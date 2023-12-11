@@ -145,13 +145,11 @@ namespace Centos_BM
         {
             btnHome_display.Text = "home";
             btnOverview_display.Text = "overview";
-            btnTransaction_display.Text = "transaction";
             btnCategory_display.Text = "category";
             btnAccount_display.Text = "account";
             btnUserAccount_display.Text = "users";
             btnAdminAccount_display.Text = "admins";
             btnLanguages_display.Text = "manage_languages";
-            btnCurrencies_display.Text = "manage_currency";
             btnSettings_display.Text = "settings";
 
             Load_Form();
