@@ -1,6 +1,6 @@
-﻿using CentosCashFlow.Properties;
+﻿using Centos_BM.Properties;
 
-namespace CentosCashFlow
+namespace Centos_BM
 {
     partial class Login
     {
@@ -187,7 +187,7 @@ namespace CentosCashFlow
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.BackgroundImage = global::CentosCashFlow.Properties.Resources.centos;
+            this.panel2.BackgroundImage = global::Centos_BM.Properties.Resources.centos;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.label4);

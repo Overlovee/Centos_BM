@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-namespace CentosCashFlow
+namespace Centos_BM
 {
     public partial class Register : Form
     {

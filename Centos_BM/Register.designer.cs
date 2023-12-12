@@ -1,4 +1,4 @@
-﻿namespace CentosCashFlow
+﻿namespace Centos_BM
 {
     partial class Register
     {
@@ -203,7 +203,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.BackgroundImage = global::CentosCashFlow.Properties.Resources.centos;
+            this.panel1.BackgroundImage = global::Centos_BM.Properties.Resources.centos;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);

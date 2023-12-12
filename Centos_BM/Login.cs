@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace CentosCashFlow
+namespace Centos_BM
 {
     public partial class Login : Form
     {
@@ -49,41 +49,41 @@ namespace CentosCashFlow
 
             //textBoxEmail.Text = "Thu2123@gmail.com";
             //textBoxPassword.Text = "admin";
-            if (textBoxEmail.Text == "")
-            {
-                this.errorProvider1.SetError(textBoxEmail, "Username is required");
-            }
-            if (textBoxPassword.Text == "")
-            {
-                this.errorProvider2.SetError(textBoxPassword, "Password is required");
-            }
-            else
-            {
-                string email = textBoxEmail.Text;
-                string password = textBoxPassword.Text;
-                Models.ConnectUsers connect = new Models.ConnectUsers();
-                Models.User user = connect.Login(email, password);
-                if (user is null || user.Id == 0)
-                {
-                    MessageBox.Show("Email or password is incorrect!", "", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    this.Hide();
-                    Menu menu = new Menu();
-                    menu.user = user;
-                    menu.ShowDialog();
-                    if (menu.isClosing)
-                    {
-                        this.Close();
-                    }
-                    else
-                    {
-                        this.Show();
-                        Reset_Login();
-                    }
-                }
-            }
+            //if (textBoxEmail.Text == "")
+            //{
+            //    this.errorProvider1.SetError(textBoxEmail, "Username is required");
+            //}
+            //if (textBoxPassword.Text == "")
+            //{
+            //    this.errorProvider2.SetError(textBoxPassword, "Password is required");
+            //}
+            //else
+            //{
+            //    string email = textBoxEmail.Text;
+            //    string password = textBoxPassword.Text;
+            //    Models.ConnectUsers connect = new Models.ConnectUsers();
+            //    Models.User user = connect.Login(email, password);
+            //    if (user is null || user.Id == 0)
+            //    {
+            //        MessageBox.Show("Email or password is incorrect!", "", MessageBoxButtons.OK);
+            //    }
+            //    else
+            //    {
+            //        this.Hide();
+            //        Menu menu = new Menu();
+            //        menu.user = user;
+            //        menu.ShowDialog();
+            //        if (menu.isClosing)
+            //        {
+            //            this.Close();
+            //        }
+            //        else
+            //        {
+            //            this.Show();
+            //            Reset_Login();
+            //        }
+            //    }
+            //}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

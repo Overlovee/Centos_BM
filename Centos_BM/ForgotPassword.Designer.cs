@@ -1,4 +1,4 @@
-﻿namespace CentosCashFlow
+﻿namespace Centos_BM
 {
     partial class ForgotPassword
     {
