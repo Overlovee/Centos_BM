@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Centos_BM.Properties {
+namespace CentosBM.Properties {
     using System;
     
     

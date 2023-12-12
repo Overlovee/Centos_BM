@@ -1,6 +1,6 @@
-﻿using Centos_BM.Properties;
+﻿using CentosBM.Properties;
 
-namespace Centos_BM
+namespace CentosBM
 {
     partial class Login
     {
@@ -187,7 +187,7 @@ namespace Centos_BM
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.BackgroundImage = global::Centos_BM.Properties.Resources.centos;
+            this.panel2.BackgroundImage = global::CentosBM.Properties.Resources.centos;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.label4);

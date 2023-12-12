@@ -1,4 +1,4 @@
-namespace Centos_BM
+namespace CentosBM
 {
     internal static class Program
     {

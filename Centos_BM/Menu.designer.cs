@@ -1,4 +1,4 @@
-﻿namespace Centos_BM
+﻿namespace CentosBM
 {
     partial class Menu
     {
@@ -103,7 +103,7 @@
             this.btnSettings_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSettings_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSettings_display.ForeColor = System.Drawing.Color.White;
-            this.btnSettings_display.Image = global::Centos_BM.Properties.Resources.settings;
+            this.btnSettings_display.Image = global::CentosBM.Properties.Resources.settings;
             this.btnSettings_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings_display.Location = new System.Drawing.Point(0, 578);
             this.btnSettings_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -184,7 +184,7 @@
             this.btnAccount_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAccount_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAccount_display.ForeColor = System.Drawing.Color.White;
-            this.btnAccount_display.Image = global::Centos_BM.Properties.Resources.account;
+            this.btnAccount_display.Image = global::CentosBM.Properties.Resources.account;
             this.btnAccount_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount_display.Location = new System.Drawing.Point(0, 298);
             this.btnAccount_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -205,7 +205,7 @@
             this.btnCategory_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCategory_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCategory_display.ForeColor = System.Drawing.Color.White;
-            this.btnCategory_display.Image = global::Centos_BM.Properties.Resources.categories;
+            this.btnCategory_display.Image = global::CentosBM.Properties.Resources.categories;
             this.btnCategory_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategory_display.Location = new System.Drawing.Point(0, 228);
             this.btnCategory_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -226,7 +226,7 @@
             this.btnOverview_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOverview_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnOverview_display.ForeColor = System.Drawing.Color.White;
-            this.btnOverview_display.Image = global::Centos_BM.Properties.Resources.overview;
+            this.btnOverview_display.Image = global::CentosBM.Properties.Resources.overview;
             this.btnOverview_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOverview_display.Location = new System.Drawing.Point(0, 158);
             this.btnOverview_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

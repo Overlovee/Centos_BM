@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-namespace Centos_BM
+namespace CentosBM
 {
     public partial class Register : Form
     {
