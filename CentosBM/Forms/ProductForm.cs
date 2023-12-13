@@ -20,14 +20,14 @@ namespace CentosBM.Forms
 
         private void ProductForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                SmallProductItem item = new SmallProductItem();
-                item.Name = "Gạch " + i.ToString();
-                item.Dock = DockStyle.Top;
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    SmallProductItem item = new SmallProductItem();
+            //    item.Name = "Gạch " + i.ToString();
+            //    item.Dock = DockStyle.Top;
 
-                panel1.Controls.Add(item);
-            }
+            //    panel1.Controls.Add(item);
+            //}
         }
     }
 }

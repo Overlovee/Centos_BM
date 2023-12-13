@@ -37,18 +37,19 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panelMessageLoad = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelUserName = new System.Windows.Forms.Label();
+            this.panelProductDetailLoading = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.panel1);
             this.panel7.Controls.Add(this.tableLayoutPanel2);
             this.panel7.Controls.Add(this.panel12);
@@ -66,9 +67,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panelUserAccountsLoad);
-            this.panel1.Location = new System.Drawing.Point(12, 88);
+            this.panel1.Location = new System.Drawing.Point(12, 90);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 509);
+            this.panel1.Size = new System.Drawing.Size(341, 512);
             this.panel1.TabIndex = 2;
             // 
             // panelUserAccountsLoad
@@ -79,7 +80,7 @@
             this.panelUserAccountsLoad.Margin = new System.Windows.Forms.Padding(0);
             this.panelUserAccountsLoad.Name = "panelUserAccountsLoad";
             this.panelUserAccountsLoad.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.panelUserAccountsLoad.Size = new System.Drawing.Size(339, 507);
+            this.panelUserAccountsLoad.Size = new System.Drawing.Size(339, 510);
             this.panelUserAccountsLoad.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -87,7 +88,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel2.Controls.Add(this.btnSearch_display, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnClear, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxSearch, 0, 0);
@@ -108,14 +109,12 @@
             this.btnSearch_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnSearch_display.ForeColor = System.Drawing.Color.White;
             this.btnSearch_display.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch_display.Image")));
-            this.btnSearch_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch_display.Location = new System.Drawing.Point(215, 0);
+            this.btnSearch_display.Location = new System.Drawing.Point(300, 0);
             this.btnSearch_display.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnSearch_display.Name = "btnSearch_display";
             this.btnSearch_display.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnSearch_display.Size = new System.Drawing.Size(126, 35);
+            this.btnSearch_display.Size = new System.Drawing.Size(41, 35);
             this.btnSearch_display.TabIndex = 4;
-            this.btnSearch_display.Text = "Search";
             this.btnSearch_display.UseVisualStyleBackColor = false;
             // 
             // btnClear
@@ -128,7 +127,7 @@
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.Location = new System.Drawing.Point(176, 0);
+            this.btnClear.Location = new System.Drawing.Point(261, 0);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(35, 35);
@@ -144,7 +143,7 @@
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.textBoxSearch.Multiline = true;
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(172, 35);
+            this.textBoxSearch.Size = new System.Drawing.Size(257, 35);
             this.textBoxSearch.TabIndex = 0;
             // 
             // panel12
@@ -153,52 +152,54 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.panelMessageLoad);
-            this.panel12.Controls.Add(this.tableLayoutPanel1);
-            this.panel12.Location = new System.Drawing.Point(359, 12);
+            this.panel12.Controls.Add(this.panelProductDetailLoading);
+            this.panel12.Location = new System.Drawing.Point(359, 90);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(766, 585);
+            this.panel12.Size = new System.Drawing.Size(777, 512);
             this.panel12.TabIndex = 0;
             // 
-            // panelMessageLoad
+            // panelProductDetailLoading
             // 
-            this.panelMessageLoad.AutoScroll = true;
-            this.panelMessageLoad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMessageLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMessageLoad.Location = new System.Drawing.Point(0, 35);
-            this.panelMessageLoad.Margin = new System.Windows.Forms.Padding(0);
-            this.panelMessageLoad.Name = "panelMessageLoad";
-            this.panelMessageLoad.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.panelMessageLoad.Size = new System.Drawing.Size(764, 548);
-            this.panelMessageLoad.TabIndex = 3;
+            this.panelProductDetailLoading.AutoScroll = true;
+            this.panelProductDetailLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProductDetailLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelProductDetailLoading.Location = new System.Drawing.Point(0, 0);
+            this.panelProductDetailLoading.Margin = new System.Windows.Forms.Padding(0);
+            this.panelProductDetailLoading.Name = "panelProductDetailLoading";
+            this.panelProductDetailLoading.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.panelProductDetailLoading.Size = new System.Drawing.Size(775, 510);
+            this.panelProductDetailLoading.TabIndex = 3;
             // 
-            // tableLayoutPanel1
+            // comboBox1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.labelUserName, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 35);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 54);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(341, 34);
+            this.comboBox1.TabIndex = 0;
             // 
-            // labelUserName
+            // button1
             // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.labelUserName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelUserName.Font = new System.Drawing.Font("Montserrat Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.ForeColor = System.Drawing.Color.Black;
-            this.labelUserName.Location = new System.Drawing.Point(3, 0);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(758, 35);
-            this.labelUserName.TabIndex = 0;
-            this.labelUserName.Text = "To All";
-            this.labelUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(963, 26);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(172, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Add new";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // ProductForm
             // 
@@ -214,8 +215,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel12.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -230,8 +229,8 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panelMessageLoad;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Panel panelProductDetailLoading;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
