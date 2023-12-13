@@ -1,6 +1,6 @@
 ﻿namespace Centos_BM.Forms
 {
-    partial class Category
+    partial class CategoryForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Centos_BM.Forms
 {
-    public partial class Category : Form
+    public partial class CategoryForm : Form
     {
-        public Category()
+        public CategoryForm()
         {
             InitializeComponent();
         }

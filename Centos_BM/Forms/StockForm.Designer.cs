@@ -1,6 +1,6 @@
 ﻿namespace Centos_BM.Forms
 {
-    partial class Stock
+    partial class StockForm
     {
         /// <summary>
         /// Required designer variable.

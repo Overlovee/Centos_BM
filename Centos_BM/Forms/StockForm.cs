@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Centos_BM.Forms
 {
-    public partial class Stock : Form
+    public partial class StockForm : Form
     {
-        public Stock()
+        public StockForm()
         {
             InitializeComponent();
         }
