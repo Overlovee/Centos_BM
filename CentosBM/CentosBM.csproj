@@ -246,5 +246,8 @@
     <Content Include="Resources\world.png" />
     <Content Include="Resources\x-24-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
