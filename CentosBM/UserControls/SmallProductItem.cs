@@ -12,9 +12,16 @@ namespace CentosBM.UserControls
 {
     public partial class SmallProductItem : UserControl
     {
+        public string Name { get; set; }
         public SmallProductItem()
         {
             InitializeComponent();
+            Name = "Gạch";
+        }
+
+        private void SmallProductItem_Load(object sender, EventArgs e)
+        {
+            label1.Text = Name;
         }
     }
 }

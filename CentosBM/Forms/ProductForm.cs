@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CentosBM.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace CentosBM.Forms
         public ProductForm()
         {
             InitializeComponent();
+        }
+
+        private void ProductForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                SmallProductItem item = new SmallProductItem();
+                item.Name = "Gạch " + i.ToString();
+                item.Dock = DockStyle.Top;
+
+                panel1.Controls.Add(item);
+            }
         }
     }
 }
