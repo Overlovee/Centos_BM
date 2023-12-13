@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Centos_BM", "Centos_BM\Centos_BM.csproj", "{E9CE65AC-DDBF-471C-88D5-3E00408F07F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentosBM", "CentosBM\CentosBM.csproj", "{4FC77C4E-AFA5-471B-BB95-49E66AA5F214}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9CE65AC-DDBF-471C-88D5-3E00408F07F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9CE65AC-DDBF-471C-88D5-3E00408F07F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9CE65AC-DDBF-471C-88D5-3E00408F07F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9CE65AC-DDBF-471C-88D5-3E00408F07F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC77C4E-AFA5-471B-BB95-49E66AA5F214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC77C4E-AFA5-471B-BB95-49E66AA5F214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC77C4E-AFA5-471B-BB95-49E66AA5F214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC77C4E-AFA5-471B-BB95-49E66AA5F214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
