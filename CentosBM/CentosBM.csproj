@@ -142,6 +142,12 @@
     <Compile Include="SubForms\ProductDetail.Designer.cs">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CategoriesItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CategoriesItems.Designer.cs">
+      <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SmallProductItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CategoriesItems.resx">
+      <DependentUpon>CategoriesItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SmallProductItem.resx">
       <DependentUpon>SmallProductItem.cs</DependentUpon>
