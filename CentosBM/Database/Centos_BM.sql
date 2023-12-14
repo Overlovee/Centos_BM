@@ -25,9 +25,20 @@ CREATE TABLE Products (
     Price DECIMAL(18, 2) NOT NULL,
     CategoryID INT,
     SupplierID INT,
+    QuantityInStock INT Default 0,
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
     FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
 );
+
+Select P.ProductID, ProductName, Description, Price, P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName
+from Products P
+join Images I ON P.ProductID = I.ProductID
+join Categories C ON P.CategoryID = C.CategoryID
+join Suppliers S ON P.SupplierID = S.SupplierID
+where C.NameCategory like N'%Tôn Hoa Sen%' And
+(ProductName like N'%Tôn lạnh%' Or C.NameCategory like N'%Tôn lạnh%' Or S.SupplierName like N'%Tôn lạnh%')
+Order by CategoryID ASC;
+
 -- Tạo bảng Images
 CREATE TABLE Images (
     Image_ID INT IDENTITY(1,1),

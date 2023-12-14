@@ -3,25 +3,55 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CentosBM.Models;
+using CentosBM.SubForms;
 
 namespace CentosBM.UserControls
 {
     public partial class SmallProductItem : UserControl
     {
-        public string Name { get; set; }
+        public Product product { get; set; }
         public SmallProductItem()
         {
             InitializeComponent();
-            Name = "Gạch";
+            product = new Product();
         }
 
         private void SmallProductItem_Load(object sender, EventArgs e)
         {
-            label1.Text = Name;
+            labelName.Text = product.Name;
+            labelSupplierName.Text = product.SupplierName;
+            labelCategoryName.Text = product.CategoryName;
+            labelPrice.Text = product.Price.ToString();
+
+            string imagePath = product.Url;
+
+            string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.Windows.Forms.Application.StartupPath));
+            if (!imagePath.Contains("\\"))
+            {
+                imagePath = Path.Combine(projectPath, @"Images", imagePath);
+            }
+
+            if (File.Exists(imagePath))
+            {
+                pictureBoxProduct.Image = System.Drawing.Image.FromFile(imagePath);
+            }
+            else
+            {
+                pictureBoxProduct.Image = CentosBM.Properties.Resources.categories;
+            }
+        }
+
+        private void pictureBoxProduct_Click(object sender, EventArgs e)
+        {
+            ProductDetail productDetail = new ProductDetail();
+            productDetail.product = product;
+            productDetail.ShowDialog();
         }
     }
 }

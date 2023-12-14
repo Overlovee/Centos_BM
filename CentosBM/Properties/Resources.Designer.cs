@@ -83,6 +83,16 @@ namespace CentosBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OngnhuauPVCnongtron_160x4_0m {
+            get {
+                object obj = ResourceManager.GetObject("OngnhuauPVCnongtron_160x4.0m", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap overview {
             get {
                 object obj = ResourceManager.GetObject("overview", resourceCulture);

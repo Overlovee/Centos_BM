@@ -102,11 +102,6 @@ namespace CentosBM
             
         }
 
-
-        private void btnUserAccount_Click(object sender, EventArgs e)
-        {
-            
-        }
         private void EmptyClickHandler(object sender, EventArgs e)
         {
             
@@ -147,7 +142,7 @@ namespace CentosBM
             btnOverview_display.Text = "overview";
             btnCategory_display.Text = "category";
             btnAccount_display.Text = "account";
-            btnUserAccount_display.Text = "users";
+            btnShowProductForm.Text = "users";
             btnAdminAccount_display.Text = "admins";
             btnLanguages_display.Text = "manage_languages";
             btnSettings_display.Text = "settings";
@@ -215,6 +210,11 @@ namespace CentosBM
         {
             
             
+        }
+
+        private void btnShowProductForm_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.ProductForm(), sender);
         }
     }
 
