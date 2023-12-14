@@ -28,30 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelLanguagesLoad = new System.Windows.Forms.Panel();
+            this.panelCategoryLoad = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6_display = new System.Windows.Forms.Label();
             this.btnAddNewLanguage_display = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.categoriesItems1 = new CentosBM.UserControls.CategoriesItems();
-            this.panelLanguagesLoad.SuspendLayout();
             this.panel12.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelLanguagesLoad
+            // panelCategoryLoad
             // 
-            this.panelLanguagesLoad.AutoScroll = true;
-            this.panelLanguagesLoad.Controls.Add(this.categoriesItems1);
-            this.panelLanguagesLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLanguagesLoad.Location = new System.Drawing.Point(0, 61);
-            this.panelLanguagesLoad.Margin = new System.Windows.Forms.Padding(0);
-            this.panelLanguagesLoad.Name = "panelLanguagesLoad";
-            this.panelLanguagesLoad.Padding = new System.Windows.Forms.Padding(11, 12, 11, 12);
-            this.panelLanguagesLoad.Size = new System.Drawing.Size(1169, 527);
-            this.panelLanguagesLoad.TabIndex = 1;
+            this.panelCategoryLoad.AutoScroll = true;
+            this.panelCategoryLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCategoryLoad.Location = new System.Drawing.Point(0, 61);
+            this.panelCategoryLoad.Margin = new System.Windows.Forms.Padding(0);
+            this.panelCategoryLoad.Name = "panelCategoryLoad";
+            this.panelCategoryLoad.Padding = new System.Windows.Forms.Padding(11, 12, 11, 12);
+            this.panelCategoryLoad.Size = new System.Drawing.Size(1169, 527);
+            this.panelCategoryLoad.TabIndex = 1;
             // 
             // panel12
             // 
@@ -59,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.panelLanguagesLoad);
+            this.panel12.Controls.Add(this.panelCategoryLoad);
             this.panel12.Controls.Add(this.tableLayoutPanel1);
             this.panel12.Location = new System.Drawing.Point(32, 126);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -122,13 +119,6 @@
             this.panel7.Size = new System.Drawing.Size(1229, 743);
             this.panel7.TabIndex = 8;
             // 
-            // categoriesItems1
-            // 
-            this.categoriesItems1.Location = new System.Drawing.Point(3, 3);
-            this.categoriesItems1.Name = "categoriesItems1";
-            this.categoriesItems1.Size = new System.Drawing.Size(1166, 102);
-            this.categoriesItems1.TabIndex = 0;
-            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -137,7 +127,7 @@
             this.Controls.Add(this.panel7);
             this.Name = "CategoryForm";
             this.Text = "Category";
-            this.panelLanguagesLoad.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
             this.panel12.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -148,12 +138,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelLanguagesLoad;
+        private System.Windows.Forms.Panel panelCategoryLoad;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label6_display;
         private System.Windows.Forms.Button btnAddNewLanguage_display;
         private System.Windows.Forms.Panel panel7;
-        private UserControls.CategoriesItems categoriesItems1;
     }
 }

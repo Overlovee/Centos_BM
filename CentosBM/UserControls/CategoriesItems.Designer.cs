@@ -110,6 +110,7 @@ namespace CentosBM.UserControls
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CategoriesItems";
             this.Size = new System.Drawing.Size(610, 90);
+            this.Load += new System.EventHandler(this.CategoriesItems_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
