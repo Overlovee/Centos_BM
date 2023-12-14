@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connects\ConnectCategory.cs" />
     <Compile Include="Connects\DbContext.cs" />
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>

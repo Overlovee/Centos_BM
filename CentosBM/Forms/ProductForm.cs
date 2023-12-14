@@ -29,5 +29,9 @@ namespace CentosBM.Forms
             //    panel1.Controls.Add(item);
             //}
         }
+        public void Load_Data()
+        {
+
+        }
     }
 }
