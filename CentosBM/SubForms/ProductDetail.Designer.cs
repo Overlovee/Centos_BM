@@ -207,6 +207,7 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(752, 30);
             this.comboBoxCategory.Sorted = true;
             this.comboBoxCategory.TabIndex = 10;
+            this.comboBoxCategory.SelectedValueChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // panel2
             // 
@@ -260,6 +261,7 @@
             this.comboBoxSupplier.Size = new System.Drawing.Size(752, 30);
             this.comboBoxSupplier.Sorted = true;
             this.comboBoxSupplier.TabIndex = 9;
+            this.comboBoxSupplier.SelectedValueChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // tableLayoutPanel4
             // 

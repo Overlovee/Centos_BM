@@ -16,10 +16,12 @@ namespace CentosBM.SubForms
     public partial class ProductDetail : Form
     {
         public Product product { get; set; }
+        public bool isUpdated { get; set; }
         public ProductDetail()
         {
             InitializeComponent();
             product = new Product();
+            isUpdated = false;
         }
 
         private void Load_CategoryCombobox()
@@ -114,13 +116,38 @@ namespace CentosBM.SubForms
                 if (kt != 0)
                 {
                     MessageBox.Show("Completely updating!", "", MessageBoxButtons.OK);
-                    bool isChanged = true;
+                    isUpdated = true;
                     //this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Cannot update!", "", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        private void comboBoxSupplier_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (!(comboBoxSupplier.SelectedItem is null)
+                && !(comboBoxCategory.SelectedItem is null)
+                //&& !(cbbTimeFormat.SelectedItem is null)
+                /*&& !(cbbOverviewDisplayMode.SelectedItem is null)*/)
+            {
+                if (comboBoxSupplier.SelectedItem.ToString() != product.SupplierName
+                || comboBoxCategory.SelectedItem.ToString() != product.CategoryName
+                //|| cbbTimeFormat.SelectedItem.ToString() != userSetting.TimeFormat
+                /*|| cbbOverviewDisplayMode.SelectedItem.ToString() != userSetting.OverviewDisplayMode*/)
+                {
+                    btnSave.Enabled = true;
+                }
+                else
+                {
+                    btnSave.Enabled = false;
+                }
+            }
+            else
+            {
+                btnSave.Enabled = false;
             }
         }
     }
