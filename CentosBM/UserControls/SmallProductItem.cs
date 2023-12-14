@@ -32,8 +32,7 @@ namespace CentosBM.UserControls
             labelName.Text = product.Name;
             labelSupplierName.Text = product.SupplierName;
             labelCategoryName.Text = product.CategoryName;
-            labelPrice.Text = product.Price.ToString();
-
+            labelPrice.Text = product.Price.ToString() + " /" + product.Unit;
             string imagePath = product.Url;
 
             string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.Windows.Forms.Application.StartupPath));

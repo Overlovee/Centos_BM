@@ -19,7 +19,7 @@ CREATE TABLE Suppliers (
 
 -- Tạo bảng Products
 CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
     ProductName NVARCHAR(255) NOT NULL,
     Description NVARCHAR(MAX),
     Price DECIMAL(18, 2) NOT NULL,
@@ -27,6 +27,7 @@ CREATE TABLE Products (
     SupplierID INT,
     QuantityInStock INT Default 0,
     isDiscontinued bit Default 1,
+    Unit NVARCHAR(50) Default N'Cái',
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
     FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
 );

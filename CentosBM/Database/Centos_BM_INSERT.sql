@@ -1,4 +1,6 @@
-﻿INSERT INTO Categories (NameCategory) 
+﻿use CentosBM
+go
+INSERT INTO Categories (NameCategory) 
 VALUES
 	(N'Tôn Hoa Sen'),
 	(N'Ống Thép Hoa Sen'),
@@ -16,33 +18,33 @@ VALUES
 	(N'Công Ty Cổ Phần SX & TM Nhất Tín', '0915287635');
 
 -- Insert data into Products
-INSERT INTO Products (ProductID, ProductName, Description, Price, CategoryID, SupplierID) 
+INSERT INTO Products (ProductName, Description, Price, CategoryID, SupplierID) 
 VALUES
-	(1, N'Tôn lạnh màu đỏ MRL03 0.45mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 123750, 1, 1),
-	(2, N'Tôn lạnh màu xanh BGL03 0.30mm ', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 89650, 1, 2),
-	(3, N'Tôn lạnh màu trắng BWL01 0.5mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 135299, 1, 4),
-	(4, N'Tôn cách nhiệt PU màu xám MDL01 16mm 0.45mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 184800, 1, 3),
-	(5, N'Tôn cách nhiệt PU màu đỏ BRL01 16mm 0.50mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 195800, 1, 2),
-	(6, N'Thép hộp mạ kẽm Z080: 13mmx26mmx6.0m', N'Được sản xuất qua các công đoạn: tẩy rỉ, cán nguội, ủ mềm, mạ kẽm, cắt băng, dán định hình.', 74762, 2, 1),
-	(7, N'Thép hộp mạ kẽm Z120: 30mmx60mmx6.0m', N'Được sản xuất qua các công đoạn: tẩy rỉ, cán nguội, ủ mềm, mạ kẽm, cắt băng, dán định hình.', 303622, 2, 3),
-	(8, N'Thép ống mạ kẽm Z080: 90mmx6.0m', N'Sản phẩm thép ống mạ kẽm trải qua quá trình sản xuất kỹ lưỡng và nghiêm ngặt, đảm bảo chất lượng.', 381928, 2, 2),
-	(9, N'Thép ống mạ kẽm Z080: 60mmx6.0m', N'Sản phẩm thép ống mạ kẽm trải qua quá trình sản xuất kỹ lưỡng và nghiêm ngặt, đảm bảo chất lượng.', 257308, 2, 4),
-	(10, N'Thép ống nhúng kẽm: 75.6mmx6.0m', N'Ống thép mạ kẽm nhúng nóng Hoa Sen là dòng sản phẩm mới được ứng dụng rộng rãi trong nhiều lĩnh vực như: Hệ thống phòng cháy, chữa cháy, hệ thống dẫn khí, giàn giáo, kết cấu xây dựng,... ', 574358, 2, 5),
-	(11, N'Thép ống nhúng kẽm: 26.65mmx6.0m', N'Ống thép mạ kẽm nhúng nóng Hoa Sen là dòng sản phẩm mới được ứng dụng rộng rãi trong nhiều lĩnh vực như: Hệ thống phòng cháy, chữa cháy, hệ thống dẫn khí, giàn giáo, kết cấu xây dựng,... ', 192931, 2, 3),
-	(12, N'Ống nhựa uPVC luồn dây điện: 16mmx1.4mmx2.92m', N'có khả năng chống cháy, cách điện, bảo vệ an toàn cho hệ thống điện dân dụng và công nghiệp, dễ dàng uốn cong và thi công lắp đặt.', 26175, 3, 1),
-	(13, N'Ống nhựa uPVC nong dài 200mmx4.0m', N'được sử dụng rộng rãi trong các lĩnh vực như: cấp thoát nước dân dụng và công cộng, các công trình điện lực, viễn thông, bơm cát,...', 1211760, 3, 3),
-	(14, N'Ống nhựa uPVC gân xoắn luồn dây điện: 20mmx50m', N'Sản phẩm có khả năng chống cháy, cách điện, bảo vệ an toàn cho hệ thống điện dân dụng và công nghiệp.', 297000, 3, 2),
-	(15, N'Ống nhựa uPVC nong trơn 160mmx4.0m', N'được sử dụng rộng rãi trong các lĩnh vực như: cấp thoát nước dân dụng và công cộng, các công trình điện lực, viễn thông, bơm cát,...', 691200, 3, 4),
-	(16, N'Ống nhựa HDPE 63mmx50m', N'ống nhựa HDPE đáp ứng được các yêu cầu cao trong lĩnh vực cấp thoát nước.', 2251800, 3, 5),
-	(17, N'Ống nhựa PPR 1 lớp chỉ đỏ 25mmx4.0m', N'ống nhựa PPR chịu được nhiệt độ của nước lên đến 95oC và được sử dụng dẫn nước sinh hoạt, dẫn nước nóng trong các công trình xây dựng,…', 188784, 3, 4),
-	(18, N'Ống nhựa PPR 2 lớp chỉ đỏ: 25mmx4.0m', N'ống nhựa PPR chịu được nhiệt độ của nước lên đến 95oC và được sử dụng dẫn nước sinh hoạt, dẫn nước nóng trong các công trình xây dựng,…', 238766, 3, 1),
-	(19, N'Thép V đen Đại Việt', N'Có khả năng chống rung động mạnh, chịu được ảnh hưởng xấu của thời tiết.', 345352, 4, 1),
-	(20, N'Thép V kẽm Quang Thắng', N'Bề mặt V nhẵn mịn đồng đều về độ mềm, khả năng chịu lực, chịu uốn cao.', 170075, 4, 4),
-	(21, N'Thép la đen Tín Phát', N'Có khả năng chống rung động mạnh, chịu được ảnh hưởng xấu của thời tiết, kính thước đa dạng phù hợp với nhiều yếu tố khác nhau của công trình.', 47106 , 4, 5),
-	(22, N'Gạch ốp tường granite LUSTRA INEMB0601200056: 600mmx1200mm', N'Sở hữu “3 TỐT”: Chống thấm hút TỐT - chống trầy xước TỐT - chịu lực TỐT.', 391392, 5, 5),
-	(23, N'Gạch lát nền granite LUSTRA INDAL1001000016: 1000mmx1000mm', N'Sở hữu “3 TỐT”: Chống thấm hút TỐT - chống trầy xước TỐT - chịu lực TỐT.', 510840, 5, 1),
-	(24, N'Gạch họa tiết cổ điển Omela OHS3030011 300mmx300mm', N'Công dụng: gạch trang trí ốp lát bếp, nhà tắm, ốp viền', 549990 , 5, 3),
-	(25, N'Gạch bán sứ Omela 1624049G 1600mmx2400mm', N'Công nghệ sản xuất gạch tiên tiến tạo nên những sản phẩm gạch ốp lát dẫn đầu về kỹ thuật và xu hướng thiết kế.', 4537490 , 5, 5);
+	(N'Tôn lạnh màu đỏ MRL03 0.45mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 123750, 1, 1),
+	(N'Tôn lạnh màu xanh BGL03 0.30mm ', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 89650, 1, 2),
+	(N'Tôn lạnh màu trắng BWL01 0.5mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 135299, 1, 4),
+	(N'Tôn cách nhiệt PU màu xám MDL01 16mm 0.45mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 184800, 1, 3),
+	(N'Tôn cách nhiệt PU màu đỏ BRL01 16mm 0.50mm', N'Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.', 195800, 1, 2),
+	(N'Thép hộp mạ kẽm Z080: 13mmx26mmx6.0m', N'Được sản xuất qua các công đoạn: tẩy rỉ, cán nguội, ủ mềm, mạ kẽm, cắt băng, dán định hình.', 74762, 2, 1),
+	(N'Thép hộp mạ kẽm Z120: 30mmx60mmx6.0m', N'Được sản xuất qua các công đoạn: tẩy rỉ, cán nguội, ủ mềm, mạ kẽm, cắt băng, dán định hình.', 303622, 2, 3),
+	(N'Thép ống mạ kẽm Z080: 90mmx6.0m', N'Sản phẩm thép ống mạ kẽm trải qua quá trình sản xuất kỹ lưỡng và nghiêm ngặt, đảm bảo chất lượng.', 381928, 2, 2),
+	(N'Thép ống mạ kẽm Z080: 60mmx6.0m', N'Sản phẩm thép ống mạ kẽm trải qua quá trình sản xuất kỹ lưỡng và nghiêm ngặt, đảm bảo chất lượng.', 257308, 2, 4),
+	(N'Thép ống nhúng kẽm: 75.6mmx6.0m', N'Ống thép mạ kẽm nhúng nóng Hoa Sen là dòng sản phẩm mới được ứng dụng rộng rãi trong nhiều lĩnh vực như: Hệ thống phòng cháy, chữa cháy, hệ thống dẫn khí, giàn giáo, kết cấu xây dựng,... ', 574358, 2, 5),
+	(N'Thép ống nhúng kẽm: 26.65mmx6.0m', N'Ống thép mạ kẽm nhúng nóng Hoa Sen là dòng sản phẩm mới được ứng dụng rộng rãi trong nhiều lĩnh vực như: Hệ thống phòng cháy, chữa cháy, hệ thống dẫn khí, giàn giáo, kết cấu xây dựng,... ', 192931, 2, 3),
+	(N'Ống nhựa uPVC luồn dây điện: 16mmx1.4mmx2.92m', N'có khả năng chống cháy, cách điện, bảo vệ an toàn cho hệ thống điện dân dụng và công nghiệp, dễ dàng uốn cong và thi công lắp đặt.', 26175, 3, 1),
+	(N'Ống nhựa uPVC nong dài 200mmx4.0m', N'được sử dụng rộng rãi trong các lĩnh vực như: cấp thoát nước dân dụng và công cộng, các công trình điện lực, viễn thông, bơm cát,...', 1211760, 3, 3),
+	(N'Ống nhựa uPVC gân xoắn luồn dây điện: 20mmx50m', N'Sản phẩm có khả năng chống cháy, cách điện, bảo vệ an toàn cho hệ thống điện dân dụng và công nghiệp.', 297000, 3, 2),
+	(N'Ống nhựa uPVC nong trơn 160mmx4.0m', N'được sử dụng rộng rãi trong các lĩnh vực như: cấp thoát nước dân dụng và công cộng, các công trình điện lực, viễn thông, bơm cát,...', 691200, 3, 4),
+	(N'Ống nhựa HDPE 63mmx50m', N'ống nhựa HDPE đáp ứng được các yêu cầu cao trong lĩnh vực cấp thoát nước.', 2251800, 3, 5),
+	(N'Ống nhựa PPR 1 lớp chỉ đỏ 25mmx4.0m', N'ống nhựa PPR chịu được nhiệt độ của nước lên đến 95oC và được sử dụng dẫn nước sinh hoạt, dẫn nước nóng trong các công trình xây dựng,…', 188784, 3, 4),
+	(N'Ống nhựa PPR 2 lớp chỉ đỏ: 25mmx4.0m', N'ống nhựa PPR chịu được nhiệt độ của nước lên đến 95oC và được sử dụng dẫn nước sinh hoạt, dẫn nước nóng trong các công trình xây dựng,…', 238766, 3, 1),
+	(N'Thép V đen Đại Việt', N'Có khả năng chống rung động mạnh, chịu được ảnh hưởng xấu của thời tiết.', 345352, 4, 1),
+	(N'Thép V kẽm Quang Thắng', N'Bề mặt V nhẵn mịn đồng đều về độ mềm, khả năng chịu lực, chịu uốn cao.', 170075, 4, 4),
+	(N'Thép la đen Tín Phát', N'Có khả năng chống rung động mạnh, chịu được ảnh hưởng xấu của thời tiết, kính thước đa dạng phù hợp với nhiều yếu tố khác nhau của công trình.', 47106 , 4, 5),
+	(N'Gạch ốp tường granite LUSTRA INEMB0601200056: 600mmx1200mm', N'Sở hữu “3 TỐT”: Chống thấm hút TỐT - chống trầy xước TỐT - chịu lực TỐT.', 391392, 5, 5),
+	(N'Gạch lát nền granite LUSTRA INDAL1001000016: 1000mmx1000mm', N'Sở hữu “3 TỐT”: Chống thấm hút TỐT - chống trầy xước TỐT - chịu lực TỐT.', 510840, 5, 1),
+	(N'Gạch họa tiết cổ điển Omela OHS3030011 300mmx300mm', N'Công dụng: gạch trang trí ốp lát bếp, nhà tắm, ốp viền', 549990 , 5, 3),
+	(N'Gạch bán sứ Omela 1624049G 1600mmx2400mm', N'Công nghệ sản xuất gạch tiên tiến tạo nên những sản phẩm gạch ốp lát dẫn đầu về kỹ thuật và xu hướng thiết kế.', 4537490 , 5, 5);
 
 -- Insert data into Images
 INSERT INTO Images (Url, ProductID) VALUES

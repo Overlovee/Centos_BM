@@ -63,7 +63,9 @@ namespace CentosBM.SubForms
             textBoxPrice.Text = product.Price.ToString();
             richTextBoxDescription.Text = product.Description;
             textBoxQuantityInStock.Text = product.QuantityInStock.ToString();
+            textBoxUnit.Text = product.Unit;
             newImg = product.Url;
+
             string imagePath = product.Url;
 
             string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.Windows.Forms.Application.StartupPath));
@@ -125,7 +127,7 @@ namespace CentosBM.SubForms
                 product.Price = decimal.Parse(textBoxPrice.Text);
                 product.QuantityInStock = int.Parse(textBoxQuantityInStock.Text);
                 product.Description = richTextBoxDescription.Text;
-
+                product.Unit = textBoxUnit.Text;
                 ConnectProduct connectProduct = new ConnectProduct();
                 int kt = connectProduct.updateDataForItem(product);
                 if (kt != 0)
@@ -150,6 +152,7 @@ namespace CentosBM.SubForms
                 && !(textBoxPrice.Text is null)
                 && !(textBoxQuantityInStock.Text is null)
                 && !(richTextBoxDescription.Text is null)
+                && !(textBoxUnit.Text is null)
 
                 )
 
@@ -161,6 +164,7 @@ namespace CentosBM.SubForms
                 || textBoxPrice.Text != product.Price.ToString()
                 || textBoxQuantityInStock.Text != product.QuantityInStock.ToString()
                 || richTextBoxDescription.Text != product.Description
+                || textBoxUnit.Text != product.Unit
                 )
 
                 {

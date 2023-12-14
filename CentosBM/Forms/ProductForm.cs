@@ -107,6 +107,23 @@ namespace CentosBM.Forms
         {
             AddingNewProductForm addingNewProductForm = new AddingNewProductForm();
             addingNewProductForm.ShowDialog();
+            if (addingNewProductForm.isAdded)
+            {
+                Product product = new Product();
+                product = addingNewProductForm.product;
+
+                Panel newPanel = new Panel();
+                panelProductDetailLoading.Controls.Add(newPanel);
+                newPanel.Dock = DockStyle.Top;
+                newPanel.Height = 170;
+
+                SmallProductItem item = new SmallProductItem();
+                item.product = product;
+
+                newPanel.Controls.Add(item);
+                item.Dock = DockStyle.Top;
+                item.Height = 150;
+            }
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxProduct = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -41,19 +42,24 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxProduct = new System.Windows.Forms.PictureBox();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxQuantityInStock = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxUnit = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,6 +78,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 400);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // pictureBoxProduct
+            // 
+            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxProduct.Image = global::CentosBM.Properties.Resources.OngnhuauPVCnongtron_160x4_0m;
+            this.pictureBoxProduct.Location = new System.Drawing.Point(10, 10);
+            this.pictureBoxProduct.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxProduct.Name = "pictureBoxProduct";
+            this.pictureBoxProduct.Size = new System.Drawing.Size(380, 380);
+            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxProduct.TabIndex = 1;
+            this.pictureBoxProduct.TabStop = false;
+            this.pictureBoxProduct.Click += new System.EventHandler(this.pictureBoxProduct_Click);
             // 
             // panel1
             // 
@@ -256,8 +276,8 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.Controls.Add(this.textBoxPrice, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(13, 121);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -265,35 +285,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(756, 30);
             this.tableLayoutPanel4.TabIndex = 11;
-            // 
-            // pictureBoxProduct
-            // 
-            this.pictureBoxProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxProduct.Image = global::CentosBM.Properties.Resources.OngnhuauPVCnongtron_160x4_0m;
-            this.pictureBoxProduct.Location = new System.Drawing.Point(10, 10);
-            this.pictureBoxProduct.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxProduct.Name = "pictureBoxProduct";
-            this.pictureBoxProduct.Size = new System.Drawing.Size(380, 380);
-            this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxProduct.TabIndex = 1;
-            this.pictureBoxProduct.TabStop = false;
-            this.pictureBoxProduct.Click += new System.EventHandler(this.pictureBoxProduct_Click);
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.textBoxPrice.ForeColor = System.Drawing.Color.Tomato;
-            this.textBoxPrice.Location = new System.Drawing.Point(10, 8);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(10, 8, 0, 0);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(443, 27);
-            this.textBoxPrice.TabIndex = 9;
-            this.textBoxPrice.Text = "123750.00";
-            this.textBoxPrice.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
             // 
             // tableLayoutPanel5
             // 
@@ -309,18 +300,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(297, 24);
             this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số lượng:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxQuantityInStock
             // 
@@ -338,6 +317,90 @@
             this.textBoxQuantityInStock.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             this.textBoxQuantityInStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQuantityInStock_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số lượng:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.textBoxPrice, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(453, 30);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.textBoxPrice.ForeColor = System.Drawing.Color.Tomato;
+            this.textBoxPrice.Location = new System.Drawing.Point(10, 0);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(216, 27);
+            this.textBoxPrice.TabIndex = 10;
+            this.textBoxPrice.Text = "123750.00";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.textBoxUnit, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(226, 0);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(227, 30);
+            this.tableLayoutPanel7.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "/";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxUnit
+            // 
+            this.textBoxUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxUnit.ForeColor = System.Drawing.Color.Black;
+            this.textBoxUnit.Location = new System.Drawing.Point(113, 0);
+            this.textBoxUnit.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.textBoxUnit.Multiline = true;
+            this.textBoxUnit.Name = "textBoxUnit";
+            this.textBoxUnit.Size = new System.Drawing.Size(114, 30);
+            this.textBoxUnit.TabIndex = 12;
+            this.textBoxUnit.Text = "Cái";
+            this.textBoxUnit.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            // 
             // ProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,16 +416,19 @@
             this.Text = "ProductDetail";
             this.Load += new System.EventHandler(this.ProductDetail_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,9 +448,13 @@
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.ComboBox comboBoxSupplier;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TextBox textBoxQuantityInStock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TextBox textBoxUnit;
+        private System.Windows.Forms.Label label2;
     }
 }

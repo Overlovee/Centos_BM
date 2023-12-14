@@ -31,7 +31,7 @@ namespace CentosBM.Connects
         public List<Product> getProducts()
         {
             List<Product> list = new List<Product>();
-            string sql = ("Select P.ProductID, ProductName, Description, Price, P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName, P.QuantityInStock " +
+            string sql = ("Select P.ProductID, ProductName, Description, Price, P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName, P.QuantityInStock, P.Unit " +
                 "from Products P " +
                 "join Images I ON P.ProductID = I.ProductID " +
                 "join Categories C ON P.CategoryID = C.CategoryID " +
@@ -52,6 +52,7 @@ namespace CentosBM.Connects
                 emp.CategoryName = rdr.GetValue(7).ToString();
                 emp.SupplierName = rdr.GetValue(8).ToString();
                 emp.QuantityInStock = int.Parse(rdr.GetValue(9).ToString());
+                emp.Unit = rdr.GetValue(10).ToString();
                 list.Add(emp);
             }
             rdr.Close();
@@ -91,30 +92,44 @@ namespace CentosBM.Connects
                 emp.CategoryName = rdr.GetValue(7).ToString();
                 emp.SupplierName = rdr.GetValue(8).ToString();
                 emp.QuantityInStock = int.Parse(rdr.GetValue(9).ToString());
-
+                emp.Unit = rdr.GetValue(10).ToString();
                 list.Add(emp);
             }
             rdr.Close();
             return list;
         }
 
-        //public int addNewItem(Transaction transaction)
-        //{
-        //    Models.ConnectCategory connectCategory = new Models.ConnectCategory();
-        //    Models.Category category = connectCategory.getDataByName(transaction.CategoryName);
-        //    int rs = 0;
-        //    string sql = "Set dateformat dmy INSERT INTO Transactions " +
-        //        "VALUES('" + transaction.UserID + "', '"
-        //        + category.CategoryID + "', '"
-        //        + transaction.TransactionType + "', '"
-        //        + transaction.Amount + "', CONVERT (varchar, '"
-        //        + transaction.TransactionDate + "', 103), N'"
-        //        + transaction.TransactionDescription + "')";
+        public int addNewItem(Product product)
+        {
+            ConnectCategory connectCategory = new ConnectCategory();
+            Category category = connectCategory.getDataByName(product.CategoryName);
+            ConnectSupplier connectSupplier = new ConnectSupplier();
+            Supplier supplier = connectSupplier.getDataByName(product.SupplierName);
 
-        //    rs = dbContext.ExcuteNonQuery(sql);
-        //    dbContext.close();
-        //    return rs;
-        //}
+            int rs = 0;
+            string sql = "EXEC InsertProduct " +
+                "@ProductName = N'"+ product.Name+ "', " +
+                "@Description = N'"+ product.Description + "', " +
+                "@Price = "+ product.Price + ", " +
+                "@QuantityInStock = "+ product.QuantityInStock+ ", " +
+                "@Unit = N'"+ product.Unit+ "', " +
+                "@Url = N'"+ product.Url+ "', " +
+                "@CategoryID = " + category.Id+ ", " +
+                "@SupplierID = "+ supplier.Id+ ";";
+
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+
+            sql = "SELECT dbo.FindLastInsertedProductID();";
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+            int id = 0;
+            if (rdr.Read())
+            {
+                id = int.Parse(rdr.GetValue(0).ToString());
+            }
+            rdr.Close();
+            return id;
+        }
         public int updateDataForItem(Product product)
         {
             ConnectCategory connectCategory = new ConnectCategory();
@@ -130,6 +145,7 @@ namespace CentosBM.Connects
                 "@CategoryID = "+category.Id+", " +
                 "@SupplierID = " + supplier.Id + ", " +
                 "@QuantityInStock = " + product.QuantityInStock + ", " +
+                "@Unit = N'" + product.Unit + "', " +
                 "@Url = N'" + product.Url+ "';";
             rs = dbContext.ExcuteNonQuery(sql);
             dbContext.close();
