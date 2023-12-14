@@ -94,7 +94,7 @@ namespace CentosBM
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ProductForm(), sender);
+            OpenChildForm(new Forms.CategoryForm(), sender);
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
