@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CentosBM.Connects;
 using CentosBM.Models;
+using CentosBM.SubForms;
 
 namespace CentosBM.Forms
 {
@@ -100,6 +101,12 @@ namespace CentosBM.Forms
                 comboBoxCategoryLoad.SelectedItem = "Tất cả";
                 Reload_Data(false);
             }
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            AddingNewProductForm addingNewProductForm = new AddingNewProductForm();
+            addingNewProductForm.ShowDialog();
         }
     }
 }

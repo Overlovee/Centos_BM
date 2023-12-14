@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.comboBoxCategoryLoad = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panelProductDetailLoading = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.btnAddNew);
             this.panel7.Controls.Add(this.comboBoxCategoryLoad);
             this.panel7.Controls.Add(this.tableLayoutPanel2);
             this.panel7.Controls.Add(this.panel12);
@@ -57,23 +57,24 @@
             this.panel7.Size = new System.Drawing.Size(1148, 614);
             this.panel7.TabIndex = 4;
             // 
-            // button1
+            // btnAddNew
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(13, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(172, 35);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add new";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddNew.BackColor = System.Drawing.Color.Black;
+            this.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnAddNew.FlatAppearance.BorderSize = 0;
+            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnAddNew.ForeColor = System.Drawing.Color.White;
+            this.btnAddNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNew.Location = new System.Drawing.Point(13, 12);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAddNew.Size = new System.Drawing.Size(172, 35);
+            this.btnAddNew.TabIndex = 5;
+            this.btnAddNew.Text = "Add new";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // comboBoxCategoryLoad
             // 
@@ -109,42 +110,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(887, 35);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSearch.Location = new System.Drawing.Point(0, 0);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.textBoxSearch.Multiline = true;
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(813, 35);
-            this.textBoxSearch.TabIndex = 0;
-            // 
-            // panel12
-            // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.panelProductDetailLoading);
-            this.panel12.Location = new System.Drawing.Point(12, 93);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1124, 509);
-            this.panel12.TabIndex = 0;
-            // 
-            // panelProductDetailLoading
-            // 
-            this.panelProductDetailLoading.AutoScroll = true;
-            this.panelProductDetailLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelProductDetailLoading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProductDetailLoading.Location = new System.Drawing.Point(0, 0);
-            this.panelProductDetailLoading.Margin = new System.Windows.Forms.Padding(0);
-            this.panelProductDetailLoading.Name = "panelProductDetailLoading";
-            this.panelProductDetailLoading.Padding = new System.Windows.Forms.Padding(10);
-            this.panelProductDetailLoading.Size = new System.Drawing.Size(1122, 507);
-            this.panelProductDetailLoading.TabIndex = 3;
             // 
             // btnSearch
             // 
@@ -182,6 +147,42 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSearch.Location = new System.Drawing.Point(0, 0);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(813, 35);
+            this.textBoxSearch.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.panelProductDetailLoading);
+            this.panel12.Location = new System.Drawing.Point(12, 93);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1124, 509);
+            this.panel12.TabIndex = 0;
+            // 
+            // panelProductDetailLoading
+            // 
+            this.panelProductDetailLoading.AutoScroll = true;
+            this.panelProductDetailLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProductDetailLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelProductDetailLoading.Location = new System.Drawing.Point(0, 0);
+            this.panelProductDetailLoading.Margin = new System.Windows.Forms.Padding(0);
+            this.panelProductDetailLoading.Name = "panelProductDetailLoading";
+            this.panelProductDetailLoading.Padding = new System.Windows.Forms.Padding(10);
+            this.panelProductDetailLoading.Size = new System.Drawing.Size(1122, 507);
+            this.panelProductDetailLoading.TabIndex = 3;
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +210,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panelProductDetailLoading;
         private System.Windows.Forms.ComboBox comboBoxCategoryLoad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

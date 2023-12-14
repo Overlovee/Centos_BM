@@ -1,4 +1,4 @@
-﻿Alter FUNCTION dbo.GetProductsByKeyword
+﻿Create FUNCTION dbo.GetProductsByKeyword
 (
     @Keyword NVARCHAR(100)
 )
@@ -11,9 +11,11 @@ RETURN
     JOIN Images I ON P.ProductID = I.ProductID
     JOIN Categories C ON P.CategoryID = C.CategoryID
     JOIN Suppliers S ON P.SupplierID = S.SupplierID
-    WHERE ProductName LIKE N'%' + @Keyword + '%'
+    WHERE 
+		(ProductName LIKE N'%' + @Keyword + '%'
        OR C.NameCategory LIKE N'%' + @Keyword + '%'
-       OR S.SupplierName LIKE N'%' + @Keyword + '%'
+       OR S.SupplierName LIKE N'%' + @Keyword + '%')
+	   And P.isDiscontinued = 1
 );
 
 SELECT * 
@@ -21,7 +23,7 @@ FROM dbo.GetProductsByKeyword(N'Tôn')
 ORDER BY CategoryID ASC;
 
 
-Alter FUNCTION dbo.SearchProductsByPriceRange
+Create FUNCTION dbo.SearchProductsByPriceRange
 (
 	@CategoryKeyword NVARCHAR(100),
     @MinPrice DECIMAL(18, 2),
@@ -38,13 +40,14 @@ RETURN
     JOIN Suppliers S ON P.SupplierID = S.SupplierID
     WHERE C.NameCategory like N'%' + @CategoryKeyword + '%' And
 	(Price BETWEEN @MinPrice AND @MaxPrice)
+	And P.isDiscontinued = 1
 );
 
 SELECT * 
 FROM dbo.SearchProductsByPriceRange(N'Tôn Hoa Sen', 0, 200000)
 ORDER BY Price DESC;
 
-Alter FUNCTION dbo.SearchProducts
+Create FUNCTION dbo.SearchProducts
 (
     @CategoryKeyword NVARCHAR(100),
     @ProductKeyword NVARCHAR(100)
@@ -62,6 +65,7 @@ RETURN
       AND (ProductName LIKE N'%' + @ProductKeyword + '%'
            OR C.NameCategory LIKE N'%' + @ProductKeyword + '%'
            OR S.SupplierName LIKE N'%' + @ProductKeyword + '%')
+		   And P.isDiscontinued = 1
 );
 
 SELECT * 
@@ -105,3 +109,16 @@ EXEC UpdateProduct
     @SupplierID = 2,
     @QuantityInStock = 12,
 	@Url = N'Tonlanhmaudo_MR03 0.45mm.jpg';
+
+
+CREATE PROCEDURE UpdateDiscontinuedStatus
+    @ProductID INT,
+    @isDiscontinued BIT
+AS
+BEGIN
+    UPDATE Products
+    SET isDiscontinued = @isDiscontinued
+    WHERE ProductID = @ProductID;
+END;
+
+EXEC UpdateDiscontinuedStatus @ProductID = 1, @isDiscontinued = 0;

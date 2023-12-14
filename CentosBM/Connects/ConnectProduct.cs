@@ -36,6 +36,7 @@ namespace CentosBM.Connects
                 "join Images I ON P.ProductID = I.ProductID " +
                 "join Categories C ON P.CategoryID = C.CategoryID " +
                 "join Suppliers S ON P.SupplierID = S.SupplierID " +
+                "where P.isDiscontinued = 1 " +
                 "Order by Price DESC;");
             SqlDataReader rdr = dbContext.ExcuteQuery(sql);
             while (rdr.Read())
@@ -134,13 +135,13 @@ namespace CentosBM.Connects
             dbContext.close();
             return rs;
         }
-        //public int deleteDataById(int id)
-        //{
-        //    int rs = 0;
-        //    string sql = "EXEC DeleteTransaction '" + id + "'";
-        //    rs = dbContext.ExcuteNonQuery(sql);
-        //    dbContext.close();
-        //    return rs;
-        //}
+        public int deleteDataById(int id)
+        {
+            int rs = 0;
+            string sql = "EXEC UpdateDiscontinuedStatus @ProductID = "+id+", @isDiscontinued = 0;";
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+            return rs;
+        }
     }
 }

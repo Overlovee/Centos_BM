@@ -1,4 +1,5 @@
-﻿using CentosBM.Connects;
+﻿using CentosBM.ChildForms;
+using CentosBM.Connects;
 using CentosBM.Models;
 using System;
 using System.Collections.Generic;
@@ -178,17 +179,52 @@ namespace CentosBM.SubForms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             ConnectProduct connectProduct = new ConnectProduct();
-            int kt = connectProduct.updateDataForItem(product);
+            int kt = connectProduct.deleteDataById(product.Id);
             if (kt != 0)
             {
-                MessageBox.Show("Completely updating!", "", MessageBoxButtons.OK);
-                isUpdated = true;
+                MessageBox.Show("Completely deleting!", "", MessageBoxButtons.OK);
+                isDeleted = true;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Cannot update!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Cannot delete!", "", MessageBoxButtons.OK);
+            }
+        }
+
+        private void textBoxQuantityInStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int count = 0;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != (char)Keys.Back && e.KeyChar != 32 && e.KeyChar != '.')
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+            if (e.KeyChar == '.')
+            {
+                count++;
+                if (count >= 2)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int count = 0;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != (char)Keys.Back && e.KeyChar != 32 && e.KeyChar != '.')
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+            if (e.KeyChar == '.')
+            {
+                count++;
+                if (count >= 2)
+                {
+                    e.Handled = true;
+                }
             }
         }
     }

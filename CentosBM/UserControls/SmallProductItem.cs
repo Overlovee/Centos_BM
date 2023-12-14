@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CentosBM.Forms;
 using CentosBM.Models;
 using CentosBM.SubForms;
 
@@ -60,6 +61,19 @@ namespace CentosBM.UserControls
             {
                 product = productDetail.product;
                 Load_Data();
+            }
+            if (productDetail.isDeleted)
+            {
+                Control control = (Control)this;
+                while (control.Parent != null && !(control.Parent is Panel))
+                {
+                    control = control.Parent;
+                }
+
+                if (control.Parent is Panel)
+                {
+                    control.Parent.Dispose();
+                }
             }
         }
     }

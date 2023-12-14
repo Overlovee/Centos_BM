@@ -136,6 +136,18 @@
     <Compile Include="Register.designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\AddingNewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\AddingNewProductForm.Designer.cs">
+      <DependentUpon>AddingNewProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\ConfirmPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\ConfirmPasswordForm.designer.cs">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\ProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +214,12 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\AddingNewProductForm.resx">
+      <DependentUpon>AddingNewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\ConfirmPasswordForm.resx">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
@@ -282,6 +300,7 @@
     <Content Include="Resources\letter.png" />
     <Content Include="Resources\money-exchange.png" />
     <Content Include="Resources\money.png" />
+    <None Include="Resources\newImage.png" />
     <Content Include="Resources\overview.png" />
     <None Include="Resources\overview1.png" />
     <Content Include="Resources\pay.png" />
