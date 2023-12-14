@@ -24,6 +24,10 @@ namespace CentosBM.UserControls
 
         private void SmallProductItem_Load(object sender, EventArgs e)
         {
+            Load_Data();
+        }
+        public void Load_Data()
+        {
             labelName.Text = product.Name;
             labelSupplierName.Text = product.SupplierName;
             labelCategoryName.Text = product.CategoryName;
@@ -52,6 +56,11 @@ namespace CentosBM.UserControls
             ProductDetail productDetail = new ProductDetail();
             productDetail.product = product;
             productDetail.ShowDialog();
+            if (productDetail.isUpdated)
+            {
+                product = productDetail.product;
+                Load_Data();
+            }
         }
     }
 }

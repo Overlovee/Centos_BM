@@ -17,11 +17,15 @@ namespace CentosBM.SubForms
     {
         public Product product { get; set; }
         public bool isUpdated { get; set; }
+        public bool isDeleted { get; set; }
+        public string newImg { get; set; }
         public ProductDetail()
         {
             InitializeComponent();
             product = new Product();
             isUpdated = false;
+            isDeleted = false;
+            newImg = "";
         }
 
         private void Load_CategoryCombobox()
@@ -58,6 +62,7 @@ namespace CentosBM.SubForms
             textBoxPrice.Text = product.Price.ToString();
             richTextBoxDescription.Text = product.Description;
             textBoxQuantityInStock.Text = product.QuantityInStock.ToString();
+            newImg = product.Url;
             string imagePath = product.Url;
 
             string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.Windows.Forms.Application.StartupPath));
@@ -100,7 +105,8 @@ namespace CentosBM.SubForms
                     if (df.ShowDialog() == DialogResult.OK)
                     {
                         pictureBoxProduct.Image = Image.FromFile(df.FileName);
-                        product.Url = Path.GetFileName(df.FileName);
+                        newImg = Path.GetFileName(df.FileName);
+                        comboBoxSupplier_SelectedValueChanged(sender, e);
                     }
                 }
             }
@@ -111,13 +117,21 @@ namespace CentosBM.SubForms
             string role = "admin";
             if (role == "admin")
             {
+                product.SupplierName = comboBoxSupplier.SelectedItem.ToString();
+                product.CategoryName = comboBoxCategory.SelectedItem.ToString();
+                product.Url = newImg;
+                product.Name = textBoxName.Text;
+                product.Price = decimal.Parse(textBoxPrice.Text);
+                product.QuantityInStock = int.Parse(textBoxQuantityInStock.Text);
+                product.Description = richTextBoxDescription.Text;
+
                 ConnectProduct connectProduct = new ConnectProduct();
                 int kt = connectProduct.updateDataForItem(product);
                 if (kt != 0)
                 {
                     MessageBox.Show("Completely updating!", "", MessageBoxButtons.OK);
                     isUpdated = true;
-                    //this.Close();
+                    this.Close();
                 }
                 else
                 {
@@ -130,13 +144,24 @@ namespace CentosBM.SubForms
         {
             if (!(comboBoxSupplier.SelectedItem is null)
                 && !(comboBoxCategory.SelectedItem is null)
-                //&& !(cbbTimeFormat.SelectedItem is null)
-                /*&& !(cbbOverviewDisplayMode.SelectedItem is null)*/)
+                && !(newImg is null)
+                && !(textBoxName.Text is null)
+                && !(textBoxPrice.Text is null)
+                && !(textBoxQuantityInStock.Text is null)
+                && !(richTextBoxDescription.Text is null)
+
+                )
+
             {
                 if (comboBoxSupplier.SelectedItem.ToString() != product.SupplierName
                 || comboBoxCategory.SelectedItem.ToString() != product.CategoryName
-                //|| cbbTimeFormat.SelectedItem.ToString() != userSetting.TimeFormat
-                /*|| cbbOverviewDisplayMode.SelectedItem.ToString() != userSetting.OverviewDisplayMode*/)
+                || newImg != product.Url
+                || textBoxName.Text != product.Name
+                || textBoxPrice.Text != product.Price.ToString()
+                || textBoxQuantityInStock.Text != product.QuantityInStock.ToString()
+                || richTextBoxDescription.Text != product.Description
+                )
+
                 {
                     btnSave.Enabled = true;
                 }
@@ -148,6 +173,22 @@ namespace CentosBM.SubForms
             else
             {
                 btnSave.Enabled = false;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ConnectProduct connectProduct = new ConnectProduct();
+            int kt = connectProduct.updateDataForItem(product);
+            if (kt != 0)
+            {
+                MessageBox.Show("Completely updating!", "", MessageBoxButtons.OK);
+                isUpdated = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cannot update!", "", MessageBoxButtons.OK);
             }
         }
     }

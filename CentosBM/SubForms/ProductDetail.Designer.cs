@@ -149,6 +149,7 @@
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -228,11 +229,11 @@
             this.richTextBoxDescription.Location = new System.Drawing.Point(10, 0);
             this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
-            this.richTextBoxDescription.ReadOnly = true;
             this.richTextBoxDescription.Size = new System.Drawing.Size(752, 171);
             this.richTextBoxDescription.TabIndex = 0;
             this.richTextBoxDescription.Text = "Ứng dụng công nghệ hàng đầu về sơn phủ trên nền hợp kim nhôm kẽm, có thể sơn hai " +
     "mặt giống nhau nhằm tăng tính thẩm mỹ, đa dạng về màu sắc, độ bền cao.";
+            this.richTextBoxDescription.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // textBoxName
             // 
@@ -245,6 +246,7 @@
             this.textBoxName.Size = new System.Drawing.Size(762, 36);
             this.textBoxName.TabIndex = 5;
             this.textBoxName.Text = "Tôn lạnh màu đỏ MRL03 0.45mm";
+            this.textBoxName.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // comboBoxSupplier
             // 
@@ -290,6 +292,7 @@
             this.textBoxPrice.Size = new System.Drawing.Size(443, 27);
             this.textBoxPrice.TabIndex = 9;
             this.textBoxPrice.Text = "123750.00";
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -332,6 +335,7 @@
             this.textBoxQuantityInStock.Size = new System.Drawing.Size(149, 24);
             this.textBoxQuantityInStock.TabIndex = 10;
             this.textBoxQuantityInStock.Text = "121";
+            this.textBoxQuantityInStock.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // ProductDetail
             // 
