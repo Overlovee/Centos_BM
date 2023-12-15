@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connects\ConnectCategory.cs" />
+    <Compile Include="Connects\ConnectEmployee.cs" />
     <Compile Include="Connects\ConnectOrder.cs" />
     <Compile Include="Connects\ConnectProduct.cs" />
     <Compile Include="Connects\ConnectSupplier.cs" />
@@ -120,6 +121,7 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Supplier.cs" />
@@ -143,6 +145,12 @@
     <Compile Include="SubForms\ConfirmPasswordForm.designer.cs">
       <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\ProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +162,12 @@
     </Compile>
     <Compile Include="UserControls\CategoriesItems.Designer.cs">
       <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderDetailItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderDetailItem.Designer.cs">
+      <DependentUpon>SmallOrderDetailItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SmallOrderItem.cs">
       <SubType>UserControl</SubType>
@@ -225,11 +239,17 @@
     <EmbeddedResource Include="SubForms\ConfirmPasswordForm.resx">
       <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CategoriesItems.resx">
       <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallOrderDetailItem.resx">
+      <DependentUpon>SmallOrderDetailItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SmallOrderItem.resx">
       <DependentUpon>SmallOrderItem.cs</DependentUpon>

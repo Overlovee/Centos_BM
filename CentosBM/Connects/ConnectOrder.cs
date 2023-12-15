@@ -77,9 +77,54 @@ namespace CentosBM.Connects
             list.Add("Đã thanh toán");
             list.Add("Đã huỷ");
             list.Add("Đã giao hàng");
-            list.Add("Chưa giao hàng");
             list.Add("Chờ giao hàng");
             return list;
+        }
+
+        //public int addNewItem(Product product)
+        //{
+        //    ConnectCategory connectCategory = new ConnectCategory();
+        //    Category category = connectCategory.getDataByName(product.CategoryName);
+        //    ConnectSupplier connectSupplier = new ConnectSupplier();
+        //    Supplier supplier = connectSupplier.getDataByName(product.SupplierName);
+
+        //    int rs = 0;
+        //    string sql = "EXEC InsertProduct " +
+        //        "@ProductName = N'" + product.Name + "', " +
+        //        "@Description = N'" + product.Description + "', " +
+        //        "@Price = " + product.Price + ", " +
+        //        "@QuantityInStock = " + product.QuantityInStock + ", " +
+        //        "@Unit = N'" + product.Unit + "', " +
+        //        "@Url = N'" + product.Url + "', " +
+        //        "@CategoryID = " + category.Id + ", " +
+        //        "@SupplierID = " + supplier.Id + ";";
+
+        //    rs = dbContext.ExcuteNonQuery(sql);
+        //    dbContext.close();
+
+        //    sql = "SELECT dbo.FindLastInsertedProductID();";
+        //    SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+        //    int id = 0;
+        //    if (rdr.Read())
+        //    {
+        //        id = int.Parse(rdr.GetValue(0).ToString());
+        //    }
+        //    rdr.Close();
+        //    return id;
+        //}
+        public int updateDataForItem(Order order)
+        {
+            int rs = 0;
+            string sql = "EXEC UpdateOrder " +
+                "@OrderID = '"+ order.OrderID+ "', " +
+                "@CustomerName = N'"+ order.CustomerName+ "', " +
+                "@CustomerPhoneNumber = '"+ order.CustomerPhoneNumber+ "', " +
+                "@CustomerAddress = N'"+ order.CustomerAddress+ "', " +
+                "@OrderStatus = N'"+ order.OrderStatus+ "', " +
+                "@ShipmentStatus = N'"+ order.ShipmentStatus+ "';";
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+            return rs;
         }
     }
 }

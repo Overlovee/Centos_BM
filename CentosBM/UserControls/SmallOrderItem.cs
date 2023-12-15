@@ -1,4 +1,5 @@
 ﻿using CentosBM.Models;
+using CentosBM.SubForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,18 @@ namespace CentosBM.UserControls
             labelTotal.Text = order.TotalAmount.ToString() + " VND";
             labelShipmentStatus.Text = order.ShipmentStatus;
             labelOrderStatus.Text = order.OrderStatus;
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            OrderDetail orderDetailForm = new OrderDetail();
+            orderDetailForm.order = order;
+            orderDetailForm.ShowDialog();
+            if (orderDetailForm.isUpdated || orderDetailForm.isCanceled)
+            {
+                order = orderDetailForm.order;
+                SmallOrderItem_Load(sender, e);
+            }
         }
     }
 }

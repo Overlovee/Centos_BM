@@ -344,8 +344,46 @@ BEGIN
 END;
 Select dbo.GetLastInsertedCustomerID();
 
+CREATE PROCEDURE UpdateOrder
+    @OrderID VARCHAR(10),
+    @CustomerName NVARCHAR(255),
+    @CustomerPhoneNumber NVARCHAR(11),
+    @CustomerAddress NVARCHAR(255),
+    @OrderStatus NVARCHAR(100),
+    @ShipmentStatus NVARCHAR(100)
+AS
+BEGIN
+    UPDATE Orders
+    SET
+        CustomerName = COALESCE(@CustomerName, CustomerName),
+        CustomerPhoneNumber = COALESCE(@CustomerPhoneNumber, CustomerPhoneNumber),
+        CustomerAddress = COALESCE(@CustomerAddress, CustomerAddress),
+        OrderStatus = COALESCE(@OrderStatus, OrderStatus),
+        ShipmentStatus = COALESCE(@ShipmentStatus, ShipmentStatus)
+    WHERE OrderID = @OrderID;
+END;
+EXEC UpdateOrder
+    @OrderID = 'YourOrderID',
+    @CustomerName = 'NewCustomerName',
+    @CustomerPhoneNumber = 'NewPhoneNumber',
+    @CustomerAddress = 'NewCustomerAddress',
+    @OrderStatus = 'NewOrderStatus',
+    @ShipmentStatus = 'NewShipmentStatus';
 
 Select *
 from Orders O 
+join Employees E ON O.EmployeeID = E.EmployeeID
+
 where (O.OrderStatus like N'Chưa thanh toán' Or O.ShipmentStatus like N'Chưa thanh toán')
 And (O.CustomerName like N'%Nguyễn%' Or O.CustomerPhoneNumber like N'%Nguyễn%')
+
+SELECT P.ProductID, ProductName, Description, OD.Price, P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName, P.QuantityInStock, P.Unit, OD.Quantity
+    FROM Order_Detail OD
+	Join Products P ON P.ProductID = OD.ProductID
+    JOIN Images I ON P.ProductID = I.ProductID
+    JOIN Categories C ON P.CategoryID = C.CategoryID
+    JOIN Suppliers S ON P.SupplierID = S.SupplierID
+    WHERE OD.OrderID = 'Order1'
+
+Select * from Employees where EmployeeID = 1
+

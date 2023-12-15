@@ -83,7 +83,6 @@ namespace CentosBM.Forms
         private void OrderForm_Load(object sender, EventArgs e)
         {
             Load_OrderStatusComboBox();
-            Load_Data(false);
         }
 
         private void comboBoxOrderStatusLoad_SelectedValueChanged(object sender, EventArgs e)

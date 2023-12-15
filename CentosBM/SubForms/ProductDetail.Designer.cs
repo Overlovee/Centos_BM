@@ -357,6 +357,7 @@
             this.textBoxPrice.Size = new System.Drawing.Size(216, 27);
             this.textBoxPrice.TabIndex = 10;
             this.textBoxPrice.Text = "123750.00";
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // tableLayoutPanel7
             // 

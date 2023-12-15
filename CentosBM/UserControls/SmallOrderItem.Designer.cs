@@ -66,6 +66,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(957, 60);
             this.tableLayoutPanel1.TabIndex = 4;
+            this.tableLayoutPanel1.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelID
             // 
@@ -81,6 +82,7 @@
             this.labelID.TabIndex = 42;
             this.labelID.Text = "Order1";
             this.labelID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelID.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // btnDetail
             // 
@@ -99,6 +101,7 @@
             this.btnDetail.TabIndex = 32;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelTotal
             // 
@@ -113,6 +116,7 @@
             this.labelTotal.TabIndex = 41;
             this.labelTotal.Text = "10,000,000 VND";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotal.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelOrderStatus
             // 
@@ -127,6 +131,7 @@
             this.labelOrderStatus.TabIndex = 39;
             this.labelOrderStatus.Text = "Chưa thanh toán";
             this.labelOrderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelOrderStatus.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelShipmentStatus
             // 
@@ -141,6 +146,7 @@
             this.labelShipmentStatus.TabIndex = 40;
             this.labelShipmentStatus.Text = "Chờ giao hàng";
             this.labelShipmentStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelShipmentStatus.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelDate
             // 
@@ -155,6 +161,7 @@
             this.labelDate.TabIndex = 38;
             this.labelDate.Text = "12/12/1231";
             this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDate.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelPhone
             // 
@@ -169,6 +176,7 @@
             this.labelPhone.TabIndex = 34;
             this.labelPhone.Text = "012312743";
             this.labelPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPhone.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // labelName
             // 
@@ -184,6 +192,7 @@
             this.labelName.TabIndex = 41;
             this.labelName.Text = "Nguyễn Văn A";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelName.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // SmallOrderItem
             // 
