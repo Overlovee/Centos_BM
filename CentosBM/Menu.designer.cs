@@ -35,7 +35,7 @@
             this.btnLanguages_display = new System.Windows.Forms.Button();
             this.btnAdminAccount_display = new System.Windows.Forms.Button();
             this.btnShowProductForm = new System.Windows.Forms.Button();
-            this.btnAccount_display = new System.Windows.Forms.Button();
+            this.btnOrderForm = new System.Windows.Forms.Button();
             this.btnCategory_display = new System.Windows.Forms.Button();
             this.btnOverview_display = new System.Windows.Forms.Button();
             this.btnHome_display = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.panelMenu.Controls.Add(this.btnLanguages_display);
             this.panelMenu.Controls.Add(this.btnAdminAccount_display);
             this.panelMenu.Controls.Add(this.btnShowProductForm);
-            this.panelMenu.Controls.Add(this.btnAccount_display);
+            this.panelMenu.Controls.Add(this.btnOrderForm);
             this.panelMenu.Controls.Add(this.btnCategory_display);
             this.panelMenu.Controls.Add(this.btnOverview_display);
             this.panelMenu.Controls.Add(this.btnHome_display);
@@ -176,26 +176,26 @@
             this.btnShowProductForm.UseVisualStyleBackColor = false;
             this.btnShowProductForm.Click += new System.EventHandler(this.btnShowProductForm_Click);
             // 
-            // btnAccount_display
+            // btnOrderForm
             // 
-            this.btnAccount_display.BackColor = System.Drawing.Color.Black;
-            this.btnAccount_display.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAccount_display.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnAccount_display.FlatAppearance.BorderSize = 0;
-            this.btnAccount_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAccount_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnAccount_display.ForeColor = System.Drawing.Color.White;
-            this.btnAccount_display.Image = global::CentosBM.Properties.Resources.account;
-            this.btnAccount_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount_display.Location = new System.Drawing.Point(0, 238);
-            this.btnAccount_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAccount_display.Name = "btnAccount_display";
-            this.btnAccount_display.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnAccount_display.Size = new System.Drawing.Size(250, 56);
-            this.btnAccount_display.TabIndex = 9;
-            this.btnAccount_display.Text = "account";
-            this.btnAccount_display.UseVisualStyleBackColor = false;
-            this.btnAccount_display.Click += new System.EventHandler(this.btnAccount_Click);
+            this.btnOrderForm.BackColor = System.Drawing.Color.Black;
+            this.btnOrderForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOrderForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnOrderForm.FlatAppearance.BorderSize = 0;
+            this.btnOrderForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOrderForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnOrderForm.ForeColor = System.Drawing.Color.White;
+            this.btnOrderForm.Image = global::CentosBM.Properties.Resources.pay;
+            this.btnOrderForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderForm.Location = new System.Drawing.Point(0, 238);
+            this.btnOrderForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderForm.Name = "btnOrderForm";
+            this.btnOrderForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnOrderForm.Size = new System.Drawing.Size(250, 56);
+            this.btnOrderForm.TabIndex = 9;
+            this.btnOrderForm.Text = "Orders";
+            this.btnOrderForm.UseVisualStyleBackColor = false;
+            this.btnOrderForm.Click += new System.EventHandler(this.btnOrderForm_Click);
             // 
             // btnCategory_display
             // 
@@ -398,7 +398,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelIcon;
         private System.Windows.Forms.Button btnOverview_display;
-        private System.Windows.Forms.Button btnAccount_display;
+        private System.Windows.Forms.Button btnOrderForm;
         private System.Windows.Forms.Button btnCategory_display;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelDesktop;

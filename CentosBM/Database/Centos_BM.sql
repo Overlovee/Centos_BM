@@ -44,8 +44,7 @@ CREATE TABLE Images (
 -- Tạo bảng Customer
 CREATE TABLE Customer (
     CustomerID INT IDENTITY(1,1),
-    FirstName NVARCHAR(255) NOT NULL,
-    LastName NVARCHAR(255) NOT NULL,
+    FullName NVARCHAR(255) NOT NULL,
     Address NVARCHAR(255),
     Phone NVARCHAR(20),
 	CONSTRAINT PK_Customer PRIMARY KEY (CustomerID)
@@ -72,8 +71,12 @@ CREATE TABLE Orders (
     TotalAmount DECIMAL(18, 2),
     CustomerID INT,
     EmployeeID INT,
+	CustomerName NVARCHAR(255) NULL,
+    CustomerPhoneNumber NVARCHAR(11),
+	CustomerAddress NVARCHAR(255) Default N'Không',
+	OrderStatus NVARCHAR(100) Default N'Chưa thanh toán',
+	ShipmentStatus NVARCHAR(100) Default N'Chờ giao hàng',
 	CONSTRAINT PK_Orders PRIMARY KEY (OrderID),
-    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
 

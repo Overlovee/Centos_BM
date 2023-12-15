@@ -71,11 +71,6 @@ namespace CentosBM
             //OpenChildForm(new ChildForms.Settings(), sender);
         }
 
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new ChildForms.Account(), sender);
-        }
-
         private void btnPaybook_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new ChildForms.Paybook(), sender);
@@ -141,7 +136,7 @@ namespace CentosBM
             btnHome_display.Text = "home";
             btnOverview_display.Text = "overview";
             btnCategory_display.Text = "category";
-            btnAccount_display.Text = "account";
+            btnOrderForm.Text = "account";
             btnShowProductForm.Text = "users";
             btnAdminAccount_display.Text = "admins";
             btnLanguages_display.Text = "manage_languages";
@@ -215,6 +210,11 @@ namespace CentosBM
         private void btnShowProductForm_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.ProductForm(), sender);
+        }
+
+        private void btnOrderForm_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.OrderForm(), sender);
         }
     }
 

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connects\ConnectCategory.cs" />
+    <Compile Include="Connects\ConnectOrder.cs" />
     <Compile Include="Connects\ConnectProduct.cs" />
     <Compile Include="Connects\ConnectSupplier.cs" />
     <Compile Include="Connects\DbContext.cs" />
@@ -104,12 +105,6 @@
     <Compile Include="Forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StockForm.Designer.cs">
-      <DependentUpon>StockForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Languages\LanguageDictionary.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -160,6 +155,12 @@
     <Compile Include="UserControls\CategoriesItems.Designer.cs">
       <DependentUpon>CategoriesItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SmallOrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderItem.Designer.cs">
+      <DependentUpon>SmallOrderItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SmallProductItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,9 +200,6 @@
     <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockForm.resx">
-      <DependentUpon>StockForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CategoriesItems.resx">
       <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallOrderItem.resx">
+      <DependentUpon>SmallOrderItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SmallProductItem.resx">
       <DependentUpon>SmallProductItem.cs</DependentUpon>

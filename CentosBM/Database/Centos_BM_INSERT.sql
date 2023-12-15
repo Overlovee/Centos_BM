@@ -75,13 +75,13 @@ INSERT INTO Images (Url, ProductID) VALUES
 ('Gachtranhtham.jpg', 25);
 
 -- Insert data into Customer
-INSERT INTO Customer (FirstName, LastName, Address, Phone) 
+INSERT INTO Customer (FullName, Address, Phone) 
 VALUES
-	(N'Vương', N'Kim Huy', N'816 Nguyễn Chí Thanh', '0963482153'),
-	(N'Nguyễn', N'Quốc Hoàng', N'123 Lê Trọng Tấn', '0165482365'),
-	(N'Nguyễn', N'Minh Sơn', N'107 Dương Đức Hiền', '0759842365'),
-	(N'Trương', N'Ngọc Dinh', N'256 Tân Kỳ Tân Quý', '0152845698'),
-	(N'Trương', N'Huy Thư', N'13 Cộng Hòa', '0212536498');
+	(N'Vương Kim Huy', N'816 Nguyễn Chí Thanh', '0963482153'),
+	(N'Nguyễn Quốc Hoàng', N'123 Lê Trọng Tấn', '0165482365'),
+	(N'Nguyễn Minh Sơn', N'107 Dương Đức Hiền', '0759842365'),
+	(N'Trương Ngọc Dinh', N'256 Tân Kỳ Tân Quý', '0152845698'),
+	(N'Trương Huy Thư', N'13 Cộng Hòa', '0212536498');
 
 -- Insert data into Employees
 INSERT INTO Employees (FirstName, LastName, Address, Phone, Position, Salary, empStatus) 
@@ -92,15 +92,41 @@ VALUES
 	(N'Trần', N'Ngọc Huy', N'104 Cách Mạng Tháng 8', '098756231', 'Nhân Viên', 8000000, N'Còn Làm Việc'),
 	(N'Trương', N'Ngọc Sơn', N'304/23 Tân Kỳ Tân Quý', '0125436985', 'Quản Lí', 9000000, N'Còn Làm Việc');
 
--- Insert data into Orders
-INSERT INTO Orders (OrderDate, TotalAmount, CustomerID, EmployeeID) 
-VALUES
-	('2023-01-01', 247500, 1, 1),
-	('2023-02-01', 89650, 2, 1),
-	('2023-03-01', 405897, 3, 4),
-	('2023-04-01', 369600, 4, 4),
-	('2023-05-01', 195800, 5, 4);
-
+EXEC AddOrder
+    @OrderDate = '2023-01-01',
+    @TotalAmount = 247500,
+    @CustomerID = 1,
+    @EmployeeID = 1,
+    @OrderStatus = N'Chưa thanh toán',
+    @ShipmentStatus = N'Chờ giao hàng';
+EXEC AddOrder
+    @OrderDate = '2023-02-01',
+    @TotalAmount = 89650,
+    @CustomerID = 2,
+    @EmployeeID = 1,
+    @OrderStatus = N'Chưa thanh toán',
+    @ShipmentStatus = N'Chờ giao hàng';
+EXEC AddOrder
+    @OrderDate = '2023-03-01',
+    @TotalAmount = 405897,
+    @CustomerID = 3,
+    @EmployeeID = 4,
+    @OrderStatus = N'Chưa thanh toán',
+    @ShipmentStatus = N'Chờ giao hàng';
+EXEC AddOrder
+    @OrderDate = '2023-04-01',
+    @TotalAmount = 369600,
+    @CustomerID = 4,
+    @EmployeeID = 4,
+    @OrderStatus = N'Chưa thanh toán',
+    @ShipmentStatus = N'Chờ giao hàng';
+EXEC AddOrder
+    @OrderDate = '2023-05-01',
+    @TotalAmount = 195800,
+    @CustomerID = 5,
+    @EmployeeID = 4,
+    @OrderStatus = N'Chưa thanh toán',
+    @ShipmentStatus = N'Chờ giao hàng';
 -- Insert data into Roles
 INSERT INTO Roles (Name) 
 VALUES

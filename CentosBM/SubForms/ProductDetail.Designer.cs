@@ -48,8 +48,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxUnit = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             this.panel1.SuspendLayout();
@@ -338,7 +338,7 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -367,12 +367,27 @@
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(226, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(227, 30);
             this.tableLayoutPanel7.TabIndex = 11;
+            // 
+            // textBoxUnit
+            // 
+            this.textBoxUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.textBoxUnit.ForeColor = System.Drawing.Color.Black;
+            this.textBoxUnit.Location = new System.Drawing.Point(113, 0);
+            this.textBoxUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxUnit.Multiline = true;
+            this.textBoxUnit.Name = "textBoxUnit";
+            this.textBoxUnit.Size = new System.Drawing.Size(114, 30);
+            this.textBoxUnit.TabIndex = 12;
+            this.textBoxUnit.Text = "Cái";
+            this.textBoxUnit.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // label2
             // 
@@ -385,21 +400,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "/";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxUnit
-            // 
-            this.textBoxUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUnit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxUnit.ForeColor = System.Drawing.Color.Black;
-            this.textBoxUnit.Location = new System.Drawing.Point(113, 0);
-            this.textBoxUnit.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.textBoxUnit.Multiline = true;
-            this.textBoxUnit.Name = "textBoxUnit";
-            this.textBoxUnit.Size = new System.Drawing.Size(114, 30);
-            this.textBoxUnit.TabIndex = 12;
-            this.textBoxUnit.Text = "Cái";
-            this.textBoxUnit.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
             // 
             // ProductDetail
             // 
