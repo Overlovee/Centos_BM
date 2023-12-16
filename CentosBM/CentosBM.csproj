@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,10 +62,22 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Document.NET, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.5.0\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=2.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.5.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connects\ConnectAccount.cs" />
     <Compile Include="Connects\ConnectProcedureAndFunction.cs" />
+    <Compile Include="Connects\ConnectCategory.cs" />
+    <Compile Include="Connects\ConnectCustomer.cs" />
+    <Compile Include="Connects\ConnectEmployee.cs" />
+    <Compile Include="Connects\ConnectOrder.cs" />
+    <Compile Include="Connects\ConnectProduct.cs" />
+    <Compile Include="Connects\ConnectSupplier.cs" />
     <Compile Include="Connects\DbContext.cs" />
     <Compile Include="Connects\MyAccount.cs" />
     <Compile Include="Connects\Password.cs" />
@@ -63,6 +93,12 @@
     <Compile Include="Forms\AddEmployees.Designer.cs">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewCustomer.designer.cs">
+      <DependentUpon>AddNewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,10 +111,16 @@
     <Compile Include="Forms\CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormOrder.designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Home.Designer.cs">
+    <Compile Include="Forms\Home.designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ManageEmployeesForm.cs">
@@ -105,11 +147,11 @@
     <Compile Include="Forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockForm.cs">
+    <Compile Include="Forms\SupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockForm.Designer.cs">
-      <DependentUpon>StockForm.cs</DependentUpon>
+    <Compile Include="Forms\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateEmployees.cs">
       <SubType>Form</SubType>
@@ -132,8 +174,11 @@
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -148,11 +193,90 @@
     <Compile Include="UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="SubForms\AddingNewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\AddingNewProductForm.Designer.cs">
+      <DependentUpon>AddingNewProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\AddingNewSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\AddingNewSupplierForm.Designer.cs">
+      <DependentUpon>AddingNewSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\ConfirmPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\ConfirmPasswordForm.designer.cs">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\bill.Designer.cs">
+      <DependentUpon>bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\OrderDetail.Designer.cs">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\ProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\ProductDetail.Designer.cs">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\SupplierDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\SupplierDetail.Designer.cs">
+      <DependentUpon>SupplierDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CategoriesItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CategoriesItems.Designer.cs">
+      <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrderProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OrderProductItem.designer.cs">
+      <DependentUpon>OrderProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProductItem.designer.cs">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderDetailItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderDetailItem.Designer.cs">
+      <DependentUpon>SmallOrderDetailItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallOrderItem.Designer.cs">
+      <DependentUpon>SmallOrderItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SmallProductItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\SmallProductItem.Designer.cs">
       <DependentUpon>SmallProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallSupplierItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallSupplierItem.Designer.cs">
+      <DependentUpon>SmallSupplierItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -166,11 +290,17 @@
     <EmbeddedResource Include="Forms\AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewCustomer.resx">
+      <DependentUpon>AddNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -187,8 +317,8 @@
     <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockForm.resx">
-      <DependentUpon>StockForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateEmployees.resx">
       <DependentUpon>UpdateEmployees.cs</DependentUpon>
@@ -215,9 +345,49 @@
     <EmbeddedResource Include="UpdatePassword.resx">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\AddingNewProductForm.resx">
+      <DependentUpon>AddingNewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\AddingNewSupplierForm.resx">
+      <DependentUpon>AddingNewSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\ConfirmPasswordForm.resx">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\bill.resx">
+      <DependentUpon>bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\OrderDetail.resx">
+      <DependentUpon>OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\ProductDetail.resx">
+      <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\SupplierDetail.resx">
+      <DependentUpon>SupplierDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CategoriesItems.resx">
+      <DependentUpon>CategoriesItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OrderProductItem.resx">
+      <DependentUpon>OrderProductItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ProductItem.resx">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallOrderDetailItem.resx">
+      <DependentUpon>SmallOrderDetailItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallOrderItem.resx">
+      <DependentUpon>SmallOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SmallProductItem.resx">
       <DependentUpon>SmallProductItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallSupplierItem.resx">
+      <DependentUpon>SmallSupplierItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,15 +402,56 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\Centos_BM.sql" />
+    <Content Include="Database\Centos_BM_INSERT.sql" />
+    <Content Include="Images\Gachlatnen.jpg" />
+    <Content Include="Images\Gachlattuong.jpg" />
+    <Content Include="Images\Gachtrangtri.jpg" />
+    <Content Include="Images\Gachtranhtham.jpg" />
+    <Content Include="Images\OngnhuaHDPE_63x50m.jpg" />
+    <Content Include="Images\OngnhuaPPR1lopchido_25x4.0m.jpg" />
+    <Content Include="Images\OngnhuaPPR2lopchido_25x4.0m.jpg" />
+    <Content Include="Images\OngnhuauPVCganxoanluondaydien_20x50m.jpg" />
+    <Content Include="Images\OngnhuauPVCluondaydien_16x1.4x2.92m.jpg" />
+    <Content Include="Images\OngnhuauPVCnongdai_200x4.0m.jpg" />
+    <Content Include="Images\OngnhuauPVCnongtron_160x4.0m.jpg" />
+    <Content Include="Images\Thephopmakemhoasen_z080_13x26x6.0m.jpg" />
+    <Content Include="Images\Thephopmakemhoasen_z120_30x60x6.0m.jpg" />
+    <Content Include="Images\Thepladentinphat.jpg" />
+    <Content Include="Images\Thepongmakem_z080_60x6.0m.jpg" />
+    <Content Include="Images\Thepongmakem_z080_90x6.0m.jpg" />
+    <Content Include="Images\Thepongnhungkem_26.65x6.0m.jpg" />
+    <Content Include="Images\Thepongnhungkem_75.6x6.0m.jpg" />
+    <Content Include="Images\Thepvdendaiviet.jpg" />
+    <Content Include="Images\Thepvkemquangthang.jpg" />
+    <Content Include="Images\ToncachnhienPUmaudo_BRL01_16mm_0.50mm.jpg" />
+    <Content Include="Images\ToncachnhienPUmauxam_MDL01_16mm_0.45mm.jpg" />
+    <Content Include="Images\Tonlanhmaudo_MR03 0.45mm.jpg" />
+    <Content Include="Images\Tonlanhmautrang_BWL01 0.5mm.jpg" />
+    <Content Include="Images\Tonlanhmauxanh_BGL03 0.30mm.jpg" />
     <Content Include="Languages\CN.txt" />
     <Content Include="Languages\EN.txt" />
     <Content Include="Languages\FR.txt" />
     <Content Include="Languages\VN.txt" />
     <Content Include="Resources\account.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\settings1.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\account1.png" />
     <Content Include="Resources\bill.png" />
+    <None Include="Resources\box.png" />
     <Content Include="Resources\Cat-With-Wry-Smile-icon.png" />
     <Content Include="Resources\categories.png" />
     <None Include="Resources\categories1.png" />
@@ -264,6 +475,8 @@
     <Content Include="Resources\letter.png" />
     <Content Include="Resources\money-exchange.png" />
     <Content Include="Resources\money.png" />
+    <None Include="Resources\newImage.png" />
+    <None Include="Resources\order-delivery.png" />
     <Content Include="Resources\overview.png" />
     <None Include="Resources\overview1.png" />
     <Content Include="Resources\pay.png" />
@@ -273,6 +486,7 @@
     <Content Include="Resources\search-interface-symbol.png" />
     <Content Include="Resources\send-message.png" />
     <Content Include="Resources\settings.png" />
+    <None Include="Resources\supply-chain-management.png" />
     <Content Include="Resources\trans.png" />
     <Content Include="Resources\transaction.png" />
     <Content Include="Resources\user-avatar-with-check-mark.png" />

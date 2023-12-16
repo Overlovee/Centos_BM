@@ -71,46 +71,6 @@ namespace CentosBM
             lblTittle_display.Text = childForm.Text;
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new ChildForms.Settings(), sender);
-        }
-
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.MyAccountForm(loggedInUsername, this), sender);
-        }
-
-        private void btnPaybook_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new ChildForms.Paybook(), sender);
-        }
-
-        private void btnOverview_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new ChildForms.Overview(), sender);
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new ChildForms.Home(), sender);
-
-        }
-
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.ProductForm(), sender);
-        }
-
-        private void btnTransaction_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void btnUserAccount_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.ManageEmployeesForm(loggedInRoleID), sender);
-
-        }
         private void EmptyClickHandler(object sender, EventArgs e)
         {
             
@@ -147,15 +107,6 @@ namespace CentosBM
         }
         public void Reload_Form()
         {
-            btnHome_display.Text = "home";
-            btnOverview_display.Text = "overview";
-            btnCategory_display.Text = "category";
-            btnAccount_display.Text = "account";
-            btnUserAccount_display.Text = "users";
-            btnAdminAccount_display.Text = "admins";
-            btnLanguages_display.Text = "manage_languages";
-            btnSettings_display.Text = "settings";
-
             Load_Form();
         }
         private void Menu_Load(object sender, EventArgs e)
@@ -173,9 +124,9 @@ namespace CentosBM
                 activeForm.Close();
             }
             DisableButton();
-            btnHome_display.BackColor = Color.Gray;
-            btnHome_display.ForeColor = Color.White;
-            btnHome_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnHomeForm.BackColor = Color.Gray;
+            btnHomeForm.ForeColor = Color.White;
+            btnHomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             Form childForm = new Forms.Home();
             activeForm = childForm;
             childForm.Tag = this.Tag;
@@ -199,26 +150,40 @@ namespace CentosBM
             
         }
 
-        private void btnAdminAccount_Click(object sender, EventArgs e)
+
+        private void btnShowProductForm_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new Forms.ProductForm(), sender);
         }
 
-
-        private void btnLanguages_Click(object sender, EventArgs e)
+        private void btnOrderForm_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new Forms.OrderForm(), sender);
         }
 
-        private void btnCurrencies_Click(object sender, EventArgs e)
+        private void btnSupplierForm_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new Forms.SupplierForm(), sender);
         }
 
-        private void btnMessage_display_Click(object sender, EventArgs e)
+        private void btnCategoryForm_Click(object sender, EventArgs e)
         {
-            
-            
+            OpenChildForm(new Forms.CategoryForm(), sender);
+        }
+
+        private void btnOverviewForm_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Forms.Overview(), sender);
+        }
+
+        private void btnHomeForm_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.Home(), sender);
+        }
+
+        private void btnSettingForm_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Forms.SettingForm(), sender);
         }
     }
 

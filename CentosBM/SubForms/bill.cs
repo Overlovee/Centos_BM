@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CentosBM.Forms
+namespace CentosBM.SubForms
 {
-    public partial class StockForm : Form
+    public partial class bill : Form
     {
-        public StockForm()
+        public bill()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }
