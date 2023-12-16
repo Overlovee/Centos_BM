@@ -125,5 +125,17 @@ namespace CentosBM.Forms
                 item.Height = 150;
             }
         }
+
+        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                if (textBoxSearch.Text != "")
+                {
+                    Reload_Data(true);
+                }
+            }
+        }
     }
 }

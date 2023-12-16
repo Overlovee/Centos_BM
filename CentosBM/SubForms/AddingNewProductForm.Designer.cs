@@ -187,7 +187,7 @@
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(591, 30);
             this.comboBoxSupplier.TabIndex = 15;
-            this.comboBoxSupplier.SelectedValueChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.comboBoxSupplier.SelectedValueChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // comboBoxCategory
             // 
@@ -204,7 +204,7 @@
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(591, 30);
             this.comboBoxCategory.TabIndex = 14;
-            this.comboBoxCategory.SelectedValueChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.comboBoxCategory.SelectedValueChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // label7
             // 
@@ -228,7 +228,7 @@
             this.richTextBoxDescription.Size = new System.Drawing.Size(591, 110);
             this.richTextBoxDescription.TabIndex = 12;
             this.richTextBoxDescription.Text = "";
-            this.richTextBoxDescription.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.richTextBoxDescription.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // textBoxQuantityInStock
             // 
@@ -240,7 +240,7 @@
             this.textBoxQuantityInStock.Name = "textBoxQuantityInStock";
             this.textBoxQuantityInStock.Size = new System.Drawing.Size(591, 30);
             this.textBoxQuantityInStock.TabIndex = 11;
-            this.textBoxQuantityInStock.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.textBoxQuantityInStock.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             this.textBoxQuantityInStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQuantityInStock_KeyPress);
             // 
             // label6
@@ -264,7 +264,7 @@
             this.textBoxUnit.Name = "textBoxUnit";
             this.textBoxUnit.Size = new System.Drawing.Size(591, 30);
             this.textBoxUnit.TabIndex = 9;
-            this.textBoxUnit.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.textBoxUnit.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // label5
             // 
@@ -287,7 +287,7 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(591, 30);
             this.textBoxPrice.TabIndex = 7;
-            this.textBoxPrice.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress_1);
             // 
             // label4
@@ -333,7 +333,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(591, 30);
             this.textBoxName.TabIndex = 1;
-            this.textBoxName.TextChanged += new System.EventHandler(this.comboBoxSupplier_SelectedValueChanged);
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // label1
             // 

@@ -13,6 +13,7 @@ CREATE TABLE Suppliers (
     SupplierID INT IDENTITY(1,1),
     SupplierName NVARCHAR(255) NOT NULL,
     Phone NVARCHAR(20),
+    Status NVARCHAR(50),
 	CONSTRAINT PK_Suppliers PRIMARY KEY (SupplierID)
 
 );

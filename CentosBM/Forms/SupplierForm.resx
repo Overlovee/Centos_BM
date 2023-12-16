@@ -117,38 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCwQHATOco2EOAAAB+0lEQVRIS7WVTUhUURiGs7SIkiJc
+        tWgR1L5ob4tWgiCVi7a2UCFz2yYCE8GwhShCqEmLQAsSREVDCoI2UmGL0kRwoxsX/oAahXV83rkvc5E7
+        M80d7IEHPe/5vnOYO3PPOZKLEEIF3sQX+B23cAeXcBQbsNLl6aCxDhdRbOIY9mI3vsJVFGvYgmVuLQyF
+        R7ETxTzWY4Wns5CVYTV+QKFPdNrT+aGoK1Mewks86bgg1LXiHk5jueMkTN5GMeSoaOjRJuKxo4MwcQKX
+        UY/luONU0PcGf+IFRzGEd1DccpQaei/hH+x0FEM4ghuY+ELTQP9HXPAwhlA/yXEPS4Y12lGcchRBsI3P
+        PCwZ1mjS6nDZUQSBXqYBD0uGNe5pdbjoKIJAR8FbD0uGNZ7gX0w8oue4m5hICf1z+NnDGMJaFHcdpYbe
+        a9ES4aGjGEKdQdp9Bc84Lhp6jqHOJX2X5xwfhInrqDNlCvOfKTmg/imKZke5oeB+VBfeYZXjvFCjI6Zf
+        DTDruDAUNuIvXMcHeN5TWcjOoi4cnV/ih/8mn38uKLyKM5mW6Gf3DSdRF88n/I1CeQ3q9nutANq8zL+h
+        +Ao+wgn8inpf3qOe+Q3M3mT8X47DKDocHy4srF+T7nDR5fhwYWFtMpTZIoQ+LO6+TgOL6r0a1A7w3z6J
+        NukJIXzZBxuAexKtZqycAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="newImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\newImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OngnhuauPVCnongtron_160x4.0m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\OngnhuauPVCnongtron_160x4.0m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pay" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\overview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="supply-chain-management" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\supply-chain-management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categories" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categories1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="order-delivery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\order-delivery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADxSURBVFhHxZc9
+        CgIxFITTqFfWSvAkogdQC/VYWghipfNkB5YQdvPzhgx8IBHmm83aGJAd+IADWNqBOOY4AnNu7cA+fAfO
+        QDnCus1B3xv81/BAOSKWG3brYQFOwwG5ghXwyqxDOSK7WzGiuNNzRHWXx4jmjpYCt1usKXKTMyWF7nIm
+        p1gmZ6YEcjmTEt3AJTqTyJnUiDFSOWMj4qc27kAut3Qd0PUVdP0RpuQUTX3nkhyBbERJsfuImkK3ES1F
+        zSM8nqK6w+0KkeIuTzmT3amQM7PdSjkz6ej+1+w5OlDJmXjEA4QNeIE9UMoZc5gLzrD+AZJDBMxjO17p
+        AAAAAElFTkSuQmCC
+</value>
   </data>
 </root>

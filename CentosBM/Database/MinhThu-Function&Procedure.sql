@@ -387,3 +387,39 @@ SELECT P.ProductID, ProductName, Description, OD.Price, P.CategoryID, S.Supplier
 
 Select * from Employees where EmployeeID = 1
 
+
+CREATE PROCEDURE UpdateSupplier
+    @SupplierID INT,
+    @SupplierName NVARCHAR(255),
+    @Phone NVARCHAR(20),
+    @Status NVARCHAR(50)
+AS
+BEGIN
+    UPDATE Suppliers
+    SET
+        SupplierName = COALESCE(@SupplierName, SupplierName),
+        Phone = COALESCE(@Phone, Phone),
+        Status = COALESCE(@Status, Status)
+    WHERE SupplierID = @SupplierID;
+END;
+
+EXEC UpdateSupplier
+    @SupplierID = 1,
+    @SupplierName = 'NewSupplierName',
+    @Phone = 'NewPhoneNumber',
+    @Status = 'NewStatus';
+
+CREATE PROCEDURE AddSupplier
+    @SupplierName NVARCHAR(255),
+    @Phone NVARCHAR(20),
+    @Status NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO Suppliers (SupplierName, Phone, Status)
+    VALUES (@SupplierName, @Phone, @Status);
+END;
+
+EXEC AddSupplier
+    @SupplierName = 'NewSupplierName',
+    @Phone = 'NewPhoneNumber',
+    @Status = 'NewStatus';

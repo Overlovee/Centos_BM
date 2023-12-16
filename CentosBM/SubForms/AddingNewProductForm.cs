@@ -49,7 +49,7 @@ namespace CentosBM.SubForms
                     {
                         pictureBoxProduct.Image = Image.FromFile(df.FileName);
                         product.Url = Path.GetFileName(df.FileName);
-                        comboBoxSupplier_SelectedValueChanged(sender, e);
+                        textBoxName_TextChanged(sender, e);
                     }
                 }
             }
@@ -118,7 +118,7 @@ namespace CentosBM.SubForms
             {
                 comboBoxCategory.Items.Add(item.Name);
             }
-            comboBoxCategory.Items.Add("Thêm mới");
+            //comboBoxCategory.Items.Add("Thêm mới");
         }
         private void Load_ComboBoxSupplier()
         {
@@ -129,7 +129,7 @@ namespace CentosBM.SubForms
             {
                 comboBoxSupplier.Items.Add(item.Name);
             }
-            comboBoxSupplier.Items.Add("Thêm mới");
+            //comboBoxSupplier.Items.Add("Thêm mới");
         }
         private void AddingNewProductForm_Load(object sender, EventArgs e)
         {
@@ -137,7 +137,7 @@ namespace CentosBM.SubForms
             Load_ComboBoxSupplier();
         }
 
-        private void comboBoxSupplier_SelectedValueChanged(object sender, EventArgs e)
+        private void textBoxName_TextChanged(object sender, EventArgs e)
         {
             if ((comboBoxSupplier.SelectedItem is null)
                 || (comboBoxCategory.SelectedItem is null)

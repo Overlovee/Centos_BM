@@ -10,6 +10,7 @@ namespace CentosBM.Models
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
+        public string Status { get; set; } = "Đang cung cấp";
         public int Id { get; set; }
     }
 }
