@@ -143,6 +143,12 @@
     <Compile Include="Forms\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Languages\LanguageDictionary.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -178,6 +184,12 @@
     <Compile Include="SubForms\AddingNewProductForm.Designer.cs">
       <DependentUpon>AddingNewProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\AddingNewSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\AddingNewSupplierForm.Designer.cs">
+      <DependentUpon>AddingNewSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForms\ConfirmPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </Compile>
     <Compile Include="SubForms\ProductDetail.Designer.cs">
       <DependentUpon>ProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\SupplierDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\SupplierDetail.Designer.cs">
+      <DependentUpon>SupplierDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CategoriesItems.cs">
       <SubType>UserControl</SubType>
@@ -237,6 +255,12 @@
     </Compile>
     <Compile Include="UserControls\SmallProductItem.Designer.cs">
       <DependentUpon>SmallProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SmallSupplierItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SmallSupplierItem.Designer.cs">
+      <DependentUpon>SmallSupplierItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -277,6 +301,9 @@
     <EmbeddedResource Include="Forms\ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +326,9 @@
     <EmbeddedResource Include="SubForms\AddingNewProductForm.resx">
       <DependentUpon>AddingNewProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\AddingNewSupplierForm.resx">
+      <DependentUpon>AddingNewSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ConfirmPasswordForm.resx">
       <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\ProductDetail.resx">
       <DependentUpon>ProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\SupplierDetail.resx">
+      <DependentUpon>SupplierDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CategoriesItems.resx">
       <DependentUpon>CategoriesItems.cs</DependentUpon>
@@ -328,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SmallProductItem.resx">
       <DependentUpon>SmallProductItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SmallSupplierItem.resx">
+      <DependentUpon>SmallSupplierItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -393,6 +429,7 @@
     <None Include="Resources\user1.png" />
     <None Include="Resources\account1.png" />
     <Content Include="Resources\bill.png" />
+    <None Include="Resources\box.png" />
     <Content Include="Resources\Cat-With-Wry-Smile-icon.png" />
     <Content Include="Resources\categories.png" />
     <None Include="Resources\categories1.png" />
@@ -417,6 +454,7 @@
     <Content Include="Resources\money-exchange.png" />
     <Content Include="Resources\money.png" />
     <None Include="Resources\newImage.png" />
+    <None Include="Resources\order-delivery.png" />
     <Content Include="Resources\overview.png" />
     <None Include="Resources\overview1.png" />
     <Content Include="Resources\pay.png" />
@@ -426,6 +464,7 @@
     <Content Include="Resources\search-interface-symbol.png" />
     <Content Include="Resources\send-message.png" />
     <Content Include="Resources\settings.png" />
+    <None Include="Resources\supply-chain-management.png" />
     <Content Include="Resources\trans.png" />
     <Content Include="Resources\transaction.png" />
     <Content Include="Resources\user-avatar-with-check-mark.png" />

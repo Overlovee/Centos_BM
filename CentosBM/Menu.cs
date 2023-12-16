@@ -138,7 +138,7 @@ namespace CentosBM
             btnCategory_display.Text = "category";
             btnOrderForm.Text = "account";
             btnShowProductForm.Text = "users";
-            btnAdminAccount_display.Text = "admins";
+            btnSupplierForm.Text = "admins";
             btnLanguages_display.Text = "manage_languages";
             btnSettings_display.Text = "settings";
 
@@ -215,6 +215,11 @@ namespace CentosBM
         private void btnOrderForm_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.OrderForm(), sender);
+        }
+
+        private void btnSupplierForm_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.SupplierForm(), sender);
         }
     }
 

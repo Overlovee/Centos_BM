@@ -132,7 +132,47 @@ namespace CentosBM.Connects
             rdr.Close();
             return list;
         }
-
+        public List<Product> getProductsOfSupplier(int supplierID = 1, string type = "")
+        {
+            List<Product> list = new List<Product>();
+            string sql = "SELECT P.ProductID, ProductName, Description, OD.Price, P.CategoryID, " +
+                "S.SupplierID, Url, C.NameCategory, S.SupplierName, " +
+                "P.QuantityInStock, P.Unit, OD.Quantity " +
+                "FROM Order_Detail OD " +
+                "Join Products P ON P.ProductID = OD.ProductID " +
+                "JOIN Images I ON P.ProductID = I.ProductID " +
+                "JOIN Categories C ON P.CategoryID = C.CategoryID " +
+                "JOIN Suppliers S ON P.SupplierID = S.SupplierID " +
+                "WHERE S.SupplierID = " + supplierID + " ";
+            if (type == "Tất cả")
+            {
+                type = "";
+            }
+            if(type != "")
+            {
+                sql += "And C.NameCategory like N'%"+type+"%'";
+            }
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+            while (rdr.Read())
+            {
+                Product emp = new Product();
+                emp.Id = int.Parse(rdr.GetValue(0).ToString());
+                emp.Name = rdr.GetValue(1).ToString();
+                emp.Description = rdr.GetValue(2).ToString();
+                emp.Price = decimal.Parse(rdr.GetValue(3).ToString());
+                emp.CategoryID = int.Parse(rdr.GetValue(4).ToString());
+                emp.SupplierID = int.Parse(rdr.GetValue(5).ToString());
+                emp.Url = rdr.GetValue(6).ToString();
+                emp.CategoryName = rdr.GetValue(7).ToString();
+                emp.SupplierName = rdr.GetValue(8).ToString();
+                emp.QuantityInStock = int.Parse(rdr.GetValue(9).ToString());
+                emp.Unit = rdr.GetValue(10).ToString();
+                emp.Quantity = int.Parse(rdr.GetValue(11).ToString());
+                list.Add(emp);
+            }
+            rdr.Close();
+            return list;
+        }
         public int addNewItem(Product product)
         {
             ConnectCategory connectCategory = new ConnectCategory();
