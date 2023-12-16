@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CentosBM.Connects;
 using CentosBM.Forms;
 using CentosBM.Models;
 
@@ -16,9 +17,13 @@ namespace CentosBM
     {
         private Button currentButton;
         private Form activeForm;
-        public Menu()
+        private string loggedInUsername;
+        private int loggedInRoleID;
+        public Menu(string username, int roleID)
         {
             InitializeComponent();
+            loggedInUsername = username;
+            loggedInRoleID = roleID;
         }
         private void ActivateButton(object btnSender)
         {
@@ -73,7 +78,7 @@ namespace CentosBM
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new ChildForms.Account(), sender);
+            OpenChildForm(new Forms.MyAccountForm(loggedInUsername, this), sender);
         }
 
         private void btnPaybook_Click(object sender, EventArgs e)
@@ -101,11 +106,10 @@ namespace CentosBM
         {
             
         }
-
-
         private void btnUserAccount_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new Forms.ManageEmployeesForm(loggedInRoleID), sender);
+
         }
         private void EmptyClickHandler(object sender, EventArgs e)
         {

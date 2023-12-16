@@ -1,6 +1,6 @@
-﻿namespace CentosBM
+﻿namespace CentosBM.Forms
 {
-    partial class Register
+    partial class AddEmployees
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_LBID = new System.Windows.Forms.Label();
             this.LB_EmloyeeID = new System.Windows.Forms.Label();
@@ -79,11 +78,11 @@
             this.panel2.Controls.Add(this.txt_FirstName);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(343, 26);
+            this.panel2.Location = new System.Drawing.Point(283, 12);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(848, 472);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(848, 490);
+            this.panel2.TabIndex = 3;
             // 
             // txt_LBID
             // 
@@ -107,10 +106,6 @@
             // cb_Position
             // 
             this.cb_Position.FormattingEnabled = true;
-            this.cb_Position.Items.AddRange(new object[] {
-            "Admin",
-            "Quản Lí",
-            "Nhân Viên"});
             this.cb_Position.Location = new System.Drawing.Point(350, 98);
             this.cb_Position.Name = "cb_Position";
             this.cb_Position.Size = new System.Drawing.Size(239, 24);
@@ -196,7 +191,7 @@
             this.button_Register.FlatAppearance.BorderSize = 0;
             this.button_Register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Register.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_Register.Location = new System.Drawing.Point(147, 393);
+            this.button_Register.Location = new System.Drawing.Point(213, 396);
             this.button_Register.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_Register.Name = "button_Register";
             this.button_Register.Size = new System.Drawing.Size(366, 40);
@@ -307,7 +302,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(218, 18);
+            this.label3.Location = new System.Drawing.Point(277, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(250, 29);
@@ -322,23 +317,19 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 524);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(279, 521);
+            this.panel1.TabIndex = 2;
             // 
-            // Register
+            // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 524);
+            this.ClientSize = new System.Drawing.Size(1151, 521);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "Register";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Register";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
-            this.Load += new System.EventHandler(this.Register_Load);
+            this.Name = "AddEmployees";
+            this.Text = "AddEmployees";
+            this.Load += new System.EventHandler(this.AddEmployees_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -347,10 +338,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txt_LBID;
+        private System.Windows.Forms.Label LB_EmloyeeID;
+        private System.Windows.Forms.ComboBox cb_Position;
+        private System.Windows.Forms.TextBox txt_Phone;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_Address;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_UserName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button_Register;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txt_ConfirmPassword;
@@ -360,15 +358,8 @@
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_FirstName;
-        private System.Windows.Forms.TextBox txt_Phone;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_Address;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_UserName;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cb_Position;
-        private System.Windows.Forms.Label LB_EmloyeeID;
-        private System.Windows.Forms.Label txt_LBID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

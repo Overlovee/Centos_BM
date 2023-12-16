@@ -9,88 +9,79 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using CentosBM.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using CentosBM.Connects;
+using CentosBM.Forms;
 
 namespace CentosBM
 {
     public partial class Login : Form
     {
+        DbContext db = new DbContext();
+        ConnectProcedureAndFunction cl;
+        MyAccount mc = new MyAccount();
         public Login()
         {
             InitializeComponent();
+            cl = new ConnectProcedureAndFunction("Data Source=DESKTOP-4TU4H2A\\SQLEXPRESS;Initial Catalog=CentosBM;Integrated Security=True");
         }
 
 
         private void Login_Load(object sender, EventArgs e)
         {
-            //
+            if(Properties.Settings.Default.UserName != string.Empty)
+            {
+                txt_lginUserName.Text = Properties.Settings.Default.UserName;
+                txt_lginPassword.Text = Properties.Settings.Default.Password;
+            }
         }
-
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-        }
-
-        private void linkLabel_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Register register = new Register();
-            this.Hide();
-            register.ShowDialog();
-        }
-        private void Reset_Login()
-        {
-            textBoxEmail.Text = "";
-            textBoxPassword.Text = "";
+            if (MessageBox.Show("Are you sure you want to exit?", "Notification", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            //textBoxEmail.Text = "Huy5512@gmail.com";
-            //textBoxPassword.Text = "Huy12445";
-
-            //textBoxEmail.Text = "Thu2123@gmail.com";
-            //textBoxPassword.Text = "admin";
-            //if (textBoxEmail.Text == "")
-            //{
-            //    this.errorProvider1.SetError(textBoxEmail, "Username is required");
-            //}
-            //if (textBoxPassword.Text == "")
-            //{
-            //    this.errorProvider2.SetError(textBoxPassword, "Password is required");
-            //}
-            //else
-            //{
-            //    string email = textBoxEmail.Text;
-            //    string password = textBoxPassword.Text;
-            //    Models.ConnectUsers connect = new Models.ConnectUsers();
-            //    Models.User user = connect.Login(email, password);
-            //    if (user is null || user.Id == 0)
-            //    {
-            //        MessageBox.Show("Email or password is incorrect!", "", MessageBoxButtons.OK);
-            //    }
-            //    else
-            //    {
-            //        this.Hide();
-            //        Menu menu = new Menu();
-            //        menu.user = user;
-            //        menu.ShowDialog();
-            //        if (menu.isClosing)
-            //        {
-            //            this.Close();
-            //        }
-            //        else
-            //        {
-            //            this.Show();
-            //            Reset_Login();
-            //        }
-            //    }
-            //}
+            db.open();
+            mc.Username = txt_lginUserName.Text;
+            mc.passwrord = txt_lginPassword.Text;
+            mc = cl.Login(txt_lginUserName.Text, Password.Create_MD5(txt_lginPassword.Text));
+            if (mc != null)
+            {
+                if (mc.Role == 1)
+                {
+                    MessageBox.Show("LogIn Successfully With Admin Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu menuForm = new Menu(mc.Username, mc.Role);
+                    menuForm.Show();
+                    this.Hide();
+                }
+                else if (mc.Role == 2)
+                {
+                    MessageBox.Show("LogIn Successfully With Quản Lí Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu menuForm = new Menu(mc.Username, mc.Role);
+                    menuForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("LogIn Successfully With Nhân Viên Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu menuForm = new Menu(mc.Username, mc.Role);
+                    menuForm.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Login Unsuccessful. Please Check Your Login information Again.!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            db.close();
         }
-
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ForgotPassword forgotPassword = new ForgotPassword();
-            this.Hide();
-            forgotPassword.ShowDialog();
         }
     }
 }

@@ -5,12 +5,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Remoting.Contexts;
 
 namespace CentosBM.Models
 {
     class DbContext
     {
-        string constr = "Data Source=.\\SQLEXPRESS;Initial Catalog=DB_CentosCashFlow;Integrated Security=True";
+        public string constr = "Data Source=DESKTOP-4TU4H2A\\SQLEXPRESS;Initial Catalog=CentosBM;Integrated Security=True";
         SqlConnection con = new SqlConnection();
         SqlCommand cmd;
         SqlDataReader reader;
@@ -42,9 +43,17 @@ namespace CentosBM.Models
         public DataTable getDatatable(string sql)
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(sql, Con);
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, Con);
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
         }
         public int ExcuteNonQuery(string sql)
         {
@@ -78,6 +87,16 @@ namespace CentosBM.Models
             SqlCommandBuilder cb = new SqlCommandBuilder(da);
             int kt = da.Update(dt);
             return kt;
+        }
+        public DataSet GetData(string query)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = query;
+            SqlDataAdapter da_lop = new SqlDataAdapter(cmd);
+            DataSet ds_lop = new DataSet();
+            da_lop.Fill(ds_lop);
+            return ds_lop;
         }
     }
 }
