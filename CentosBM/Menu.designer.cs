@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSettings_display = new System.Windows.Forms.Button();
+            this.btnSettingForm = new System.Windows.Forms.Button();
             this.btnSupplierForm = new System.Windows.Forms.Button();
             this.btnShowProductForm = new System.Windows.Forms.Button();
             this.btnOrderForm = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Black;
-            this.panelMenu.Controls.Add(this.btnSettings_display);
+            this.panelMenu.Controls.Add(this.btnSettingForm);
             this.panelMenu.Controls.Add(this.btnSupplierForm);
             this.panelMenu.Controls.Add(this.btnShowProductForm);
             this.panelMenu.Controls.Add(this.btnOrderForm);
@@ -70,26 +70,26 @@
             this.panelMenu.Size = new System.Drawing.Size(250, 753);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnSettings_display
+            // btnSettingForm
             // 
-            this.btnSettings_display.BackColor = System.Drawing.Color.Black;
-            this.btnSettings_display.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSettings_display.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnSettings_display.FlatAppearance.BorderSize = 0;
-            this.btnSettings_display.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSettings_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnSettings_display.ForeColor = System.Drawing.Color.White;
-            this.btnSettings_display.Image = global::CentosBM.Properties.Resources.settings;
-            this.btnSettings_display.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings_display.Location = new System.Drawing.Point(0, 406);
-            this.btnSettings_display.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSettings_display.Name = "btnSettings_display";
-            this.btnSettings_display.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnSettings_display.Size = new System.Drawing.Size(250, 56);
-            this.btnSettings_display.TabIndex = 17;
-            this.btnSettings_display.Text = "settings";
-            this.btnSettings_display.UseVisualStyleBackColor = false;
-            this.btnSettings_display.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnSettingForm.BackColor = System.Drawing.Color.Black;
+            this.btnSettingForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettingForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnSettingForm.FlatAppearance.BorderSize = 0;
+            this.btnSettingForm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSettingForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSettingForm.ForeColor = System.Drawing.Color.White;
+            this.btnSettingForm.Image = global::CentosBM.Properties.Resources.settings;
+            this.btnSettingForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettingForm.Location = new System.Drawing.Point(0, 406);
+            this.btnSettingForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSettingForm.Name = "btnSettingForm";
+            this.btnSettingForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnSettingForm.Size = new System.Drawing.Size(250, 56);
+            this.btnSettingForm.TabIndex = 17;
+            this.btnSettingForm.Text = "Settings";
+            this.btnSettingForm.UseVisualStyleBackColor = false;
+            this.btnSettingForm.Click += new System.EventHandler(this.btnSettingForm_Click);
             // 
             // btnSupplierForm
             // 
@@ -173,7 +173,7 @@
             this.btnCategoryForm.TabIndex = 4;
             this.btnCategoryForm.Text = "Category";
             this.btnCategoryForm.UseVisualStyleBackColor = false;
-            this.btnCategoryForm.Click += new System.EventHandler(this.btnCategory_Click);
+            this.btnCategoryForm.Click += new System.EventHandler(this.btnCategoryForm_Click);
             // 
             // btnOverviewForm
             // 
@@ -194,7 +194,7 @@
             this.btnOverviewForm.TabIndex = 2;
             this.btnOverviewForm.Text = "Overview";
             this.btnOverviewForm.UseVisualStyleBackColor = false;
-            this.btnOverviewForm.Click += new System.EventHandler(this.btnOverview_Click);
+            this.btnOverviewForm.Click += new System.EventHandler(this.btnOverviewForm_Click);
             // 
             // btnHomeForm
             // 
@@ -215,7 +215,7 @@
             this.btnHomeForm.TabIndex = 1;
             this.btnHomeForm.Text = "Home";
             this.btnHomeForm.UseVisualStyleBackColor = false;
-            this.btnHomeForm.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHomeForm.Click += new System.EventHandler(this.btnHomeForm_Click);
             // 
             // panelLogo
             // 
@@ -364,7 +364,7 @@
         private System.Windows.Forms.Label lblTittle_display;
         private System.Windows.Forms.Button btnShowProductForm;
         private System.Windows.Forms.Button btnSupplierForm;
-        private System.Windows.Forms.Button btnSettings_display;
+        private System.Windows.Forms.Button btnSettingForm;
     }
 }
 
