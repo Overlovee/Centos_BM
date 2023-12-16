@@ -126,5 +126,43 @@ namespace CentosBM.Connects
             dbContext.close();
             return rs;
         }
+        public int CreateOrder(DateTime Orderdate,decimal total,int customerID,int EmployeeID,string OrderStatus,string shipmentstatus)
+        {
+            int rs = 0;
+            string sql = "EXEC AddOrder " +
+                "@OrderDate = '" + Orderdate + "', " +
+                "@TotalAmount = N'" + total + "', " +
+                "@CustomerID = '" + customerID + "', " +
+                "@EmployeeID = N'" + EmployeeID + "', " +
+                "@OrderStatus = N'" + OrderStatus + "', " +
+                "@ShipmentStatus = N'" + shipmentstatus + "';";
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+            return rs;
+        }
+        public string getLastOrderdetail()
+        {
+            string temp = "";
+            string sql = "Select dbo.GetLastInsertedOrderID()";
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+            if (rdr.Read())
+            {
+                temp = rdr.GetValue(0).ToString(); ;
+            }
+            dbContext.close();
+            return temp;
+        }
+        public int AddproductDetail(string orderid,int productID,int quantity,decimal price)
+        {
+            int rs = 0;
+            string sql = "EXEC AddOrderDetail " +
+                "@OrderID = '" + orderid + "', " +
+                "@ProductID = " + productID + ", " +
+                "@Quantity = " + quantity + ", " +
+                "@Price = " + price + ";";
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+            return rs;
+        }
     }
 }
