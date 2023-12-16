@@ -18,8 +18,8 @@ namespace CentosBM
     {
         DbContext db = new DbContext();
         private string Username;
-        private string Employeeid;
-        public UpdatePassword(string employeeid,string username)
+        private int Employeeid;
+        public UpdatePassword(int employeeid,string username)
         {
             InitializeComponent();
             this.Employeeid = employeeid;

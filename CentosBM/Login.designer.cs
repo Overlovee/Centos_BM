@@ -210,7 +210,7 @@ namespace CentosBM
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(338, 46);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Centos Cash Flow";
+            this.label6.Text = "Centos Buiding Materials";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label7

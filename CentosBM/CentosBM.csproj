@@ -79,7 +79,7 @@
     <Compile Include="Connects\ConnectProduct.cs" />
     <Compile Include="Connects\ConnectSupplier.cs" />
     <Compile Include="Connects\DbContext.cs" />
-    <Compile Include="Connects\MyAccount.cs" />
+    <Compile Include="Models\MyAccount.cs" />
     <Compile Include="Connects\Password.cs" />
     <Compile Include="Forms\AccountForm.cs">
       <SubType>Form</SubType>

@@ -17,13 +17,11 @@ namespace CentosBM
     {
         private Button currentButton;
         private Form activeForm;
-        private string loggedInUsername;
-        private int loggedInRoleID;
-        public Menu(string username, int roleID)
+        public MyAccount account { get; set; }
+        public Menu()
         {
             InitializeComponent();
-            loggedInUsername = username;
-            loggedInRoleID = roleID;
+            account = new MyAccount();
         }
         private void ActivateButton(object btnSender)
         {
@@ -75,34 +73,18 @@ namespace CentosBM
         {
             
         }
-        private void AssignPermissions(string role)
+        private void AssignPermissions()
         {
-            //if (role == "Admin")
-            //{
-            //    labelIcon.Click += EmptyClickHandler;
-            //    btnHome_display.Hide();
-            //    btnOverview_display.Hide();
-            //    btnTransaction_display.Hide();
-            //    OpenChildForm(new ChildForms.Category(), btnCategory_display);
-            //}
-            //else
-            //{
-            //    btnAdminAccount_display.Hide();
-            //    btnCategory_display.Hide();
-            //    btnUserAccount_display.Hide();
-            //    btnLanguages_display.Hide();
-            //    btnCurrencies_display.Hide();
-            //    goToHome();
-            //}
+            if(account.Role != 1 && account.Role != 2)
+            {
+                btnCategoryForm.Enabled = false;
+                btnManageAccountForm.Enabled = false;
+                btnSupplierForm.Enabled = false;
+            }
         }
         public void Load_Form()
         {
-            //Models.ConnectUsers connectUsers = new Models.ConnectUsers();
-            //user = connectUsers.getUserDataByID(user.Id);
-            //this.Tag = user.Id.ToString();
-            //dictionary = new Languages.LanguageDictionary(user.UserSettings.LanguageCode);
-            //dictionary.SetLanguages((Control)this);
-            //AssignPermissions(user.Role);
+            AssignPermissions();
             this.Show();
         }
         public void Reload_Form()
@@ -184,6 +166,20 @@ namespace CentosBM
         private void btnSettingForm_Click(object sender, EventArgs e)
         {
             //OpenChildForm(new Forms.SettingForm(), sender);
+        }
+
+        private void btnManageAccountForm_Click(object sender, EventArgs e)
+        {
+            Forms.ManageEmployeesForm form = new Forms.ManageEmployeesForm();
+            form.account = this.account;
+            OpenChildForm(form, sender);
+        }
+
+        private void btnMyAccountForm_Click(object sender, EventArgs e)
+        {
+            Forms.MyAccountForm form = new Forms.MyAccountForm();
+            form.account = this.account;
+            OpenChildForm(form, sender);
         }
     }
 

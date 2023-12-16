@@ -45,39 +45,33 @@ namespace CentosBM
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            db.open();
-            mc.Username = txt_lginUserName.Text;
-            mc.passwrord = txt_lginPassword.Text;
             mc = cl.Login(txt_lginUserName.Text, Password.Create_MD5(txt_lginPassword.Text));
             if (mc != null)
             {
+                mc.Username = txt_lginUserName.Text;
+                mc.passwrord = txt_lginPassword.Text;
                 if (mc.Role == 1)
                 {
                     MessageBox.Show("LogIn Successfully With Admin Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Menu menuForm = new Menu(mc.Username, mc.Role);
-                    menuForm.Show();
-                    this.Hide();
                 }
                 else if (mc.Role == 2)
                 {
                     MessageBox.Show("LogIn Successfully With Quản Lí Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Menu menuForm = new Menu(mc.Username, mc.Role);
-                    menuForm.Show();
-                    this.Hide();
                 }
                 else
                 {
                     MessageBox.Show("LogIn Successfully With Nhân Viên Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Menu menuForm = new Menu(mc.Username, mc.Role);
-                    menuForm.Show();
-                    this.Hide();
                 }
+                Menu menuForm = new Menu();
+                menuForm.account = mc;
+                this.Hide();
+                menuForm.ShowDialog();
+                this.Show();
             }
             else
             {
                 MessageBox.Show("Login Unsuccessful. Please Check Your Login information Again.!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            db.close();
         }
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

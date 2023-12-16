@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CentosBM.Connects
+namespace CentosBM.Models
 {
-    internal class MyAccount
+    public class MyAccount
     {
         public int EmployeeID { get; set; }
         public string Username { get; set; }

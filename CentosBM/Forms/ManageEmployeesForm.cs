@@ -17,14 +17,13 @@ namespace CentosBM.Forms
     {
         DbContext db = new DbContext();
         ConnectProcedureAndFunction cn1;
-        private int roleID;
-
-        public ManageEmployeesForm(int roleID)
+        private Employee emp;
+        public MyAccount account {  get; set; }
+        public ManageEmployeesForm()
         {
             InitializeComponent();
             cn1 = new ConnectProcedureAndFunction(db.constr);
-            this.roleID = roleID;
-            LoadEmployeeAccountData();
+            account = new MyAccount();
         }
 
         private void ManageEmployeesForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,11 +35,11 @@ namespace CentosBM.Forms
         }
         private void ManageEmployeesForm_Load(object sender, EventArgs e)
         {
-
+            LoadEmployeeAccountData();
         }
         private void LoadEmployeeAccountData()
         {
-            dataGridView.DataSource = cn1.GetEmployeeAccountData(roleID);
+            dataGridView.DataSource = cn1.GetEmployeeAccountData(account.Role);
         }
         private void button_Register_Click(object sender, EventArgs e)
         {
@@ -49,7 +48,7 @@ namespace CentosBM.Forms
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-            AddEmployees addEmployeesForm = new AddEmployees(roleID);
+            AddEmployees addEmployeesForm = new AddEmployees(account.Role);
             addEmployeesForm.ShowDialog();
         }
 
@@ -67,16 +66,14 @@ namespace CentosBM.Forms
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView.Rows[e.RowIndex];
-                string Employees = row.Cells["EmployeeID"].Value.ToString();
-                string username = row.Cells["Username"].Value.ToString();
-                string firstname = row.Cells["FirstName"].Value.ToString();
-                string lastname = row.Cells["LastName"].Value.ToString();
-                string Phone = row.Cells["Phone"].Value.ToString();
-                string Position = row.Cells["Position"].Value.ToString();
-                string empStatus = row.Cells["empStatus"].Value.ToString();
-                string address = row.Cells["Address"].Value.ToString();
+                string id = row.Cells["EmployeeID"].Value.ToString();
+                ConnectEmployee connectEmployee = new ConnectEmployee();
 
-                UpdateEmployees up = new UpdateEmployees(Employees,username, firstname, lastname, Phone, Position, empStatus,address,roleID);
+                MyAccount temp = new MyAccount();
+                temp = connectEmployee.getDataMyAccountbyID(int.Parse(id));
+
+                UpdateEmployees up = new UpdateEmployees(temp);
+                up.roleID = account.Role;
                 up.ShowDialog();
             }
         }

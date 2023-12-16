@@ -18,30 +18,25 @@ namespace CentosBM.Forms
     public partial class MyAccountForm : Form
     {
         DbContext db = new DbContext();
-        private string loggedInUsername;
         ConnectProcedureAndFunction cp;
-        private Form menuForm;
-        public MyAccountForm(string username, Form menuForm)
+        public MyAccount account {  get; set; }
+        public MyAccountForm()
         {
             InitializeComponent();
             cp = new ConnectProcedureAndFunction(db.constr);
-            loggedInUsername = username;
-            DisplayUserInfo();
-            this.menuForm = menuForm;
+            account = new MyAccount();
         }
         public void DisplayUserInfo()
         {
-            MyAccount employeeAccountInfo = cp.GetMyAccountInfo(loggedInUsername);
-
-            if (employeeAccountInfo != null)
+            if (account != null)
             {
-                lbtext_ID.Text = employeeAccountInfo.EmployeeID.ToString();
-                lbtext_FirstName.Text = employeeAccountInfo.FirstName.ToString();
-                lbtext_LastName.Text = employeeAccountInfo.LastName.ToString();
-                lbtext_Position.Text = employeeAccountInfo.Position.ToString();
-                lbtext_Phone.Text = employeeAccountInfo.Phone.ToString();
-                lbtext_UserName.Text = employeeAccountInfo.Username.ToString();
-                lbtext_Address.Text = employeeAccountInfo.Address.ToString();
+                lbtext_ID.Text = account.EmployeeID.ToString();
+                lbtext_FirstName.Text = account.FirstName.ToString();
+                lbtext_LastName.Text = account.LastName.ToString();
+                lbtext_Position.Text = account.Position.ToString();
+                lbtext_Phone.Text = account.Phone.ToString();
+                lbtext_UserName.Text = account.Username.ToString();
+                lbtext_Address.Text = account.Address.ToString();
             }
             else
             {
@@ -50,19 +45,25 @@ namespace CentosBM.Forms
         }
         private void MyAccountForm_Load(object sender, EventArgs e)
         {
-            
+            DisplayUserInfo();
         }
         private void button_Logout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes) 
             {
-                this.Close();
-                menuForm.Close();
-                Login login = new Login();
-                login.Show();
+                Control control = (Control)this;
+                while (control.Parent != null && !(control.Parent is Form))
+                {
+                    control = control.Parent;
+                }
+
+                if (control.Parent is Menu)
+                {
+                    Menu f = (Menu)control.Parent;
+                    f.Close();
+                }
             }
-            
         }
     }
 }

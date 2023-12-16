@@ -1,6 +1,7 @@
 ﻿using CentosBM.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,27 @@ namespace CentosBM.Connects
             }
             rdr.Close();
             return emp;
+        }
+        public MyAccount getDataMyAccountbyID(int id )
+        {
+            MyAccount mc = new MyAccount();
+            SqlCommand cmd = new SqlCommand("Select * from showEmployees (@EmployeeID)", dbContext.Con);
+            cmd.Parameters.AddWithValue("EmployeeID", id);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                mc.EmployeeID = int.Parse(rdr.GetValue(0).ToString());
+                mc.Username = rdr.GetValue(1).ToString();
+                mc.FirstName = rdr.GetValue(2).ToString();
+                mc.LastName = rdr.GetValue(3).ToString();
+                mc.Address = rdr.GetValue(4).ToString();
+                mc.Phone = rdr.GetValue(5).ToString();
+                mc.Position = rdr.GetValue(6).ToString();
+                mc.empStatus = rdr.GetValue(7).ToString();
+                mc.Role = int.Parse(rdr.GetValue(8).ToString());
+            }
+            rdr.Close();
+            return mc;
         }
     }
 }

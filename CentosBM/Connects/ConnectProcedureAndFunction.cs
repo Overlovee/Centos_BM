@@ -27,7 +27,6 @@ namespace CentosBM.Connects
             try
             {
                 db.open();
-                Password ps = new Password();
                 SqlCommand cmd = new SqlCommand("LoginProcedure", db.Con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 
@@ -37,17 +36,16 @@ namespace CentosBM.Connects
                 {
                    if (reader.Read())
                    {
-                        string result = reader["Result"].ToString();
-                        if (result == "Success")
-                        {
-                            int role = Convert.ToInt32(reader["RoleID"]);
-                            return new MyAccount { Username = username, Role = role };
-                        }
-                        else
-                        {
-                            MessageBox.Show("Username Stopped working");
-                            
-                        }
+                        MyAccount temp = new MyAccount();
+                        temp.EmployeeID = Convert.ToInt32(reader["EmployeeID"].ToString());
+                        temp.FirstName = reader["FirstName"].ToString();
+                        temp.LastName = reader["LastName"].ToString();
+                        temp.Address = reader["Address"].ToString();
+                        temp.Phone = reader["Phone"].ToString();
+                        temp.Position = reader["Position"].ToString();
+                        temp.empStatus = reader["empStatus"].ToString();
+                        temp.Role = Convert.ToInt32(reader["RoleID"]);
+                        return temp;
                    }
                    else
                    {
@@ -61,6 +59,7 @@ namespace CentosBM.Connects
                 Console.WriteLine("Error: " + ex.Message);
                 
             }
+            db.close();
             return null;
         }
         public MyAccount GetMyAccountInfo(string username)
@@ -94,6 +93,7 @@ namespace CentosBM.Connects
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
+            db.close();
             return null;
         }
         public DataTable GetEmployeeAccountData(int roleID)
@@ -107,6 +107,7 @@ namespace CentosBM.Connects
                 {
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
+                    db.close();
                     return dataTable;
                 }
 
