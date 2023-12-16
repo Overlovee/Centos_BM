@@ -193,7 +193,6 @@
     <Compile Include="UpdatePassword.Designer.cs">
       <DependentUpon>UpdatePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="SubForms\AddingNewProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,19 +433,6 @@
     <Content Include="Languages\FR.txt" />
     <Content Include="Languages\VN.txt" />
     <Content Include="Resources\account.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\settings1.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\account1.png" />
