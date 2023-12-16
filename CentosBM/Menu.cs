@@ -133,9 +133,9 @@ namespace CentosBM
         }
         public void Reload_Form()
         {
-            btnHome_display.Text = "home";
-            btnOverview_display.Text = "overview";
-            btnCategory_display.Text = "category";
+            btnHomeForm.Text = "home";
+            btnOverviewForm.Text = "overview";
+            btnCategoryForm.Text = "category";
             btnOrderForm.Text = "account";
             btnShowProductForm.Text = "users";
             btnSupplierForm.Text = "admins";
@@ -159,9 +159,9 @@ namespace CentosBM
                 activeForm.Close();
             }
             DisableButton();
-            btnHome_display.BackColor = Color.Gray;
-            btnHome_display.ForeColor = Color.White;
-            btnHome_display.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnHomeForm.BackColor = Color.Gray;
+            btnHomeForm.ForeColor = Color.White;
+            btnHomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             Form childForm = new Forms.Home();
             activeForm = childForm;
             childForm.Tag = this.Tag;
