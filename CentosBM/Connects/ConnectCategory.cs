@@ -6,7 +6,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using CentosBM.Models;
-
+using System.Data;
 namespace CentosBM.Connects
 {
     public class ConnectCategory
@@ -28,7 +28,45 @@ namespace CentosBM.Connects
             rdr.Close();
             return list;
         }
-        
+        public int addNew(string Name)
+        {
+            int result = 0;
+            if (!string.IsNullOrWhiteSpace(Name))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("AddCategory", dbContext.Con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@NameCategory", Name);
+                    dbContext.open();
+
+                    result = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                if (result > 0)
+                {
+                    return 1; // Trả về 1 nếu có bản ghi bị ảnh hưởng (thêm mới thành công)
+                }
+                dbContext.close();
+
+            }
+
+            return result;
+        }
+        public int UpdateDataForItem(int id, string name)
+        {
+            int rs = 0;
+            string sql = "EXEC UpdateCategoryName  " +
+                "@CategoryID = " + id + "," +
+                "@NewNameCategory = N'" + name + "'";
+            rs = dbContext.ExcuteNonQuery(sql);
+            dbContext.close();
+            return rs;
+        }
+
+
+
+
+
         //public Category getDataByID(string id)
         //{
         //    Category emp = new Category();

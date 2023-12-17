@@ -35,13 +35,25 @@ namespace CentosBM.Forms
                 newPanel.Dock = DockStyle.Top;
                 newPanel.Height = 80;
 
-                CategoriesItems item = new CategoriesItems();
+                CategoriesItems item = new CategoriesItems(this);
                 item.category = category;
 
                 newPanel.Controls.Add(item);
                 item.Dock = DockStyle.Top;
                 item.Height = 60;
             }
+        }
+        public void DeleteCategory()
+        {
+            panelCategoryLoad.Controls.Clear();
+        }
+
+        private void btnAddNewLanguage_display_Click(object sender, EventArgs e)
+        {
+            FormAddCategory formAddCategory = new FormAddCategory();
+            formAddCategory.ShowDialog();
+            Load_Data();
+
         }
     }
 }

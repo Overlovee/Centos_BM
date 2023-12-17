@@ -90,6 +90,24 @@
     <Compile Include="Connects\ConnectProduct.cs" />
     <Compile Include="Connects\ConnectSupplier.cs" />
     <Compile Include="Connects\DbContext.cs" />
+    <Compile Include="Forms\FormAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddCategory.designer.cs">
+      <DependentUpon>FormAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDetailCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDetailCategory.designer.cs">
+      <DependentUpon>FormDetailCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditCategory.designer.cs">
+      <DependentUpon>FormEditCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\MyAccount.cs" />
     <Compile Include="Connects\Password.cs" />
     <Compile Include="Forms\AccountForm.cs">
@@ -308,6 +326,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddCategory.resx">
+      <DependentUpon>FormAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDetailCategory.resx">
+      <DependentUpon>FormDetailCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditCategory.resx">
+      <DependentUpon>FormEditCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
