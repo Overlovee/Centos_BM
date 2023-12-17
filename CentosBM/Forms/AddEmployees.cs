@@ -16,11 +16,14 @@ namespace CentosBM.Forms
     public partial class AddEmployees : Form
     {
         DbContext db = new DbContext();
-        private int roleID; 
+        private int roleID;
+        public bool isChanged { get; set; }
+
         public AddEmployees(int roleID)
         {
             InitializeComponent();
             this.roleID = roleID;
+            this.isChanged = false;
         }
 
         private void button_Register_Click(object sender, EventArgs e)
@@ -54,9 +57,10 @@ namespace CentosBM.Forms
                     cmd3.Parameters.AddWithValue("@EmployeeID", txt_LBID.Text);
                     cmd3.Parameters.AddWithValue("@RoleID", roleID);
                     int kq = cmd3.ExecuteNonQuery();
-                    if(kq > 0)
+                    if(kq < 0)
                     {
                         MessageBox.Show("Create Sucesss!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        autoIDEmployees();
                         ClearAll();
                     }
                     else

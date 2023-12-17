@@ -80,6 +80,7 @@ namespace CentosBM.Forms
                 cb_Position.Items.Add("Quản Lí");
                 cb_Position.Items.Add("Nhân Viên");
                 cb_Position.SelectedItem = "Quản Lí";
+                linkLabel1.Enabled = false;
             }
 
 
