@@ -77,9 +77,9 @@ namespace CentosBM
         {
             if(account.Role != 1 && account.Role != 2)
             {
-                btnCategoryForm.Enabled = false;
-                btnManageAccountForm.Enabled = false;
-                btnSupplierForm.Enabled = false;
+                btnCategoryForm.Hide();
+                btnManageAccountForm.Hide();
+                btnSupplierForm.Hide();
             }
         }
         public void Load_Form()
