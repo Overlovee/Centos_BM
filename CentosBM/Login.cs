@@ -53,6 +53,7 @@ namespace CentosBM
                     MessageBox.Show("LogIn Successfully With Nhân Viên Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 Menu menuForm = new Menu();
+
                 menuForm.account = mc;
                 this.Hide();
                 menuForm.ShowDialog();
