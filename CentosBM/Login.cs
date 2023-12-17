@@ -47,7 +47,7 @@ namespace CentosBM
         }
         //'Admin' : 'Minhthu25' , 'minhthu2003'
         //'Quản Lí' : 'Kimdinh30' , 'kimdinh0702'
-        //'Nhân Viên' : 'Hoàng13' , 'hoangnguyen'
+        //'Nhân Viên' : 'Hoang13' , 'hoangnguyen'
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace CentosBM
                 Properties.Settings.Default.RememberMe = false;
             }
             Properties.Settings.Default.Save();
-            mc = cl.Login(txt_lginUserName.Text, txt_lginPassword.Text);
+            mc = cl.Login(txt_lginUserName.Text, Password.Create_MD5(txt_lginPassword.Text));
             if (mc != null)
             {
                 mc.Username = txt_lginUserName.Text;

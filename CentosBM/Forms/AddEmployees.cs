@@ -53,7 +53,7 @@ namespace CentosBM.Forms
                     SqlCommand cmd3 = new SqlCommand("AddOrUpdateAccount", db.Con);
                     cmd3.CommandType = CommandType.StoredProcedure;
                     cmd3.Parameters.AddWithValue("@Username", txt_UserName.Text);
-                    cmd3.Parameters.AddWithValue("@Password", /*Password.Create_MD5(*/txt_Password.Text/*.Trim())*/);
+                    cmd3.Parameters.AddWithValue("@Password", Password.Create_MD5(txt_Password.Text.Trim()));
                     cmd3.Parameters.AddWithValue("@EmployeeID", txt_LBID.Text);
                     cmd3.Parameters.AddWithValue("@RoleID", roleID);
                     int kq = cmd3.ExecuteNonQuery();
