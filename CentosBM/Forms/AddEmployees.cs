@@ -89,6 +89,7 @@ namespace CentosBM.Forms
             }
             cb_Position.SelectedIndex = 0;
         }
+
         private void autoIDEmployees()
         {
             string query = "select max(EmployeeID) from Employees";
