@@ -50,7 +50,7 @@ namespace CentosBM
             {
                 mc.Username = txt_lginUserName.Text;
                 {
-                    MessageBox.Show("LogIn Successfully With Nhân Viên Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("LogIn Successfully With Employee Permission!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 Menu menuForm = new Menu();
 
@@ -67,6 +67,7 @@ namespace CentosBM
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
         }
     }
 }
