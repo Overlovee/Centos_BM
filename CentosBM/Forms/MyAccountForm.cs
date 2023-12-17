@@ -64,5 +64,15 @@ namespace CentosBM.Forms
                 }
             }
         }
+
+        private void lbtext_Position_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

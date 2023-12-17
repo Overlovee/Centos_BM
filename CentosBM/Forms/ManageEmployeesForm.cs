@@ -75,14 +75,26 @@ namespace CentosBM.Forms
                 UpdateEmployees up = new UpdateEmployees(temp);
                 up.roleID = account.Role;
                 up.ShowDialog();
+                if(up.isChanged)
+                {
+                    LoadEmployeeAccountData();
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string keyword = txt_Search.Text;
-            List<MyAccount> searchResult = cn1.SearchEmployees(keyword);
-            dataGridView.DataSource = searchResult;
+            string sql = "exec SearchEmployeesProcedure '" + txt_Search.Text + "'";
+            DataTable dt = db.getDatatable(sql);
+            dataGridView.DataSource = dt;
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_Search.Text is null)
+            {
+                LoadEmployeeAccountData();
+            }
         }
     }
 }

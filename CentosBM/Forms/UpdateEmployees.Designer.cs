@@ -31,9 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_FirstName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_LastName = new System.Windows.Forms.TextBox();
+            this.txt_FullName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button_Update = new System.Windows.Forms.Button();
@@ -46,9 +44,9 @@
             this.LB_EmloyeeID = new System.Windows.Forms.Label();
             this.txt_LBID = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_EmpStatus = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.cb_EmpStatus = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,40 +79,20 @@
             this.label4.Location = new System.Drawing.Point(42, 136);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 2;
-            this.label4.Text = "First Name";
+            this.label4.Text = "Full Name";
             // 
-            // txt_FirstName
+            // txt_FullName
             // 
-            this.txt_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.txt_FirstName.Location = new System.Drawing.Point(46, 166);
-            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txt_FirstName.Multiline = true;
-            this.txt_FirstName.Name = "txt_FirstName";
-            this.txt_FirstName.Size = new System.Drawing.Size(239, 32);
-            this.txt_FirstName.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(42, 204);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Last Name";
-            // 
-            // txt_LastName
-            // 
-            this.txt_LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_LastName.Location = new System.Drawing.Point(46, 237);
-            this.txt_LastName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txt_LastName.Multiline = true;
-            this.txt_LastName.Name = "txt_LastName";
-            this.txt_LastName.Size = new System.Drawing.Size(239, 32);
-            this.txt_LastName.TabIndex = 7;
+            this.txt_FullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_FullName.Location = new System.Drawing.Point(46, 166);
+            this.txt_FullName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txt_FullName.Multiline = true;
+            this.txt_FullName.Name = "txt_FullName";
+            this.txt_FullName.Size = new System.Drawing.Size(239, 32);
+            this.txt_FullName.TabIndex = 5;
+            this.txt_FullName.TextChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // label6
             // 
@@ -131,7 +109,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(346, 206);
+            this.label7.Location = new System.Drawing.Point(346, 136);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
@@ -168,7 +146,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(346, 133);
+            this.label8.Location = new System.Drawing.Point(42, 199);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 20);
@@ -178,12 +156,13 @@
             // txt_UserName
             // 
             this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_UserName.Location = new System.Drawing.Point(350, 166);
+            this.txt_UserName.Location = new System.Drawing.Point(46, 232);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_UserName.Multiline = true;
             this.txt_UserName.Name = "txt_UserName";
             this.txt_UserName.Size = new System.Drawing.Size(239, 32);
             this.txt_UserName.TabIndex = 17;
+            this.txt_UserName.TextChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // txt_Address
             // 
@@ -194,16 +173,18 @@
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.Size = new System.Drawing.Size(239, 32);
             this.txt_Address.TabIndex = 19;
+            this.txt_Address.TextChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // txt_Phone
             // 
             this.txt_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_Phone.Location = new System.Drawing.Point(350, 237);
+            this.txt_Phone.Location = new System.Drawing.Point(350, 166);
             this.txt_Phone.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_Phone.Multiline = true;
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(239, 32);
             this.txt_Phone.TabIndex = 21;
+            this.txt_Phone.TextChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // cb_Position
             // 
@@ -212,6 +193,7 @@
             this.cb_Position.Name = "cb_Position";
             this.cb_Position.Size = new System.Drawing.Size(239, 24);
             this.cb_Position.TabIndex = 2;
+            this.cb_Position.SelectedValueChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // LB_EmloyeeID
             // 
@@ -236,28 +218,18 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(346, 272);
+            this.label10.Location = new System.Drawing.Point(346, 211);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 20);
             this.label10.TabIndex = 25;
             this.label10.Text = "EmpStatus";
             // 
-            // txt_EmpStatus
-            // 
-            this.txt_EmpStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txt_EmpStatus.Location = new System.Drawing.Point(350, 303);
-            this.txt_EmpStatus.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txt_EmpStatus.Multiline = true;
-            this.txt_EmpStatus.Name = "txt_EmpStatus";
-            this.txt_EmpStatus.Size = new System.Drawing.Size(239, 32);
-            this.txt_EmpStatus.TabIndex = 26;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.cb_EmpStatus);
             this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.txt_EmpStatus);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.txt_LBID);
             this.panel2.Controls.Add(this.LB_EmloyeeID);
@@ -270,9 +242,7 @@
             this.panel2.Controls.Add(this.button_Update);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txt_LastName);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txt_FirstName);
+            this.panel2.Controls.Add(this.txt_FullName);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(303, 31);
@@ -285,13 +255,25 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.linkLabel1.Location = new System.Drawing.Point(347, 357);
+            this.linkLabel1.Location = new System.Drawing.Point(347, 284);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(112, 16);
             this.linkLabel1.TabIndex = 27;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "UpdatePassword";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // cb_EmpStatus
+            // 
+            this.cb_EmpStatus.FormattingEnabled = true;
+            this.cb_EmpStatus.Items.AddRange(new object[] {
+            "Đang Làm Việc",
+            "Đã Nghỉ Việc"});
+            this.cb_EmpStatus.Location = new System.Drawing.Point(350, 234);
+            this.cb_EmpStatus.Name = "cb_EmpStatus";
+            this.cb_EmpStatus.Size = new System.Drawing.Size(239, 24);
+            this.cb_EmpStatus.TabIndex = 28;
+            this.cb_EmpStatus.SelectedValueChanged += new System.EventHandler(this.txt_FullName_TextChanged);
             // 
             // UpdateEmployees
             // 
@@ -314,9 +296,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_FirstName;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_LastName;
+        private System.Windows.Forms.TextBox txt_FullName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_Update;
@@ -329,8 +309,8 @@
         private System.Windows.Forms.Label LB_EmloyeeID;
         private System.Windows.Forms.Label txt_LBID;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_EmpStatus;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox cb_EmpStatus;
     }
 }

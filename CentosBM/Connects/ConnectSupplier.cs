@@ -53,7 +53,7 @@ namespace CentosBM.Connects
             {
                 if (status == "")
                 {
-                    sql += " SupplierName like N'%" + search + "%' Or Phone like '%" + search + "%'  ";
+                    sql += " where SupplierName like N'%" + search + "%' Or Phone like '%" + search + "%'  ";
                 }
                 else
                 {

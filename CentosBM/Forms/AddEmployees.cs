@@ -25,7 +25,7 @@ namespace CentosBM.Forms
 
         private void button_Register_Click(object sender, EventArgs e)
         {
-            if (txt_FirstName.Text != string.Empty && txt_LastName.Text != string.Empty && txt_Address.Text != string.Empty && txt_Phone.Text != string.Empty && cb_Position.Text != string.Empty && txt_UserName.Text != string.Empty && txt_Password.Text != string.Empty && txt_ConfirmPassword.Text != string.Empty)
+            if (txt_FullName.Text != string.Empty &&  txt_Address.Text != string.Empty && txt_Phone.Text != string.Empty && cb_Position.Text != string.Empty && txt_UserName.Text != string.Empty && txt_Password.Text != string.Empty && txt_ConfirmPassword.Text != string.Empty)
             {
                 if(txt_Password.Text != txt_ConfirmPassword.Text)
                 {
@@ -36,8 +36,7 @@ namespace CentosBM.Forms
                     db.open();
                     SqlCommand cmd = new SqlCommand("AddEmployee", db.Con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@FirstName", txt_FirstName.Text);
-                    cmd.Parameters.AddWithValue("@LastName", txt_LastName.Text);
+                    cmd.Parameters.AddWithValue("@FullName", txt_FullName.Text);
                     cmd.Parameters.AddWithValue("@Address", txt_Address.Text);
                     cmd.Parameters.AddWithValue("@Phone", txt_Phone.Text);
                     cmd.Parameters.AddWithValue("@Position", cb_Position.Text);
@@ -51,7 +50,7 @@ namespace CentosBM.Forms
                     SqlCommand cmd3 = new SqlCommand("AddOrUpdateAccount", db.Con);
                     cmd3.CommandType = CommandType.StoredProcedure;
                     cmd3.Parameters.AddWithValue("@Username", txt_UserName.Text);
-                    cmd3.Parameters.AddWithValue("@Password", Password.Create_MD5(txt_Password.Text.Trim()));
+                    cmd3.Parameters.AddWithValue("@Password", /*Password.Create_MD5(*/txt_Password.Text/*.Trim())*/);
                     cmd3.Parameters.AddWithValue("@EmployeeID", txt_LBID.Text);
                     cmd3.Parameters.AddWithValue("@RoleID", roleID);
                     int kq = cmd3.ExecuteNonQuery();
@@ -77,16 +76,10 @@ namespace CentosBM.Forms
             cb_Position.Items.Clear();
             if (roleID == 1) 
             {
-                cb_Position.Items.Add("Admin");
                 cb_Position.Items.Add("Quản Lý");
                 cb_Position.Items.Add("Nhân Viên");
             }
             else if (roleID == 2)
-            {
-                cb_Position.Items.Add("Quản Lý");
-                cb_Position.Items.Add("Nhân Viên");
-            }
-            else if(roleID == 3)
             {
                 cb_Position.Items.Add("Nhân Viên");
             }
@@ -115,8 +108,7 @@ namespace CentosBM.Forms
         }
         private void ClearAll()
         {
-            txt_FirstName.Clear();
-            txt_LastName.Clear();
+            txt_FullName.Clear();
             txt_Address.Clear();
             txt_UserName.Clear();
             txt_Password.Clear();
