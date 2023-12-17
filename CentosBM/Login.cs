@@ -24,13 +24,13 @@ namespace CentosBM
         public Login()
         {
             InitializeComponent();
-            cl = new ConnectProcedureAndFunction("Data Source=.;Initial Catalog=CentosBM;Integrated Security=True");
+            cl = new ConnectProcedureAndFunction(db.constr);
         }
 
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.UserName != string.Empty)
+            if (Properties.Settings.Default.UserName != string.Empty)
             {
                 txt_lginUserName.Text = Properties.Settings.Default.UserName;
                 txt_lginPassword.Text = Properties.Settings.Default.Password;
