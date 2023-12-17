@@ -43,9 +43,13 @@ namespace CentosBM
                 e.Cancel = true;
             }
         }
+        //'Admin' : 'Minhthu25' , 'minhthu2003'
+        //'Quản Lí' : 'Kimdinh30' , 'kimdinh0702'
+        //'Nhân Viên' : 'Hoàng13' , 'hoangnguyen'
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            mc = cl.Login(txt_lginUserName.Text, Password.Create_MD5(txt_lginPassword.Text));
+            mc = cl.Login(txt_lginUserName.Text, txt_lginPassword.Text);
             if (mc != null)
             {
                 mc.Username = txt_lginUserName.Text;
@@ -56,11 +60,11 @@ namespace CentosBM
                 }
                 else if (mc.Role == 2)
                 {
-                    MessageBox.Show("LogIn Successfully With Quản Lí Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("LogIn Successfully With Manage Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("LogIn Successfully With Nhân Viên Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("LogIn Successfully With Employee Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 Menu menuForm = new Menu();
                 menuForm.account = mc;

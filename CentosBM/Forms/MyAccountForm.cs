@@ -31,8 +31,7 @@ namespace CentosBM.Forms
             if (account != null)
             {
                 lbtext_ID.Text = account.EmployeeID.ToString();
-                lbtext_FirstName.Text = account.FirstName.ToString();
-                lbtext_LastName.Text = account.LastName.ToString();
+                lbtext_FirstName.Text = account.FullName.ToString();
                 lbtext_Position.Text = account.Position.ToString();
                 lbtext_Phone.Text = account.Phone.ToString();
                 lbtext_UserName.Text = account.Username.ToString();
@@ -64,6 +63,16 @@ namespace CentosBM.Forms
                     f.Close();
                 }
             }
+        }
+
+        private void lbtext_Position_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

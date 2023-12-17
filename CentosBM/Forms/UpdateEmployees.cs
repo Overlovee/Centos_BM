@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,57 +19,32 @@ namespace CentosBM.Forms
         DbContext db = new DbContext();
         private MyAccount mc {  get; set; }
         public int roleID;
-        //private string EmployeesID;
-        //private string username;
-        //private string FirstName;
-        //private string LastName;
-        //private string Phone;
-        //private string Position;
-        //private string EmpStatus;
-        //private string Address;
+        public bool isChanged { get; set; }
         public UpdateEmployees(MyAccount mc)
         {
             InitializeComponent();
             this.mc = mc;
-            //this.EmployeesID = employeesid;
-            //this.username = username;
-            //this.FirstName = firstname;
-            //this.LastName = lastname;
-            //this.Phone = phone;
-            //this.Address = address;
-            //this.Position = position;
-            //this.EmpStatus = emp;
             this.roleID = 2;
-
-            
+            isChanged = false;
         }
+
         private void Update()
         {
             db.open();
-            SqlCommand cmd = new SqlCommand("UpdateEmployeeAndAccountStatus", db.Con);
-            //Storeprocedure dang dung nhưng 
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@EmployeeID", txt_LBID.Text);
-            cmd.Parameters.AddWithValue("@Username", txt_UserName.Text);
-            cmd.Parameters.AddWithValue("@FirstName", txt_FirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txt_LastName.Text);
-            cmd.Parameters.AddWithValue("@Address", txt_Address.Text);
-            cmd.Parameters.AddWithValue("@Phone", txt_Phone.Text);
-
-            cmd.Parameters.AddWithValue("@Position", cb_Position.Text);
-            //Chưa update được role cho account, cần lấy role id từ cái cb_posiotin combobox để thay role
-            // store procedurre tên là UpdateEmployeeAndAccountStatus
-            cmd.Parameters.AddWithValue("@EmpStatus", txt_EmpStatus.Text);
-            int result = cmd.ExecuteNonQuery();
-
-            if (result > 0)
+            int rs = 0;
+            string sql = "exec UpdateEmployeeAndAccountStatus " + int.Parse(txt_LBID.Text) + " ,N'" + txt_FullName.Text + "',N'" + txt_UserName.Text + "',N'" + txt_Address.Text + "','" + txt_Phone.Text + "',N'" + cb_EmpStatus.SelectedItem.ToString() + "', N'" + cb_Position.SelectedItem.ToString() + "'";
+            rs = db.ExcuteNonQuery(sql);
+            if (rs != 0)
             {
+                isChanged = true;
                 MessageBox.Show("Update successful");
+
             }
             else
             {
                 MessageBox.Show("Update failed");
             }
+            db.close();
         }
         private void button_Update_Click(object sender, EventArgs e)
         {
@@ -85,11 +61,11 @@ namespace CentosBM.Forms
             CustomizeComboBoxByRole();
             txt_UserName.Text = mc.Username;
             txt_LBID.Text = mc.EmployeeID.ToString();
-            txt_FirstName.Text = mc.FirstName;
-            txt_LastName.Text = mc.LastName;
+            txt_FullName.Text = mc.FullName;
             txt_Phone.Text = mc.Phone;
-            txt_EmpStatus.Text = mc.empStatus;
+            cb_EmpStatus.Text = mc.empStatus;
             txt_Address.Text = mc.Address;
+            cb_Position.SelectedItem= mc.Position;
         }
         private void CustomizeComboBoxByRole()
         {
@@ -99,12 +75,13 @@ namespace CentosBM.Forms
                 cb_Position.Items.Add("Admin");
                 cb_Position.SelectedItem = "Admin";
             }
-            else if (mc.Role == 2)
+            else if (mc.Role >= 2)
             {
-                cb_Position.Items.Add("Quản Lý");
+                cb_Position.Items.Add("Quản Lí");
                 cb_Position.Items.Add("Nhân Viên");
-                cb_Position.SelectedItem = "Quản Lý";
+                cb_Position.SelectedItem = "Quản Lí";
             }
+
 
             if (roleID != 1)
             {
@@ -115,11 +92,10 @@ namespace CentosBM.Forms
                 cb_Position.Enabled = false;
                 txt_UserName.Enabled = false;
                 txt_LBID.Enabled = false;
-                txt_FirstName.Enabled = false;
-                txt_LastName.Enabled = false;
+                txt_FullName.Enabled = false;
                 txt_Phone.Enabled = false;
                 cb_Position.Enabled = false;
-                txt_EmpStatus.Enabled = false;
+                cb_EmpStatus.Enabled = false;
                 txt_Address.Enabled = false;
 
             }
@@ -129,6 +105,21 @@ namespace CentosBM.Forms
         {
             UpdatePassword fg = new UpdatePassword(mc.EmployeeID, mc.Username);
             fg.Show();
+        }
+
+        private void txt_FullName_TextChanged(object sender, EventArgs e)
+        {
+            if(!(txt_FullName.Text is null) && !(txt_Address.Text is null) && !(txt_Phone.Text is null) && !(txt_UserName.Text is null) && !(cb_EmpStatus.SelectedItem is null) && !(cb_Position.SelectedItem is null))
+            {
+                if((txt_UserName.Text != mc.Username) || (txt_Phone.Text != mc.Phone) || (txt_FullName.Text != mc.FullName) || (txt_Address.Text != mc.Address) || (cb_Position.SelectedItem.ToString() != mc.Position) || (cb_EmpStatus.SelectedItem.ToString() != mc.empStatus))
+                {
+                    button_Update.Enabled = true;
+                }
+                else
+                {
+                    button_Update.Enabled = false;
+                }
+            }
         }
     }
 }

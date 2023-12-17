@@ -32,30 +32,35 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(29, 104);
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView.ColumnHeadersHeight = 29;
+            this.dataGridView.Location = new System.Drawing.Point(29, 61);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(656, 244);
+            this.dataGridView.Size = new System.Drawing.Size(656, 315);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.Click += new System.EventHandler(this.dataGridView_Click);
             // 
             // button_Add
             // 
+            this.button_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Add.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button_Add.FlatAppearance.BorderSize = 0;
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_Add.Location = new System.Drawing.Point(702, 104);
-            this.button_Add.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button_Add.Location = new System.Drawing.Point(702, 61);
+            this.button_Add.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(149, 44);
             this.button_Add.TabIndex = 3;
@@ -65,36 +70,34 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(224, 63);
+            this.txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_Search.Location = new System.Drawing.Point(29, 6);
+            this.txt_Search.Multiline = true;
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(254, 22);
+            this.txt_Search.Size = new System.Drawing.Size(656, 44);
             this.txt_Search.TabIndex = 4;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(504, 57);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(702, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
+            this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 5;
             this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Search";
             // 
             // ManageEmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 405);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(874, 388);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.button_Add);
@@ -115,6 +118,5 @@
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
     }
 }
