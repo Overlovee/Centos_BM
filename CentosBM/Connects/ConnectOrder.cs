@@ -164,5 +164,64 @@ namespace CentosBM.Connects
             dbContext.close();
             return rs;
         }
+        public List<Order> getAllDatabymonth(int month = 0)
+        {
+            List<Order> list = new List<Order>();
+            string sql = "Select * from Orders O WHERE MONTH(O.OrderDate) = " + month;
+
+            sql += " ORDER BY OrderID DESC";
+
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+
+            while (rdr.Read())
+            {
+                Order emp = new Order();
+                emp.ID = int.Parse(rdr.GetValue(0).ToString());
+                emp.OrderID = rdr.GetValue(1).ToString();
+                emp.OrderDate = DateTime.Parse(rdr.GetValue(2).ToString());
+                emp.TotalAmount = decimal.Parse(rdr.GetValue(3).ToString());
+                emp.CustomerID = int.Parse(rdr.GetValue(4).ToString());
+                emp.EmployeeID = int.Parse(rdr.GetValue(5).ToString());
+                emp.CustomerName = rdr.GetValue(6).ToString();
+                emp.CustomerPhoneNumber = rdr.GetValue(7).ToString();
+                emp.CustomerAddress = rdr.GetValue(8).ToString();
+                emp.OrderStatus = rdr.GetValue(9).ToString();
+                emp.ShipmentStatus = rdr.GetValue(10).ToString();
+                list.Add(emp);
+            }
+
+            rdr.Close();
+            return list;
+        }
+        public List<Product> getDataRevenueProductByCategory(string categoryname = "", int month = 0)
+        {
+            List<Product> list = new List<Product>();
+            string sql = "";
+            if (categoryname == "Tất cả")
+            {
+                sql = "SELECT * FROM dbo.GetRevenueProductByCategory(N'', " + month + ")";
+            }
+            else
+            {
+                sql = "SELECT * FROM dbo.GetRevenueProductByCategory(N'" + categoryname + "', " + month + ")";
+            }
+
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+
+            while (rdr.Read())
+            {
+                Product emp = new Product();
+                emp.Name = rdr.GetValue(0).ToString();
+                emp.Quantity = int.Parse(rdr.GetValue(1).ToString());
+                emp.Price = decimal.Parse(rdr.GetValue(2).ToString());
+                emp.OrderID = rdr.GetValue(3).ToString();
+                emp.categoryName = rdr.GetValue(4).ToString();
+                emp.OrderDate = DateTime.Parse(rdr.GetValue(5).ToString());
+                list.Add(emp);
+            }
+
+            rdr.Close();
+            return list;
+        }
     }
 }

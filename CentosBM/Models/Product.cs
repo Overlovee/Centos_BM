@@ -20,5 +20,8 @@ namespace CentosBM.Models
         public int SupplierID { get; set; }
         public int QuantityInStock { get; set; }
         public int Quantity { get; set; } = 1;
+        public string categoryName { get; set; }
+        public string OrderID { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }

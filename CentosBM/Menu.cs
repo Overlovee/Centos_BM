@@ -71,11 +71,11 @@ namespace CentosBM
 
         private void EmptyClickHandler(object sender, EventArgs e)
         {
-            
+
         }
         private void AssignPermissions()
         {
-            if(account.Role != 1 && account.Role != 2)
+            if (account.Role != 1 && account.Role != 2)
             {
                 btnCategoryForm.Hide();
                 btnManageAccountForm.Hide();
@@ -129,7 +129,7 @@ namespace CentosBM
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
 
@@ -155,7 +155,7 @@ namespace CentosBM
 
         private void btnOverviewForm_Click(object sender, EventArgs e)
         {
-            //OpenChildForm(new Forms.Overview(), sender);
+            OpenChildForm(new Forms.Overview(), sender);
         }
 
         private void btnHomeForm_Click(object sender, EventArgs e)
@@ -163,10 +163,6 @@ namespace CentosBM
             OpenChildForm(new Forms.Home(), sender);
         }
 
-        private void btnSettingForm_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new Forms.SettingForm(), sender);
-        }
 
         private void btnManageAccountForm_Click(object sender, EventArgs e)
         {
@@ -181,6 +177,16 @@ namespace CentosBM
             form.account = this.account;
             OpenChildForm(form, sender);
         }
-    }
 
+        private void button_ManageCustomer_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormCustomer(), sender);
+        }
+
+        private void btnSettingForm_Click_1(object sender, EventArgs e)
+        {
+            //OpenChildForm(new Forms.SettingForm(), sender);
+        }
+
+    }
 }
