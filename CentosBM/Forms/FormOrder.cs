@@ -30,7 +30,7 @@ namespace CentosBM.Forms
         public FormOrder()
         {
             InitializeComponent();
-            
+
         }
 
         private void button_Addnewcustomer_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace CentosBM.Forms
             textBoxAddress.Text = customer.Address;
             textBoxPhone.Text = customer.Phone;
         }
-        public void LoadNewCustomer(string name,string address,string phone)
+        public void LoadNewCustomer(string name, string address, string phone)
         {
             textBoxFullName.Text = name;
             textBoxAddress.Text = address;
@@ -109,7 +109,7 @@ namespace CentosBM.Forms
             string orderstatus = comboBox_OrderStatus.Text;
             string shipmentStautus = "Chờ giao hàng";
             string Orderid = "";
-            int rs = 0,ts = 0;
+            int rs = 0, ts = 0;
             rs = order.CreateOrder(orderdate, total, customerID, EmployeeID, orderstatus, shipmentStautus);
             if (rs == 0)
             {
@@ -118,11 +118,11 @@ namespace CentosBM.Forms
             if (rs != 0)
             {
                 Orderid = order.getLastOrderdetail();
-                foreach(Product item in productList)
+                foreach (Product item in productList)
                 {
-                    ts = order.AddproductDetail(Orderid,item.Id,item.Quantity,item.Price);
+                    ts = order.AddproductDetail(Orderid, item.Id, item.Quantity, item.Price);
                 }
-                if(ts != 0)
+                if (ts != 0)
                 {
                     MessageBox.Show("Complete !!!");
                     this.Close();
@@ -133,7 +133,7 @@ namespace CentosBM.Forms
         private void FormOrder_Load(object sender, EventArgs e)
         {
             textBox_Total.Text = total.ToString();
-
+            dateTimePickerOrder.Value = DateTime.Now;
         }
 
 
@@ -162,7 +162,7 @@ namespace CentosBM.Forms
                 {
 
                     document.InsertParagraph($"Ngày đặt hàng: {dateTimePickerOrder.Value.ToShortDateString()}").FontSize(14).Alignment = Xceed.Document.NET.Alignment.right;
-                    
+
                     document.InsertParagraph("Centos BM").Bold().FontSize(18).Alignment = Xceed.Document.NET.Alignment.center;
                     document.InsertParagraph("HÓA ĐƠN BÁN HÀNG").Bold().FontSize(20).Alignment = Xceed.Document.NET.Alignment.center;
                     document.InsertParagraph();
@@ -194,7 +194,7 @@ namespace CentosBM.Forms
                     }
 
                     // Định dạng bảng
-                    
+
                     table.AutoFit = Xceed.Document.NET.AutoFit.Contents;
                     document.InsertTable(table);
 
@@ -213,6 +213,11 @@ namespace CentosBM.Forms
                 // Mở tệp Word sau khi lưu (nếu muốn)
                 System.Diagnostics.Process.Start(filePath);
             }
+        }
+
+        private void dateTimePickerOrder_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

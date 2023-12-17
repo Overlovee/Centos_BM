@@ -24,7 +24,7 @@ namespace CentosBM
         public Login()
         {
             InitializeComponent();
-            cl = new ConnectProcedureAndFunction("Data Source=.;Initial Catalog=CentosBM;Integrated Security=True");
+            cl = new ConnectProcedureAndFunction(db.constr);
         }
 
 
@@ -95,6 +95,7 @@ namespace CentosBM
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
         }
     }
 }

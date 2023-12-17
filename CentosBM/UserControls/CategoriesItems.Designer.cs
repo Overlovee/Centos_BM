@@ -31,7 +31,7 @@ namespace CentosBM.UserControls
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnEditing = new System.Windows.Forms.Button();
-            this.btnDeleting = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.labelCategoriesName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,14 +43,14 @@ namespace CentosBM.UserControls
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.btnEditing, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnDeleting, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDetail, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelCategoriesName, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 4);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 3);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(598, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(399, 52);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // btnEditing
@@ -63,31 +63,33 @@ namespace CentosBM.UserControls
             this.btnEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.btnEditing.ForeColor = System.Drawing.Color.White;
             this.btnEditing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditing.Location = new System.Drawing.Point(459, 12);
-            this.btnEditing.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+            this.btnEditing.Location = new System.Drawing.Point(305, 8);
+            this.btnEditing.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.btnEditing.Name = "btnEditing";
-            this.btnEditing.Size = new System.Drawing.Size(128, 56);
+            this.btnEditing.Size = new System.Drawing.Size(87, 36);
             this.btnEditing.TabIndex = 34;
             this.btnEditing.Text = "Edit";
             this.btnEditing.UseVisualStyleBackColor = false;
+            this.btnEditing.Click += new System.EventHandler(this.btnEditing_Click_1);
             // 
-            // btnDeleting
+            // btnDetail
             // 
-            this.btnDeleting.BackColor = System.Drawing.Color.DeepPink;
-            this.btnDeleting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDeleting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.btnDeleting.FlatAppearance.BorderSize = 0;
-            this.btnDeleting.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeleting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnDeleting.ForeColor = System.Drawing.Color.White;
-            this.btnDeleting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleting.Location = new System.Drawing.Point(310, 12);
-            this.btnDeleting.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
-            this.btnDeleting.Name = "btnDeleting";
-            this.btnDeleting.Size = new System.Drawing.Size(127, 56);
-            this.btnDeleting.TabIndex = 33;
-            this.btnDeleting.Text = "Delete";
-            this.btnDeleting.UseVisualStyleBackColor = false;
+            this.btnDetail.BackColor = System.Drawing.Color.DeepPink;
+            this.btnDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDetail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnDetail.FlatAppearance.BorderSize = 0;
+            this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDetail.ForeColor = System.Drawing.Color.White;
+            this.btnDetail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetail.Location = new System.Drawing.Point(206, 8);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(85, 36);
+            this.btnDetail.TabIndex = 33;
+            this.btnDetail.Text = "Details";
+            this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDeleting_Click);
             // 
             // labelCategoriesName
             // 
@@ -98,18 +100,19 @@ namespace CentosBM.UserControls
             this.labelCategoriesName.Location = new System.Drawing.Point(0, 0);
             this.labelCategoriesName.Margin = new System.Windows.Forms.Padding(0);
             this.labelCategoriesName.Name = "labelCategoriesName";
-            this.labelCategoriesName.Size = new System.Drawing.Size(299, 80);
+            this.labelCategoriesName.Size = new System.Drawing.Size(199, 52);
             this.labelCategoriesName.TabIndex = 31;
             this.labelCategoriesName.Text = "Gạch";
             this.labelCategoriesName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CategoriesItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CategoriesItems";
-            this.Size = new System.Drawing.Size(610, 90);
+            this.Size = new System.Drawing.Size(407, 58);
             this.Load += new System.EventHandler(this.CategoriesItems_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -121,7 +124,7 @@ namespace CentosBM.UserControls
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnEditing;
-        private System.Windows.Forms.Button btnDeleting;
+        private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Label labelCategoriesName;
     }
 }
