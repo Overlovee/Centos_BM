@@ -38,8 +38,7 @@ namespace CentosBM.Connects
                    {
                         MyAccount temp = new MyAccount();
                         temp.EmployeeID = Convert.ToInt32(reader["EmployeeID"].ToString());
-                        temp.FirstName = reader["FirstName"].ToString();
-                        temp.LastName = reader["LastName"].ToString();
+                        temp.FullName = reader["FullName"].ToString();
                         temp.Address = reader["Address"].ToString();
                         temp.Phone = reader["Phone"].ToString();
                         temp.Position = reader["Position"].ToString();
@@ -79,8 +78,7 @@ namespace CentosBM.Connects
                             {
                                 EmployeeID = Convert.ToInt32(reader["EmployeeID"]),
                                 Username = reader["Username"].ToString(),
-                                FirstName = reader["FirstName"].ToString(),
-                                LastName = reader["LastName"].ToString(),
+                                FullName = reader["FullName"].ToString(),
                                 Address = reader["Address"].ToString(),
                                 Phone = reader["Phone"].ToString(),
                                 Position = reader["Position"].ToString()
@@ -131,8 +129,7 @@ namespace CentosBM.Connects
                         {
                             EmployeeID = Convert.ToInt32(reader["EmployeeID"]),
                             Username = reader["Username"].ToString(),
-                            FirstName = reader["FirstName"].ToString(),
-                            LastName = reader["LastName"].ToString(),
+                            FullName = reader["FullName"].ToString(),
                             Address = reader["Address"].ToString(),
                             Phone = reader["Phone"].ToString(),
                             Position = reader["Position"].ToString(),

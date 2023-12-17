@@ -50,8 +50,7 @@ namespace CentosBM.Forms
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@EmployeeID", txt_LBID.Text);
             cmd.Parameters.AddWithValue("@Username", txt_UserName.Text);
-            cmd.Parameters.AddWithValue("@FirstName", txt_FirstName.Text);
-            cmd.Parameters.AddWithValue("@LastName", txt_LastName.Text);
+            cmd.Parameters.AddWithValue("@FullName", txt_FirstName.Text);
             cmd.Parameters.AddWithValue("@Address", txt_Address.Text);
             cmd.Parameters.AddWithValue("@Phone", txt_Phone.Text);
 
@@ -85,8 +84,7 @@ namespace CentosBM.Forms
             CustomizeComboBoxByRole();
             txt_UserName.Text = mc.Username;
             txt_LBID.Text = mc.EmployeeID.ToString();
-            txt_FirstName.Text = mc.FirstName;
-            txt_LastName.Text = mc.LastName;
+            txt_FirstName.Text = mc.FullName;
             txt_Phone.Text = mc.Phone;
             txt_EmpStatus.Text = mc.empStatus;
             txt_Address.Text = mc.Address;
@@ -99,7 +97,7 @@ namespace CentosBM.Forms
                 cb_Position.Items.Add("Admin");
                 cb_Position.SelectedItem = "Admin";
             }
-            else if (mc.Role == 2)
+            else if (mc.Role >= 2)
             {
                 cb_Position.Items.Add("Quản Lý");
                 cb_Position.Items.Add("Nhân Viên");

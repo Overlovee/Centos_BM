@@ -39,13 +39,12 @@ namespace CentosBM.Connects
             {
                 mc.EmployeeID = int.Parse(rdr.GetValue(0).ToString());
                 mc.Username = rdr.GetValue(1).ToString();
-                mc.FirstName = rdr.GetValue(2).ToString();
-                mc.LastName = rdr.GetValue(3).ToString();
-                mc.Address = rdr.GetValue(4).ToString();
-                mc.Phone = rdr.GetValue(5).ToString();
-                mc.Position = rdr.GetValue(6).ToString();
-                mc.empStatus = rdr.GetValue(7).ToString();
-                mc.Role = int.Parse(rdr.GetValue(8).ToString());
+                mc.FullName = rdr.GetValue(2).ToString();
+                mc.Address = rdr.GetValue(3).ToString();
+                mc.Phone = rdr.GetValue(4).ToString();
+                mc.Position = rdr.GetValue(5).ToString();
+                mc.empStatus = rdr.GetValue(6).ToString();
+                mc.Role = int.Parse(rdr.GetValue(7).ToString());
             }
             rdr.Close();
             return mc;
