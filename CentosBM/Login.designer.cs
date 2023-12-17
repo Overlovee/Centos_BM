@@ -155,6 +155,7 @@ namespace CentosBM
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.label4);
@@ -180,6 +181,7 @@ namespace CentosBM
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(342, 136);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
@@ -188,7 +190,7 @@ namespace CentosBM
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Garamond", 20F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Vivaldi", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(2, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -210,7 +212,7 @@ namespace CentosBM
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(338, 46);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Centos Buiding Materials";
+            this.label6.Text = "Buiding Materials";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label7
@@ -218,14 +220,14 @@ namespace CentosBM
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Vivaldi", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(2, 45);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(338, 45);
             this.label7.TabIndex = 3;
-            this.label7.Text = "To";
+            this.label7.Text = "Centos ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label4

@@ -24,7 +24,7 @@ namespace CentosBM
         public Login()
         {
             InitializeComponent();
-            cl = new ConnectProcedureAndFunction("Data Source=DESKTOP-4TU4H2A\\SQLEXPRESS;Initial Catalog=CentosBM;Integrated Security=True");
+            cl = new ConnectProcedureAndFunction("Data Source=.;Initial Catalog=CentosBM;Integrated Security=True");
         }
 
 
@@ -53,8 +53,6 @@ namespace CentosBM
             if (mc != null)
             {
                 mc.Username = txt_lginUserName.Text;
-                mc.passwrord = txt_lginPassword.Text;
-                if (mc.Role == 1)
                 {
                     MessageBox.Show("LogIn Successfully With Admin Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -67,6 +65,7 @@ namespace CentosBM
                     MessageBox.Show("LogIn Successfully With Employee Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 Menu menuForm = new Menu();
+
                 menuForm.account = mc;
                 this.Hide();
                 menuForm.ShowDialog();
