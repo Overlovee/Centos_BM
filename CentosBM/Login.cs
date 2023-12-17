@@ -53,6 +53,7 @@ namespace CentosBM
             if (mc != null)
             {
                 mc.Username = txt_lginUserName.Text;
+                if(mc.Role == 1)
                 {
                     MessageBox.Show("LogIn Successfully With Admin Rights!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
