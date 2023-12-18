@@ -64,7 +64,7 @@ namespace CentosBM
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@EmployeeID", Employeeid);
                         cmd.Parameters.AddWithValue("@Username", Username);
-                        cmd.Parameters.AddWithValue("@NewPassword", Password.Create_MD5(txt_Password.Text));
+                        cmd.Parameters.AddWithValue("@NewPassword", Password.Create_MD5(txt_Password.Text.Trim()));
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Password updated successfully", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         txt_Password.Clear();

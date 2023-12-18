@@ -11,7 +11,7 @@ namespace CentosBM.Models
 {
     class DbContext
     {
-        public string constr = "Data Source=.\\SQLEXPRESS;Initial Catalog=CentosBM;Integrated Security=True";
+        public string constr = "Data Source=.\\SQLEXPRESS;Initial Catalog=Centos_BM;Integrated Security=True";
         SqlConnection con = new SqlConnection();
         SqlCommand cmd;
         SqlDataReader reader;

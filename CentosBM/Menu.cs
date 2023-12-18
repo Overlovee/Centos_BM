@@ -175,8 +175,13 @@ namespace CentosBM
 
         private void btnMyAccountForm_Click(object sender, EventArgs e)
         {
-            Forms.MyAccountForm form = new Forms.MyAccountForm();
-            form.account = this.account;
+            string id = account.EmployeeID.ToString();
+            ConnectEmployee connectEmployee = new ConnectEmployee();
+            MyAccount temp = new MyAccount();
+            temp = connectEmployee.getDataMyAccountbyID(int.Parse(id));
+
+            Forms.MyAccountForm form = new Forms.MyAccountForm(temp);
+            //form.role = this.account;
             OpenChildForm(form, sender);
         }
 

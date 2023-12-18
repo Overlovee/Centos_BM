@@ -28,10 +28,6 @@ namespace CentosBM.Forms
 
         private void ManageEmployeesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (MessageBox.Show("Are you sure you want to exit?", "Notification", MessageBoxButtons.YesNo) == DialogResult.No)
-            //{
-            //    e.Cancel = true;
-            //}
         }
         private void ManageEmployeesForm_Load(object sender, EventArgs e)
         {

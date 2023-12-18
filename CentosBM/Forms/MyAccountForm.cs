@@ -19,23 +19,26 @@ namespace CentosBM.Forms
     {
         DbContext db = new DbContext();
         ConnectProcedureAndFunction cp;
-        public MyAccount account {  get; set; }
-        public MyAccountForm()
+        private MyAccount account {  get; set; }
+        public bool isChanged { get; set; }
+        public MyAccountForm(MyAccount account)
         {
             InitializeComponent();
             cp = new ConnectProcedureAndFunction(db.constr);
-            account = new MyAccount();
+            this.account = account;
+            isChanged = false;
         }
         public void DisplayUserInfo()
         {
             if (account != null)
             {
-                lbtext_ID.Text = account.EmployeeID.ToString();
-                lbtext_FirstName.Text = account.FullName.ToString();
+                txt_LBID.Text = account.EmployeeID.ToString();
+                txt_FullName.Text = account.FullName.ToString();
                 lbtext_Position.Text = account.Position.ToString();
-                lbtext_Phone.Text = account.Phone.ToString();
-                lbtext_UserName.Text = account.Username.ToString();
-                lbtext_Address.Text = account.Address.ToString();
+                txt_Phone.Text = account.Phone.ToString();
+                txt_UserName.Text = account.Username.ToString();
+                txt_Address.Text = account.Address.ToString();
+                lbtext_empStatus.Text = account.empStatus.ToString();
             }
             else
             {
@@ -73,6 +76,46 @@ namespace CentosBM.Forms
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            db.open();
+            int rs = 0;
+            string sql = "Exec UpdateMyAccount '" + int.Parse(txt_LBID.Text) + "',N'" + txt_FullName.Text + "',N'" + txt_UserName.Text + "',N'" + txt_Address.Text + "','" + txt_Phone.Text + "'";
+            rs = db.ExcuteNonQuery(sql);
+            if (rs != 0)
+            {
+                isChanged = true;
+                MessageBox.Show("Update successful");
+
+            }
+            else
+            {
+                MessageBox.Show("Update failed");
+            }
+            db.close();
+        }
+
+        private void txt_FullName_TextChanged(object sender, EventArgs e)
+        {
+            if (!(txt_FullName.Text is null) && !(txt_Address.Text is null) && !(txt_Phone.Text is null) && !(txt_UserName.Text is null) )
+            {
+                if ((txt_UserName.Text != account.Username) || (txt_Phone.Text != account.Phone) || (txt_FullName.Text != account.FullName) || (txt_Address.Text != account.Address))
+                {
+                    button_Update.Enabled = true;
+                }
+                else
+                {
+                    button_Update.Enabled = false;
+                }
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UpdatePassword fg = new UpdatePassword(account.EmployeeID, account.Username);
+            fg.Show();
         }
     }
 }
