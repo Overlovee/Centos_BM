@@ -30,11 +30,13 @@ namespace CentosBM
 
         private void Login_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.UserName != string.Empty)
+            if (Properties.Settings.Default.RememberMe)
             {
                 txt_lginUserName.Text = Properties.Settings.Default.UserName;
                 txt_lginPassword.Text = Properties.Settings.Default.Password;
+                checkBox1.Checked = false;
             }
+            Properties.Settings.Default.Save();
         }
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -45,11 +47,24 @@ namespace CentosBM
         }
         //'Admin' : 'Minhthu25' , 'minhthu2003'
         //'Quản Lí' : 'Kimdinh30' , 'kimdinh0702'
-        //'Nhân Viên' : 'Hoàng13' , 'hoangnguyen'
+        //'Nhân Viên' : 'Hoang13' , 'hoangnguyen'
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            mc = cl.Login(txt_lginUserName.Text, txt_lginPassword.Text);
+            if (checkBox1.Checked)
+            {
+                Properties.Settings.Default.UserName = txt_lginUserName.Text;
+                Properties.Settings.Default.Password = txt_lginPassword.Text;
+                Properties.Settings.Default.RememberMe = true;
+            }
+            else
+            {
+                Properties.Settings.Default.UserName = string.Empty;
+                Properties.Settings.Default.Password = string.Empty;
+                Properties.Settings.Default.RememberMe = false;
+            }
+            Properties.Settings.Default.Save();
+            mc = cl.Login(txt_lginUserName.Text, Password.Create_MD5(txt_lginPassword.Text));
             if (mc != null)
             {
                 mc.Username = txt_lginUserName.Text;

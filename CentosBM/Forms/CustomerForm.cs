@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Forms.DataVisualization.Charting;
 namespace CentosBM.Forms
 {
     public partial class CustomerForm : Form
@@ -15,6 +15,11 @@ namespace CentosBM.Forms
         public CustomerForm()
         {
             InitializeComponent();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

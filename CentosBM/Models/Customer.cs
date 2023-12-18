@@ -12,6 +12,8 @@ namespace CentosBM.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public decimal Total { get; set; }
+        public string CustomerType { get; set; }
 
         public Customer()
         {
@@ -19,6 +21,9 @@ namespace CentosBM.Models
             Name = "";
             Address = "";
             Phone = "";
+            Total = 0;
+            CustomerType = "";
+
         }
     }
 }

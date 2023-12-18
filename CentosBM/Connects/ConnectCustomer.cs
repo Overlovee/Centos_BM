@@ -39,6 +39,30 @@ namespace CentosBM.Connects
             dbContext.close();
             return rs;
         }
+        public List<Customer> LoadDataCustomer(string search = "")
+        {
+            List<Customer> list = new List<Customer>();
+            string sql = "SELECT * FROM dbo.GetCustomer('')";
+            if (search != "")
+            {
+                sql = "SELECT * FROM dbo.GetCustomer(N'" + search + "')";
+            }
 
+            SqlDataReader rdr = dbContext.ExcuteQuery(sql);
+
+            while (rdr.Read())
+            {
+                Customer emp = new Customer();
+                emp.CustomerID = int.Parse(rdr.GetValue(0).ToString());
+                emp.Name = rdr.GetValue(1).ToString();
+                emp.Address = rdr.GetValue(2).ToString();
+                emp.Phone = rdr.GetValue(3).ToString();
+                emp.Total = decimal.Parse(rdr.GetValue(4).ToString());
+                emp.CustomerType = rdr.GetValue(5).ToString();
+                list.Add(emp);
+            }
+            rdr.Close();
+            return list;
+        }
     }
 }

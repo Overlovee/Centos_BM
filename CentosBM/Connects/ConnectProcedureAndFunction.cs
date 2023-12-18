@@ -48,7 +48,7 @@ namespace CentosBM.Connects
                    }
                    else
                    {
-                        MessageBox.Show("Read data failed");
+                        MessageBox.Show("This Username Has Retired");
                         
                    }
                 }

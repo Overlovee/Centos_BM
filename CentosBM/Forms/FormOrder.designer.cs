@@ -114,7 +114,7 @@
             this.dateTimePickerOrder.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerOrder.Location = new System.Drawing.Point(198, 7);
             this.dateTimePickerOrder.Margin = new System.Windows.Forms.Padding(0);
-            this.dateTimePickerOrder.MaxDate = new System.DateTime(2023, 10, 30, 13, 47, 27, 0);
+            this.dateTimePickerOrder.MaxDate = new System.DateTime(2029, 3, 8, 0, 0, 0, 0);
             this.dateTimePickerOrder.Name = "dateTimePickerOrder";
             this.dateTimePickerOrder.Size = new System.Drawing.Size(298, 32);
             this.dateTimePickerOrder.TabIndex = 2;

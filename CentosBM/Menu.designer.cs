@@ -47,6 +47,8 @@
             this.panelNavBar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTittle_display = new System.Windows.Forms.Label();
+            this.button_ManageCustomer = new System.Windows.Forms.Button();
+            this.btnSettingForm = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,6 +60,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Black;
             this.panelMenu.Controls.Add(this.btnSettingForm);
+            this.panelMenu.Controls.Add(this.button_ManageCustomer);
             this.panelMenu.Controls.Add(this.btnMyAccountForm);
             this.panelMenu.Controls.Add(this.btnManageAccountForm);
             this.panelMenu.Controls.Add(this.btnSupplierForm);
@@ -71,7 +74,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 753);
+            this.panelMenu.Size = new System.Drawing.Size(281, 941);
             this.panelMenu.TabIndex = 0;
             // 
             // btnSettingForm
@@ -105,11 +108,11 @@
             this.btnMyAccountForm.ForeColor = System.Drawing.Color.White;
             this.btnMyAccountForm.Image = global::CentosBM.Properties.Resources.account1;
             this.btnMyAccountForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyAccountForm.Location = new System.Drawing.Point(0, 462);
+            this.btnMyAccountForm.Location = new System.Drawing.Point(0, 578);
             this.btnMyAccountForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMyAccountForm.Name = "btnMyAccountForm";
-            this.btnMyAccountForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnMyAccountForm.Size = new System.Drawing.Size(250, 56);
+            this.btnMyAccountForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnMyAccountForm.Size = new System.Drawing.Size(281, 70);
             this.btnMyAccountForm.TabIndex = 19;
             this.btnMyAccountForm.Text = "My Account";
             this.btnMyAccountForm.UseVisualStyleBackColor = false;
@@ -126,11 +129,11 @@
             this.btnManageAccountForm.ForeColor = System.Drawing.Color.White;
             this.btnManageAccountForm.Image = global::CentosBM.Properties.Resources.group;
             this.btnManageAccountForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManageAccountForm.Location = new System.Drawing.Point(0, 406);
+            this.btnManageAccountForm.Location = new System.Drawing.Point(0, 508);
             this.btnManageAccountForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManageAccountForm.Name = "btnManageAccountForm";
-            this.btnManageAccountForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnManageAccountForm.Size = new System.Drawing.Size(250, 56);
+            this.btnManageAccountForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnManageAccountForm.Size = new System.Drawing.Size(281, 70);
             this.btnManageAccountForm.TabIndex = 18;
             this.btnManageAccountForm.Text = "Manage Account";
             this.btnManageAccountForm.UseVisualStyleBackColor = false;
@@ -147,11 +150,11 @@
             this.btnSupplierForm.ForeColor = System.Drawing.Color.White;
             this.btnSupplierForm.Image = global::CentosBM.Properties.Resources.supply_chain_management;
             this.btnSupplierForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSupplierForm.Location = new System.Drawing.Point(0, 350);
+            this.btnSupplierForm.Location = new System.Drawing.Point(0, 438);
             this.btnSupplierForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSupplierForm.Name = "btnSupplierForm";
-            this.btnSupplierForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnSupplierForm.Size = new System.Drawing.Size(250, 56);
+            this.btnSupplierForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnSupplierForm.Size = new System.Drawing.Size(281, 70);
             this.btnSupplierForm.TabIndex = 13;
             this.btnSupplierForm.Text = "Suppliers";
             this.btnSupplierForm.UseVisualStyleBackColor = false;
@@ -168,11 +171,11 @@
             this.btnShowProductForm.ForeColor = System.Drawing.Color.White;
             this.btnShowProductForm.Image = global::CentosBM.Properties.Resources.box;
             this.btnShowProductForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowProductForm.Location = new System.Drawing.Point(0, 294);
+            this.btnShowProductForm.Location = new System.Drawing.Point(0, 368);
             this.btnShowProductForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowProductForm.Name = "btnShowProductForm";
-            this.btnShowProductForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnShowProductForm.Size = new System.Drawing.Size(250, 56);
+            this.btnShowProductForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnShowProductForm.Size = new System.Drawing.Size(281, 70);
             this.btnShowProductForm.TabIndex = 11;
             this.btnShowProductForm.Text = "Products";
             this.btnShowProductForm.UseVisualStyleBackColor = false;
@@ -189,11 +192,11 @@
             this.btnOrderForm.ForeColor = System.Drawing.Color.White;
             this.btnOrderForm.Image = global::CentosBM.Properties.Resources.order_delivery;
             this.btnOrderForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderForm.Location = new System.Drawing.Point(0, 238);
+            this.btnOrderForm.Location = new System.Drawing.Point(0, 298);
             this.btnOrderForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderForm.Name = "btnOrderForm";
-            this.btnOrderForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnOrderForm.Size = new System.Drawing.Size(250, 56);
+            this.btnOrderForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnOrderForm.Size = new System.Drawing.Size(281, 70);
             this.btnOrderForm.TabIndex = 9;
             this.btnOrderForm.Text = "Orders";
             this.btnOrderForm.UseVisualStyleBackColor = false;
@@ -210,11 +213,11 @@
             this.btnCategoryForm.ForeColor = System.Drawing.Color.White;
             this.btnCategoryForm.Image = global::CentosBM.Properties.Resources.categories;
             this.btnCategoryForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategoryForm.Location = new System.Drawing.Point(0, 182);
+            this.btnCategoryForm.Location = new System.Drawing.Point(0, 228);
             this.btnCategoryForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCategoryForm.Name = "btnCategoryForm";
-            this.btnCategoryForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnCategoryForm.Size = new System.Drawing.Size(250, 56);
+            this.btnCategoryForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnCategoryForm.Size = new System.Drawing.Size(281, 70);
             this.btnCategoryForm.TabIndex = 4;
             this.btnCategoryForm.Text = "Category";
             this.btnCategoryForm.UseVisualStyleBackColor = false;
@@ -231,11 +234,11 @@
             this.btnOverviewForm.ForeColor = System.Drawing.Color.White;
             this.btnOverviewForm.Image = global::CentosBM.Properties.Resources.overview;
             this.btnOverviewForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOverviewForm.Location = new System.Drawing.Point(0, 126);
+            this.btnOverviewForm.Location = new System.Drawing.Point(0, 158);
             this.btnOverviewForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOverviewForm.Name = "btnOverviewForm";
-            this.btnOverviewForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnOverviewForm.Size = new System.Drawing.Size(250, 56);
+            this.btnOverviewForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnOverviewForm.Size = new System.Drawing.Size(281, 70);
             this.btnOverviewForm.TabIndex = 2;
             this.btnOverviewForm.Text = "Overview";
             this.btnOverviewForm.UseVisualStyleBackColor = false;
@@ -252,11 +255,11 @@
             this.btnHomeForm.ForeColor = System.Drawing.Color.White;
             this.btnHomeForm.Image = ((System.Drawing.Image)(resources.GetObject("btnHomeForm.Image")));
             this.btnHomeForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHomeForm.Location = new System.Drawing.Point(0, 70);
+            this.btnHomeForm.Location = new System.Drawing.Point(0, 88);
             this.btnHomeForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHomeForm.Name = "btnHomeForm";
-            this.btnHomeForm.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnHomeForm.Size = new System.Drawing.Size(250, 56);
+            this.btnHomeForm.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnHomeForm.Size = new System.Drawing.Size(281, 70);
             this.btnHomeForm.TabIndex = 1;
             this.btnHomeForm.Text = "Home";
             this.btnHomeForm.UseVisualStyleBackColor = false;
@@ -282,7 +285,7 @@
             this.labelIcon.Image = ((System.Drawing.Image)(resources.GetObject("labelIcon.Image")));
             this.labelIcon.Location = new System.Drawing.Point(0, 0);
             this.labelIcon.Name = "labelIcon";
-            this.labelIcon.Size = new System.Drawing.Size(250, 70);
+            this.labelIcon.Size = new System.Drawing.Size(281, 88);
             this.labelIcon.TabIndex = 0;
             this.labelIcon.Click += new System.EventHandler(this.labelIcon_Click);
             // 
@@ -363,18 +366,18 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1642, 753);
+            this.ClientSize = new System.Drawing.Size(1847, 941);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1660, 800);
+            this.MinimumSize = new System.Drawing.Size(1865, 986);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cash Flow Management";
@@ -408,9 +411,10 @@
         private System.Windows.Forms.Label lblTittle_display;
         private System.Windows.Forms.Button btnShowProductForm;
         private System.Windows.Forms.Button btnSupplierForm;
-        private System.Windows.Forms.Button btnSettingForm;
         private System.Windows.Forms.Button btnMyAccountForm;
         private System.Windows.Forms.Button btnManageAccountForm;
+        private System.Windows.Forms.Button btnSettingForm;
+        private System.Windows.Forms.Button button_ManageCustomer;
     }
 }
 

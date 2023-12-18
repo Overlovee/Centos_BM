@@ -14,10 +14,12 @@ namespace CentosBM.Forms
 {
     public partial class Home : Form
     {
+        public MyAccount account { get; set; }
         public List<Product> productList { get; set; } = new List<Product>();
         public Home()
         {
             InitializeComponent();
+            account = new MyAccount();
 
 
         }
@@ -230,6 +232,7 @@ namespace CentosBM.Forms
         {
             List<Product> products = GetProducts();
             FormOrder form = new FormOrder();
+            form.account = account;
             form.total = total();
             form.SetProductList(products);
             form.ShowDialog();
