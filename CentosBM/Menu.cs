@@ -160,7 +160,9 @@ namespace CentosBM
 
         private void btnHomeForm_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Home(), sender);
+            Forms.Home form = new Forms.Home();
+            form.account = this.account;
+            OpenChildForm(form, sender);
         }
 
 

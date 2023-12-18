@@ -12,11 +12,14 @@ using CentosBM.Connects;
 using CentosBM.UserControls;
 using System.IO;
 using Xceed.Words.NET;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 namespace CentosBM.Forms
 {
     public partial class FormOrder : Form
     {
         public int customerID { get; set; }
+        public MyAccount account { get; set; }
         public decimal total { get; set; }
         public List<Product> productList = new List<Product>();
 
@@ -30,7 +33,7 @@ namespace CentosBM.Forms
         public FormOrder()
         {
             InitializeComponent();
-
+            account = new MyAccount();
         }
 
         private void button_Addnewcustomer_Click(object sender, EventArgs e)
@@ -105,12 +108,11 @@ namespace CentosBM.Forms
             ConnectOrder order = new ConnectOrder();
 
             DateTime orderdate = dateTimePickerOrder.Value;
-            int EmployeeID = 1;
             string orderstatus = comboBox_OrderStatus.Text;
             string shipmentStautus = "Chờ giao hàng";
             string Orderid = "";
             int rs = 0, ts = 0;
-            rs = order.CreateOrder(orderdate, total, customerID, EmployeeID, orderstatus, shipmentStautus);
+            rs = order.CreateOrder(orderdate, total, customerID, account.EmployeeID, orderstatus, shipmentStautus);
             if (rs == 0)
             {
                 MessageBox.Show("Error");
