@@ -135,7 +135,7 @@ namespace CentosBM
 
         private void btnShowProductForm_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ProductForm(), sender);
+            OpenChildForm(new Forms.ProductForm(account), sender);
         }
 
         private void btnOrderForm_Click(object sender, EventArgs e)

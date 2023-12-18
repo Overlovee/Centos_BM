@@ -17,10 +17,18 @@ namespace CentosBM.UserControls
     public partial class SmallProductItem : UserControl
     {
         public Product product { get; set; }
+        public MyAccount account { get; set; }
         public SmallProductItem()
         {
             InitializeComponent();
             product = new Product();
+            account= new MyAccount();
+        }
+        public SmallProductItem(MyAccount myAccount)
+        {
+            InitializeComponent();
+            product = new Product();
+            account = myAccount;
         }
 
         private void SmallProductItem_Load(object sender, EventArgs e)
@@ -53,7 +61,7 @@ namespace CentosBM.UserControls
 
         private void pictureBoxProduct_Click(object sender, EventArgs e)
         {
-            ProductDetail productDetail = new ProductDetail();
+            ProductDetail productDetail = new ProductDetail(account);
             productDetail.product = product;
             productDetail.ShowDialog();
             if (productDetail.isUpdated)

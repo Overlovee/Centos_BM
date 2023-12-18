@@ -16,11 +16,17 @@ namespace CentosBM.Forms
 {
     public partial class ProductForm : Form
     {
+        public MyAccount account { get; set; }
         public ProductForm()
         {
             InitializeComponent();
+            account = new MyAccount();
         }
-
+        public ProductForm(MyAccount myAccount)
+        {
+            InitializeComponent();
+            account = myAccount;
+        }
         private void ProductForm_Load(object sender, EventArgs e)
         {
             Load_CategoryCombobox();
@@ -57,7 +63,7 @@ namespace CentosBM.Forms
                 newPanel.Dock = DockStyle.Top;
                 newPanel.Height = 170;
 
-                SmallProductItem item = new SmallProductItem();
+                SmallProductItem item = new SmallProductItem(account);
                 item.product = pro;
 
                 newPanel.Controls.Add(item);

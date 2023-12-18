@@ -20,6 +20,7 @@ namespace CentosBM.SubForms
         public bool isUpdated { get; set; }
         public bool isDeleted { get; set; }
         public string newImg { get; set; }
+        public MyAccount account { get; set; }
         public ProductDetail()
         {
             InitializeComponent();
@@ -27,8 +28,17 @@ namespace CentosBM.SubForms
             isUpdated = false;
             isDeleted = false;
             newImg = "";
+            account = new MyAccount();
         }
-
+        public ProductDetail(MyAccount myAccount)
+        {
+            InitializeComponent();
+            product = new Product();
+            isUpdated = false;
+            isDeleted = false;
+            newImg = "";
+            account = myAccount;
+        }
         private void Load_CategoryCombobox()
         {
             ConnectCategory connectCategory = new ConnectCategory();
@@ -66,6 +76,17 @@ namespace CentosBM.SubForms
             textBoxUnit.Text = product.Unit;
             newImg = product.Url;
 
+            if(account.Role != 1)
+            {
+                textBoxName.Enabled = false;
+                textBoxPrice.Enabled = false;
+                richTextBoxDescription.Enabled = false;
+                textBoxUnit.Enabled = false;
+                pictureBoxProduct.Enabled = false;
+                comboBoxSupplier.Enabled = false;
+                comboBoxCategory.Enabled = false;
+                btnDelete.Enabled = false;
+            }
             string imagePath = product.Url;
 
             string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.Windows.Forms.Application.StartupPath));
