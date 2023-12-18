@@ -21,7 +21,7 @@ namespace CentosBM.SubForms
         public bool isDeleted { get; set; }
 
         ConnectSupplier connectSupplier;
-
+        private bool isFirstLoad { get; set; }
         public SupplierDetail()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace CentosBM.SubForms
             connectSupplier = new ConnectSupplier();
             isUpdated = false;
             isDeleted = false;
+            isFirstLoad = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -88,8 +89,8 @@ namespace CentosBM.SubForms
             textBoxName.Text = supplier.Name;
             textBoxPhone.Text = supplier.PhoneNumber;
             labelID.Text = supplier.Id.ToString();
-            Load_ComboboxStatus();
             Load_ComboboxCategory();
+            Load_ComboboxStatus();
         }
 
         public void Load_ComboboxCategory()
@@ -127,6 +128,11 @@ namespace CentosBM.SubForms
 
         public void Load_Data()
         {
+            if (isFirstLoad)
+            {
+                isFirstLoad = false;
+                //return;
+            }
             ConnectProduct connectProduct = new ConnectProduct();
             List<Product> products = new List<Product>();
             products = connectProduct.getProductsOfSupplier(supplier.Id, comboBoxCategory.SelectedItem.ToString());

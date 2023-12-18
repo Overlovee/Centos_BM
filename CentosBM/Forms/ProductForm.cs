@@ -24,7 +24,6 @@ namespace CentosBM.Forms
         private void ProductForm_Load(object sender, EventArgs e)
         {
             Load_CategoryCombobox();
-            Load_Data();
         }
         private void Load_CategoryCombobox()
         {

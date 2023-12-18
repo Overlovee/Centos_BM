@@ -137,7 +137,7 @@ namespace CentosBM.Connects
             List<Product> list = new List<Product>();
             string sql = "SELECT P.ProductID, ProductName, Description, OD.Price, P.CategoryID, " +
                 "S.SupplierID, Url, C.NameCategory, S.SupplierName, " +
-                "P.QuantityInStock, P.Unit, OD.Quantity " +
+                "P.QuantityInStock, P.Unit " +
                 "FROM Order_Detail OD " +
                 "Join Products P ON P.ProductID = OD.ProductID " +
                 "JOIN Images I ON P.ProductID = I.ProductID " +
@@ -148,10 +148,12 @@ namespace CentosBM.Connects
             {
                 type = "";
             }
-            if(type != "")
+            if (type != "")
             {
-                sql += "And C.NameCategory like N'%"+type+"%'";
+                sql += "And C.NameCategory like N'%" + type + "%' ";
             }
+            sql += " Group by P.ProductID, ProductName, Description, OD.Price, P.CategoryID, " +
+                "S.SupplierID, Url, C.NameCategory, S.SupplierName, P.QuantityInStock, P.Unit";
             SqlDataReader rdr = dbContext.ExcuteQuery(sql);
             while (rdr.Read())
             {
@@ -167,7 +169,6 @@ namespace CentosBM.Connects
                 emp.SupplierName = rdr.GetValue(8).ToString();
                 emp.QuantityInStock = int.Parse(rdr.GetValue(9).ToString());
                 emp.Unit = rdr.GetValue(10).ToString();
-                emp.Quantity = int.Parse(rdr.GetValue(11).ToString());
                 list.Add(emp);
             }
             rdr.Close();

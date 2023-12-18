@@ -122,3 +122,14 @@ CREATE TABLE Permission_Detail (
     FOREIGN KEY (RoleID) REFERENCES Roles(RoleID),
     FOREIGN KEY (PermissionID) REFERENCES Permissions(PermissionID)
 );
+
+SELECT P.ProductID, ProductName, Description, OD.Price, P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName, 
+P.QuantityInStock, P.Unit
+FROM Order_Detail OD 
+Join Products P ON P.ProductID = OD.ProductID 
+JOIN Images I ON P.ProductID = I.ProductID 
+JOIN Categories C ON P.CategoryID = C.CategoryID 
+JOIN Suppliers S ON P.SupplierID = S.SupplierID 
+WHERE S.SupplierID = 1
+Group by P.ProductID, ProductName, Description, OD.Price, 
+P.CategoryID, S.SupplierID, Url, C.NameCategory, S.SupplierName, P.QuantityInStock, P.Unit;
